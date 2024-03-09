@@ -1,12 +1,14 @@
 import { Fragment } from "react";
+import "./App.css";
 
 import Header from "./components/Header";
-import "./App.css";
+import Content from "./components/Content";
 
 function App() {
   return (
     <Fragment>
       <Header />
+      <Content />
     </Fragment>
   );
 }
