@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 100%;
+  height: 110px;
+  padding: 0 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  background-color: orange;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 100px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.main-navigation {
+  height: 100%;
+  display: none;
+}
+.main-navigation ul {
+  display: flex;
+  height: 100%;
+  font-size: 0.8rem;
+}
+
+.main-navigation ul a {
+  padding: 0 1.2rem;
+  color: #fff;
+  transition: color 0.4s ease-in-out;
+}
+.main-navigation ul a:hover {
+  color: rgb(39, 45, 172);
+}
+
+.main-navigation ul li {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+}
+
+.main-wrapper {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card-box {
+  max-width: 450px;
+  background-color: rgb(242, 226, 204);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.card-box img {
+  width: 100%;
+  height: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-box h1 {
+  font-size: 2rem;
+  padding: 10px 15px;
+}
+.card-box h4 {
+  font-size: 1rem;
+  padding: 10px 15px;
+  font-weight: 400;
+}
+
+.footer {
+  padding: 20px 40px;
+  background: #101010;
+  color: #fff;
+}
+.footer-wrapper {
+  width: 100%;
+  display: block;
+}
+
+.terms-and-policy {
+  padding: 20px 0;
+}
+
+.terms-and-policy p {
+  margin-bottom: 5px;
+}
+
+.newsletter {
+  border: 1px solid orange;
+  padding: 10px;
+  width: 300px;
+}
+.newsletter p {
+  padding: 0 0 10px 0;
+}
+
+.newsletter input {
+  width: 70%;
+  padding: 8px 10px;
+  margin-right: 5px;
+}
+.newsletter button {
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background: orange;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.footer a {
+  color: #fff;
+}
+
+@media only screen and (min-width: 600px) {
+  .main-navigation {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .main-navigation ul {
+    font-size: 0.9rem;
+  }
+  .menu-icon {
+    display: none;
+  }
+  .card-box img {
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .header {
+    padding: 0 2.5rem;
+  }
+  .main-navigation ul {
+    font-size: 1.1rem;
+  }
+  .main-navigation ul a {
+    padding: 0 1.5rem;
+  }
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .header {
+    padding: 0 5.5rem;
+  }
+  .main-wrapper {
+    padding: 3rem 0;
+  }
+  .cards-container {
+    gap: 30px;
+  }
+  .footer-wrapper {
+    padding: 20px 80px;
+  }
+  .newsletter {
+    padding: 10px;
+    width: 350px;
   }
 }
