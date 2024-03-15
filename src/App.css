@@ -50,12 +50,18 @@
   cursor: pointer;
   display: block;
 }
+/* .main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+} */
 
 .main-wrapper {
   width: 100%;
   padding: 2rem;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 }
 .cards-container {
   display: grid;
@@ -88,6 +94,7 @@
   padding: 20px 40px;
   background: #101010;
   color: #fff;
+  margin-top: auto;
 }
 .footer-wrapper {
   width: 100%;
