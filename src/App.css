@@ -28,11 +28,11 @@
 .main-navigation ul a {
   padding: 0 1.2rem;
   color: #fff;
-  transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease;
   font-weight: 600;
 }
 .main-navigation ul a:hover {
-  color: rgb(39, 45, 172);
+  color: rgb(120, 120, 125);
 }
 
 .main-navigation ul li {
@@ -50,30 +50,59 @@
   cursor: pointer;
   display: block;
 }
-/* .main-container {
+.main-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
-} */
+}
+.search-box {
+  width: 100%;
+  display: block;
+}
+.search-box h2 {
+  display: none;
+}
+.search-form {
+  margin: 2rem 0 0 2rem;
+}
 
+.products-wrapper {
+  width: 100%;
+  display: block;
+  padding: 0 2rem;
+}
+.products-heading {
+  padding: 2rem;
+  color: #000;
+}
 .main-wrapper {
   width: 100%;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
+  /* height: auto; */
+  /* padding: 2rem; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
   overflow-y: scroll;
 }
 .cards-container {
+  /* max-width: 80%; */
+
   display: grid;
-  grid-template-columns: 100%;
+  /* grid-template-columns: 100%; */
   gap: 20px;
 }
 
 .card-box {
   max-width: 450px;
-  background-color: rgb(242, 226, 204);
+  min-height: 450px;
+  background-color: #fff;
   border-radius: 7px;
   overflow: hidden;
+  /* cursor: pointer; */
+  transition: all 0.3s ease-in-out;
+}
+.card-box:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .card-box img {
   width: 100%;
@@ -88,6 +117,20 @@
   font-size: 1rem;
   padding: 10px 15px;
   font-weight: 400;
+}
+.add-to-cart-btn {
+  padding: 8px 10px;
+  margin: 10px 0 0 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background: green;
+  transition: all 0 ease;
+}
+.add-to-cart-btn:hover {
+  cursor: pointer;
+  background: rgb(26, 195, 26);
 }
 
 .footer {
@@ -118,12 +161,14 @@
   padding: 0 0 10px 0;
 }
 
-.newsletter input {
+.newsletter input,
+.search-form input {
   width: 70%;
   padding: 8px 10px;
   margin-right: 5px;
 }
-.newsletter button {
+.newsletter button,
+.search-form button {
   border: none;
   border-radius: 4px;
   color: #fff;
@@ -162,12 +207,33 @@
   .main-navigation ul a {
     padding: 0 1.5rem;
   }
+  .search-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search-box h2 {
+    display: block;
+    visibility: hidden;
+  }
+  .search-form {
+    margin: 0 4rem 0 0;
+  }
+  .products-heading {
+    padding: 2rem 4rem;
+  }
+  .products-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -176,7 +242,7 @@
     padding: 0 5.5rem;
   }
   .main-wrapper {
-    padding: 3rem 0;
+    padding: 3rem 0 3rem;
   }
   .cards-container {
     gap: 30px;

@@ -3,16 +3,16 @@ const Navigation = () => {
     <nav className="main-navigation">
       <ul>
         <a href="#">
-          <li>მთავარი</li>
+          <li>HOME</li>
         </a>
         <a href="#">
-          <li>პროდუქტები</li>
+          <li>PRODUCTS</li>
         </a>
         <a href="#">
-          <li>გადახდები</li>
+          <li>PAYMENTS</li>
         </a>
         <a href="#">
-          <li>კონტაქტი</li>
+          <li>CONTACT</li>
         </a>
       </ul>
     </nav>

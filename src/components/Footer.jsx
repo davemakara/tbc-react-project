@@ -1,3 +1,5 @@
+import Navigation from "./Navigation";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,11 +12,12 @@ const Footer = () => {
             <a href="#">კონფიდენციალურობის პოლიტიკა</a>
           </p>
         </div>
-        <div className="newsletter">
+        {/* <div className="newsletter">
           <p>გამოიწერეთ სიახლეები</p>
           <input type="email" placeholder="Email address" />
           <button>Submit</button>
-        </div>
+        </div> */}
+        <Navigation />
       </div>
     </footer>
   );

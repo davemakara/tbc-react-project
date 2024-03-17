@@ -1,18 +1,17 @@
-import { Fragment } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
+import Layout from "./assets/UI/Layout";
 
 function App() {
   return (
-    <Fragment>
+    <Layout>
       <Header />
       <Content />
-
       <Footer />
-    </Fragment>
+    </Layout>
   );
 }
 
