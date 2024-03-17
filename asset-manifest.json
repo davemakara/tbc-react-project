@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/tbc-react-project/static/css/main.7c77f0f7.css",
-    "main.js": "/tbc-react-project/static/js/main.c8481110.js",
+    "main.css": "/tbc-react-project/static/css/main.1e835154.css",
+    "main.js": "/tbc-react-project/static/js/main.95b7a76e.js",
     "static/media/btc3.jpg": "/tbc-react-project/static/media/btc3.d2c28dc946643ba21f74.jpg",
     "static/media/btc1.jpg": "/tbc-react-project/static/media/btc1.ae208ff4b0f259f6c18a.jpg",
     "static/media/btc2.jpg": "/tbc-react-project/static/media/btc2.b587ce6aa8ac62f3b06d.jpg",
     "static/media/btc4.jpg": "/tbc-react-project/static/media/btc4.72dc7f66f915a14dabd8.jpg",
     "static/media/output-onlinepngtools.png": "/tbc-react-project/static/media/output-onlinepngtools.74258459447bf3aff17d.png",
     "index.html": "/tbc-react-project/index.html",
-    "main.7c77f0f7.css.map": "/tbc-react-project/static/css/main.7c77f0f7.css.map",
-    "main.c8481110.js.map": "/tbc-react-project/static/js/main.c8481110.js.map"
+    "main.1e835154.css.map": "/tbc-react-project/static/css/main.1e835154.css.map",
+    "main.95b7a76e.js.map": "/tbc-react-project/static/js/main.95b7a76e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c77f0f7.css",
-    "static/js/main.c8481110.js"
+    "static/css/main.1e835154.css",
+    "static/js/main.95b7a76e.js"
   ]
 }
