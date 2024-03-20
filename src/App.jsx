@@ -1,16 +1,17 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
-import Layout from "./assets/UI/Layout";
+import "./App.css";
+import Layout from "./UI/Layout";
+import Homepage from "./pages/Homepage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <Layout>
-      <Header />
-      <Content />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
     </Layout>
   );
 }

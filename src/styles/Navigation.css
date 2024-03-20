@@ -1,0 +1,42 @@
+.main-navigation {
+  height: 100%;
+  display: none;
+}
+.main-navigation ul {
+  display: flex;
+  height: 100%;
+  font-size: 0.8rem;
+}
+
+.main-navigation ul a {
+  padding: 0 1.2rem;
+  color: #fff;
+  transition: color 0.4s ease;
+  font-weight: 600;
+}
+.main-navigation ul a:hover {
+  color: rgb(120, 120, 125);
+}
+
+.main-navigation ul li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+@media only screen and (min-width: 600px) {
+  .main-navigation {
+    display: block;
+  }
+  .main-navigation ul {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .main-navigation ul {
+    font-size: 1.1rem;
+  }
+  .main-navigation ul a {
+    padding: 0 1.5rem;
+  }
+}
