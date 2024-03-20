@@ -1,0 +1,9 @@
+.main-wrapper {
+  width: 100%;
+  overflow-y: scroll;
+}
+@media only screen and (min-width: 1250px) {
+  .main-wrapper {
+    padding: 3rem 0 3rem;
+  }
+}
