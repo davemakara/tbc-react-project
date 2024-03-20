@@ -4,6 +4,7 @@
 @import url("./styles/SearchBox.css");
 @import url("./styles/Products.css");
 @import url("./styles/Footer.css");
+@import url("./styles/ContactPage.css");
 
 .main-container {
   height: 100vh;
@@ -11,12 +12,9 @@
   flex-direction: column;
 }
 
-.contactPage-wrapper {
-  padding: 1rem;
+@media only screen and (min-width: 600px) {
 }
-
 @media only screen and (min-width: 780px) {
 }
-
 @media only screen and (min-width: 1250px) {
 }
