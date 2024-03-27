@@ -1,0 +1,49 @@
+.profile-page-wrapper {
+  background: linear-gradient(120deg, #053751, #021b28);
+  display: block;
+  padding: 3rem;
+  height: 100vh;
+  color: #fff;
+}
+
+.profile-details li {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.passwords-form {
+  max-width: 400px;
+}
+
+.passwords-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+.passwords-wrapper input {
+  flex: 1;
+  margin-bottom: 12px;
+  padding: 5px;
+  font-size: 16px;
+}
+.password-save-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: white;
+  background-color: orange;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.password-save-btn:hover {
+  cursor: pointer;
+  background-color: rgb(252, 176, 35);
+}
+
+@media only screen and (min-width: 780px) {
+  .profile-page-wrapper {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+  }
+}

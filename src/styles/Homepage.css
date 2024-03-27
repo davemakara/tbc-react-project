@@ -1,5 +1,6 @@
 .main-wrapper {
   width: 100%;
+  height: 100vh;
   overflow-y: scroll;
   background: linear-gradient(120deg, #053751, #021b28);
 }

@@ -1,8 +1,9 @@
 .footer {
+  width: 100%;
   padding: 20px 40px;
   background: #101010;
   color: #fff;
-  margin-top: auto;
+  margin-bottom: auto;
 }
 .footer-wrapper {
   width: 100%;

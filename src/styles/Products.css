@@ -12,6 +12,7 @@
   /* max-width: 80%; */
 
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
   /* grid-template-columns: 100%; */
   gap: 20px;
 }
