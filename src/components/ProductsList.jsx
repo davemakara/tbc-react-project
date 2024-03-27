@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import Product from "./Product";
 
-import { homepageCards } from "../assets/store/store";
+import { homepageCards } from "../assets/store/store.js";
 
 const ProductsList = () => {
   return (

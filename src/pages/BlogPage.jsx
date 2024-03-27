@@ -1,4 +1,4 @@
-import { blogPosts } from "../assets/store/store";
+import { blogPosts } from "../assets/store/store.js";
 
 const BlogPage = () => {
   return (
