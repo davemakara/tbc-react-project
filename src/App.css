@@ -5,9 +5,11 @@
 @import url("./styles/Products.css");
 @import url("./styles/Footer.css");
 @import url("./styles/ContactPage.css");
+@import url("./styles/ProfilePage.css");
+@import url("./styles/BlogPage.css");
 
 .main-container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }

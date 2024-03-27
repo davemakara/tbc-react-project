@@ -7,12 +7,12 @@ const Navigation = () => {
         <NavLink to="/">
           <li>HOME</li>
         </NavLink>
-        <a href="#">
-          <li>PRODUCTS</li>
-        </a>
-        <a href="#">
-          <li>PAYMENTS</li>
-        </a>
+        <NavLink to="/profile">
+          <li>PROFILE</li>
+        </NavLink>
+        <NavLink to="/blog">
+          <li>BLOG</li>
+        </NavLink>
         <NavLink to="/contact">
           <li>CONTACT</li>
         </NavLink>
