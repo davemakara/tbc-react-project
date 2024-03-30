@@ -26,31 +26,31 @@ import blog20 from "../image/blog-photos/blog20.jpg";
 
 export const homepageCards = [
   {
-    title: "Product 1",
+    title: "Time Is Now",
     description:
       "Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify transactions through cryptography and record them in a blockchain.",
     image: btcImg1,
     id: 1,
   },
   {
-    title: "Product 2",
+    title: "Bitcoin Is The Future",
     description:
-      "Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify transactions through cryptography and record them in a blockchain.",
-    image: btcImg2,
+      "Taking a long-term approach with your investments helps cut out the short-term noise and with it, the worries about finding the right time to invest.",
+    image: btcImg4,
     id: 2,
   },
   {
-    title: "Product 3",
+    title: "Market Updates",
     description:
-      "Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify transactions through cryptography and record them in a blockchain.",
+      "Prices change because of supply and demand. If more people want to buy a stock than sell it - price moves up. If more people wanted to sell a stock than buy it the price would fall.",
     image: btcImg3,
     id: 3,
   },
   {
-    title: "Product 4",
+    title: "Crypto Investments",
     description:
-      "Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify transactions through cryptography and record them in a blockchain.",
-    image: btcImg4,
+      "You should invest in cryptos only if you have a high risk tolerance, are in a strong financial position already and can afford to lose some or all of your investment.",
+    image: btcImg2,
     id: 4,
   },
 ];
