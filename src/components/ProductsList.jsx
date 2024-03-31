@@ -1,16 +1,22 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import Product from "./Product";
 
 import { homepageCards } from "../assets/store/store.js";
 
-const ProductsList = () => {
+const ProductsList = ({ isClicked, filteredData, searchInp }) => {
+  const cardsCopy = [...homepageCards];
+
+  const sortedCards = cardsCopy.sort((a, b) => a.title.localeCompare(b.title));
+
+  const renderCards = isClicked ? sortedCards : homepageCards;
+
   return (
     <Fragment>
       <h1 className="products-heading">Products</h1>
       <div className="products-wrapper">
         <div className="cards-container">
-          {homepageCards.map((product) => (
+          {(searchInp === "" ? renderCards : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))}
         </div>

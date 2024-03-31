@@ -1,35 +1,88 @@
+import { useState } from "react";
+
 const ProfilePage = () => {
+  let profile = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const [profileObj, setProfileObj] = useState(profile);
+
+  const handleInputChange = (event) => {
+    const { name: inputName, value } = event.target;
+    setProfileObj((prevState) => ({ ...prevState, [inputName]: value }));
+  };
+
+  const handleSubit = (e) => {
+    setProfileObj(profile);
+    e.preventDefault();
+  };
+
   return (
     <section className="profile-page-wrapper">
-      <div className="profile-details">
-        <ul>
-          <li>Name: John</li>
-          <li>Last Name: Doe</li>
-          <li>Email: someone@gmail.com</li>
-        </ul>
-        <form
-          className="passwords-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-        >
-          <div className="passwords-wrapper">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-            />
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              placeholder="Confirm Password"
-            />
-          </div>
-          <button className="password-save-btn">Submit</button>
-        </form>
-      </div>
+      <form
+        className="profile-details"
+        onSubmit={handleSubit}
+        autoComplete="off"
+      >
+        <div className="form-heading">
+          <h1>Profile Details</h1>
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="firstName">First Name:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            value={profileObj.firstName}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            value={profileObj.lastName}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="email">Email Address:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={profileObj.email}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={profileObj.password}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            value={profileObj.confirmPassword}
+            onChange={handleInputChange}
+          />
+        </div>
+        <button className="profile-save-btn">Submit</button>
+      </form>
     </section>
   );
 };
