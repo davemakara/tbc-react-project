@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tbc-react-project/static/css/main.3757627b.css",
-    "main.js": "/tbc-react-project/static/js/main.92357e3d.js",
+    "main.css": "/tbc-react-project/static/css/main.3f1c6223.css",
+    "main.js": "/tbc-react-project/static/js/main.988f42a2.js",
     "static/media/btc3.jpg": "/tbc-react-project/static/media/btc3.d2c28dc946643ba21f74.jpg",
     "static/media/blog1.png": "/tbc-react-project/static/media/blog1.576152bfbd216f9c531f.png",
     "static/media/btc1.jpg": "/tbc-react-project/static/media/btc1.ae208ff4b0f259f6c18a.jpg",
@@ -28,11 +28,11 @@
     "static/media/blog4.jpg": "/tbc-react-project/static/media/blog4.5058308495d8e9b624d1.jpg",
     "static/media/blog20.jpg": "/tbc-react-project/static/media/blog20.f1a3ba25cfa5498c5f5c.jpg",
     "index.html": "/tbc-react-project/index.html",
-    "main.3757627b.css.map": "/tbc-react-project/static/css/main.3757627b.css.map",
-    "main.92357e3d.js.map": "/tbc-react-project/static/js/main.92357e3d.js.map"
+    "main.3f1c6223.css.map": "/tbc-react-project/static/css/main.3f1c6223.css.map",
+    "main.988f42a2.js.map": "/tbc-react-project/static/js/main.988f42a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.3757627b.css",
-    "static/js/main.92357e3d.js"
+    "static/css/main.3f1c6223.css",
+    "static/js/main.988f42a2.js"
   ]
 }
