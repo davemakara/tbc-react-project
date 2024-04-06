@@ -1,6 +1,6 @@
 "use client";
 
-import BlogPage from "../../pages/BlogPage";
+import BlogPage from "../../main-pages/BlogPage";
 
 const Blog = () => {
   return <BlogPage />;

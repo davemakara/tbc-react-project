@@ -1,6 +1,6 @@
 "use client";
 
-import ContactPage from "../../pages/ContactPage";
+import ContactPage from "../../main-pages/ContactPage";
 
 const Contact = () => {
   return <ContactPage />;

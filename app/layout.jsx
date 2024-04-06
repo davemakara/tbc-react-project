@@ -3,7 +3,7 @@ import "../styles/index.css";
 import "../styles/app.css";
 
 export const metadata = {
-  title: "NextJS TBC App",
+  title: "TBC App",
   description: "Your first NextJS app!",
 };
 

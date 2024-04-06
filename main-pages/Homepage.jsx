@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 import ProductsList from "../components/ProductsList";
-import SearchBox from "../components/SearchBox";
 
 import { homepageCards } from "../components/store";
 

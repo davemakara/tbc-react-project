@@ -16,7 +16,7 @@ const Header = () => {
 
       {/* <img src={outputLogo} alt="logo" className="logo" /> */}
       <Navigation />
-      <img src={menuIcon} alt="menu icon" className="menu-icon" />
+      <Image src={menuIcon} alt="menu icon" className="menu-icon" fill />
     </header>
   );
 };

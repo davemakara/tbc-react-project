@@ -1,6 +1,6 @@
 "use client";
 
-import ProfilePage from "../../pages/ProfilePage";
+import ProfilePage from "../../main-pages/ProfilePage";
 
 const Profile = () => {
   return <ProfilePage />;

@@ -2,8 +2,7 @@
 
 // import "../src/App.css";
 
-import Homepage from "../pages/Homepage";
-import Layout from "../UI/Layout";
+import Homepage from "../main-pages/Homepage";
 
 const MainPage = () => {
   return <Homepage />;
