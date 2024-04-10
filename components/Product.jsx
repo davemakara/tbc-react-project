@@ -1,12 +1,10 @@
-"use client";
-
 import Image from "next/image";
 
 const Product = ({ productData }) => {
   return (
     <div className="card-box">
       <span>
-        <Image src={productData.image} alt="crypto" fill />
+        <Image src={productData.images[0]} alt="crypto" fill />
         {/* <img src={productData.image} alt="crypto" /> */}
       </span>
       <h1>{productData.title}</h1>

@@ -1,19 +1,39 @@
 "use client";
-import { Fragment, useState } from "react";
+
+import { useEffect, useState } from "react";
 
 import Product from "./Product";
 
-import { homepageCards } from "./store";
+const ProductsList = ({
+  isClicked,
+  filteredData,
+  searchInp,
+  productsData,
+  sortedCards,
+  renderCards,
+}) => {
+  // const [productsData, setProductsData] = useState([]);
 
-const ProductsList = ({ isClicked, filteredData, searchInp }) => {
-  const cardsCopy = [...homepageCards];
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch("https://dummyjson.com/products");
 
-  const sortedCards = cardsCopy.sort((a, b) => a.title.localeCompare(b.title));
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch data");
+  //     }
 
-  const renderCards = isClicked ? sortedCards : homepageCards;
+  //     const data = await response.json();
+  //     console.log(data.products);
+  //     setProductsData(data.products.slice(0, 6));
+  //   };
 
+  //   fetchData();
+
+  // }, []);
+
+  // console.log(productsData);
   return (
-    <Fragment>
+    <div>
       <h1 className="products-heading">Products</h1>
       <div className="products-wrapper">
         <div className="cards-container">
@@ -22,7 +42,7 @@ const ProductsList = ({ isClicked, filteredData, searchInp }) => {
           ))}
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default ProductsList;
