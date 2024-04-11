@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 
 import Image from "next/image";
 
-import { blogPosts } from "./store";
-
 const BlogPosts = () => {
   const [blogsData, setBlogsData] = useState([]);
 
