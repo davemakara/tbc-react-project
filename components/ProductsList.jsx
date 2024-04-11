@@ -4,40 +4,33 @@ import { useEffect, useState } from "react";
 
 import Product from "./Product";
 
-const ProductsList = ({
-  isClicked,
-  filteredData,
-  searchInp,
-  productsData,
-  sortedCards,
-  renderCards,
-}) => {
-  // const [productsData, setProductsData] = useState([]);
+const ProductsList = ({ isClicked, searchInp, productsData }) => {
+  const [sortedData, setSortedData] = useState([...productsData]);
+  const [filteredData, setFilteredData] = useState([...productsData]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch("https://dummyjson.com/products");
+  useEffect(() => {
+    if (isClicked) {
+      setSortedData(
+        [...productsData].sort((a, b) => a.title.localeCompare(b.title))
+      );
+    } else {
+      setSortedData([...productsData]);
+    }
+  }, [isClicked, productsData]);
 
-  //     if (!response.ok) {
-  //       throw new Error("Failed to fetch data");
-  //     }
+  useEffect(() => {
+    const filtered = sortedData.filter((item) =>
+      item.title.toLowerCase().startsWith(searchInp.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [searchInp, sortedData]);
 
-  //     const data = await response.json();
-  //     console.log(data.products);
-  //     setProductsData(data.products.slice(0, 6));
-  //   };
-
-  //   fetchData();
-
-  // }, []);
-
-  // console.log(productsData);
   return (
     <div>
       <h1 className="products-heading">Products</h1>
       <div className="products-wrapper">
         <div className="cards-container">
-          {(searchInp === "" ? renderCards : filteredData).map((product) => (
+          {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))}
         </div>
