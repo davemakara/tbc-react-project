@@ -1,8 +1,14 @@
 "use client";
 
-import ContactPage from "../../main-pages/ContactPage";
+import ContactForm from "../../components/ContactForm";
+import ContactInfoBox from "../../components/ContactInfoBox";
 
-const Contact = () => {
-  return <ContactPage />;
+const ContactPage = () => {
+  return (
+    <section className="contactPage-wrapper">
+      <ContactInfoBox />
+      <ContactForm />
+    </section>
+  );
 };
-export default Contact;
+export default ContactPage;

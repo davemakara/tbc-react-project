@@ -1,9 +1,11 @@
-"use client";
+import BlogPosts from "../../components/BlogPosts";
 
-import BlogPage from "../../main-pages/BlogPage";
-
-const Blog = () => {
-  return <BlogPage />;
+const BlogPage = () => {
+  return (
+    <section className="blog-page-wrapper">
+      <BlogPosts />
+    </section>
+  );
 };
 
-export default Blog;
+export default BlogPage;

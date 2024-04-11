@@ -1,8 +1,10 @@
-"use client";
+import ProfileForm from "../../components/ProfileForm";
 
-import ProfilePage from "../../main-pages/ProfilePage";
-
-const Profile = () => {
-  return <ProfilePage />;
+const ProfilePage = () => {
+  return (
+    <section className="profile-page-wrapper">
+      <ProfileForm />
+    </section>
+  );
 };
-export default Profile;
+export default ProfilePage;

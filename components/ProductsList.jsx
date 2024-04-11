@@ -1,28 +1,41 @@
 "use client";
-import { Fragment, useState } from "react";
+
+import { useEffect, useState } from "react";
 
 import Product from "./Product";
 
-import { homepageCards } from "./store";
+const ProductsList = ({ isClicked, searchInp, productsData }) => {
+  const [sortedData, setSortedData] = useState([...productsData]);
+  const [filteredData, setFilteredData] = useState([...productsData]);
 
-const ProductsList = ({ isClicked, filteredData, searchInp }) => {
-  const cardsCopy = [...homepageCards];
+  useEffect(() => {
+    if (isClicked) {
+      setSortedData(
+        [...productsData].sort((a, b) => a.title.localeCompare(b.title))
+      );
+    } else {
+      setSortedData([...productsData]);
+    }
+  }, [isClicked, productsData]);
 
-  const sortedCards = cardsCopy.sort((a, b) => a.title.localeCompare(b.title));
-
-  const renderCards = isClicked ? sortedCards : homepageCards;
+  useEffect(() => {
+    const filtered = sortedData.filter((item) =>
+      item.title.toLowerCase().startsWith(searchInp.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [searchInp, sortedData]);
 
   return (
-    <Fragment>
+    <div>
       <h1 className="products-heading">Products</h1>
       <div className="products-wrapper">
         <div className="cards-container">
-          {(searchInp === "" ? renderCards : filteredData).map((product) => (
+          {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))}
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default ProductsList;
