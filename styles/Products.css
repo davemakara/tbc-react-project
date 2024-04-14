@@ -52,7 +52,7 @@
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  color: #fff;
+  color: #fff !important;
   background: green;
   transition: all 0 ease;
 }

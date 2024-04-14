@@ -5,29 +5,12 @@ import ProductsList from "../components/ProductsList";
 import SearchSection from "../components/searchSection";
 
 const Homepage = () => {
-  const [productsData, setProductsData] = useState([]);
-
   const [isClicked, setIsClicked] = useState(false);
   const [searchItem, setSearchItem] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("https://dummyjson.com/products");
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-
-      const data = await response.json();
-      setProductsData(data.products.slice(0, 6));
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <main className="main-wrapper">
-      <SearchSection
+      {/* <SearchSection
         setIsClicked={setIsClicked}
         setSearchItem={setSearchItem}
       />
@@ -35,7 +18,9 @@ const Homepage = () => {
         isClicked={isClicked}
         searchInp={searchItem}
         productsData={productsData}
-      />
+      /> */}
+      <h1>This is main page!</h1>
+      <h2>Content to be added soon..</h2>
     </main>
   );
 };
