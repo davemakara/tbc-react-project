@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Product = ({ productData }) => {
   return (
@@ -9,7 +10,9 @@ const Product = ({ productData }) => {
       </span>
       <h1>{productData.title}</h1>
       <h4>{productData.description}</h4>
-      <button className="add-to-cart-btn">Add to Cart</button>
+      <button className="add-to-cart-btn">
+        <Link href={`/product-${productData.id}`}>Add to Cart</Link>
+      </button>
     </div>
   );
 };

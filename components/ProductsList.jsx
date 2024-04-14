@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 import Product from "./Product";
 
@@ -31,7 +32,9 @@ const ProductsList = ({ isClicked, searchInp, productsData }) => {
       <div className="products-wrapper">
         <div className="cards-container">
           {(searchInp === "" ? sortedData : filteredData).map((product) => (
-            <Product productData={product} key={product.id} />
+            <Link href={`/product-${product.id}`} key={product.id}>
+              <Product productData={product} />
+            </Link>
           ))}
         </div>
       </div>
