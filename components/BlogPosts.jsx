@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
+import BlogPostDetails from "./BlogPostDetails";
 
 const BlogPosts = () => {
   const [blogsData, setBlogsData] = useState([]);
@@ -26,14 +28,17 @@ const BlogPosts = () => {
   return (
     <div className="blog-container">
       {blogsData.map((blog) => (
-        <div className="blog-box" key={blog.id}>
-          <span>
-            <Image src={blog.image} alt={blog.name} fill />
-          </span>
-          <h1>{blog.name}</h1>
-          <h4>{blog.ingredients.join(", ")}</h4>
-          <button className="see-more-btn">See More</button>
-        </div>
+        <BlogPostDetails blogData={blog} key={blog.id} />
+        // <div className="blog-box" key={blog.id}>
+        //   <span>
+        //     <Image src={blog.image} alt={blog.name} fill />
+        //   </span>
+        //   <h1>{blog.name}</h1>
+        //   <h4>{blog.ingredients.join(", ")}</h4>
+        //   <Link href={`blog/${blog.id}`}>
+        //     <button className="see-more-btn">See More</button>
+        //   </Link>
+        // </div>
       ))}
     </div>
   );
