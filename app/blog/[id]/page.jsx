@@ -26,16 +26,19 @@ async function Post({ params }) {
   const post = await getPost(params.id);
   console.log(data);
   return (
-    <div>
+    <section className="blog-post-container">
       <div>
-        <Image src={post.image} alt={post.name} fill />
+        <span className="blog-post-img-wrapper">
+          <Image src={post.image} alt={post.name} width={600} height={400} />
+        </span>
+
         <h2>{post.name}</h2>
         <p>{post.ingredients.join(", ")}</p>
         <Link href="/blog">
           <button>{"<"} Back to Blogs</button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 }
 

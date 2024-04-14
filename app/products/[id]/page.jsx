@@ -20,35 +20,26 @@ async function ProductCardPage({ params }) {
   const product = await getProduct(params.id);
 
   return (
-    <div>
+    <section className="product-card-container">
+      <div className="product-images-wrapper">
+        {product.images.map((image, index) => (
+          <div key={index}>
+            <Image src={image} alt={product.title} width={220} height={200} />
+          </div>
+        ))}
+      </div>
       <div>
+        <h2>{product.title}</h2>
+        <p>{product.description}</p>
+        <p>Price: ${product.price}</p>
         <div>
-          <div className="flex flex-wrap ">
-            {product.images.map((image, index) => (
-              <div key={index}>
-                <Image
-                  src={image}
-                  alt={product.title}
-                  width={200}
-                  height={300}
-                />
-              </div>
-            ))}
-          </div>
-          <div>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
-            <div>
-              <button>Add to Cart</button>
-              <Link href="/products">
-                <button>{"<"} Back to Products</button>
-              </Link>
-            </div>
-          </div>
+          <button>Add to Cart</button>
+          <Link href="/products">
+            <button>{"<"} Back to Products</button>
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

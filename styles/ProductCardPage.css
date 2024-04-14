@@ -1,0 +1,10 @@
+.product-card-container {
+  background: lightsalmon;
+  width: 100%;
+  padding: 5rem;
+}
+.product-images-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
