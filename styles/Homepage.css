@@ -1,11 +1,12 @@
 .main-wrapper {
   width: 100%;
-  height: 100vh;
-  overflow-y: scroll;
+  min-height: 100vh;
+  padding: 13rem 0 3rem;
+  /* overflow-y: scroll; */
   background: linear-gradient(120deg, #053751, #021b28);
 }
 @media only screen and (min-width: 1250px) {
   .main-wrapper {
-    padding: 3rem 0 3rem;
+    padding: 13rem 0 3rem;
   }
 }

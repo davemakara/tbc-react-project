@@ -1,4 +1,4 @@
-import Layout from "../UI/Layout";
+import Layout from "../components/Layout";
 import "../styles/index.css";
 import "../styles/app.css";
 
@@ -15,9 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Layout>{children}</Layout>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

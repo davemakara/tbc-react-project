@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Product from "../../components/Product";
+import Layout from "../../components/Layout";
 
 const ProductsList = ({ isClicked, searchInp }) => {
   const [productsData, setProductsData] = useState([]);
@@ -19,7 +20,7 @@ const ProductsList = ({ isClicked, searchInp }) => {
       }
 
       const data = await response.json();
-      setProductsData(data.products.slice(0, 6));
+      setProductsData(data.products.slice(0, 10));
     };
 
     fetchData();
@@ -43,19 +44,21 @@ const ProductsList = ({ isClicked, searchInp }) => {
   //   }, [searchInp, sortedData]);
 
   return (
-    <div>
-      <h1 className="products-heading">Products</h1>
-      <div className="products-wrapper">
-        <div className="cards-container">
-          {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
+    <Layout>
+      <div>
+        <h1 className="products-heading">Products</h1>
+        <div className="products-wrapper">
+          <div className="cards-container">
+            {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))} */}
-          {productsData.map((product) => (
-            <Product productData={product} key={product.id} />
-          ))}
+            {productsData.map((product) => (
+              <Product productData={product} key={product.id} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 export default ProductsList;

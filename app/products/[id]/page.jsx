@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Layout from "../../../components/Layout";
 
 export async function generateStaticParams() {
   const res = await fetch("https://dummyjson.com/products/");
@@ -20,26 +21,28 @@ async function ProductCardPage({ params }) {
   const product = await getProduct(params.id);
 
   return (
-    <section className="product-card-container">
-      <div className="product-images-wrapper">
-        {product.images.map((image, index) => (
-          <div key={index}>
-            <Image src={image} alt={product.title} width={220} height={200} />
-          </div>
-        ))}
-      </div>
-      <div>
-        <h2>{product.title}</h2>
-        <p>{product.description}</p>
-        <p>Price: ${product.price}</p>
-        <div>
-          <button>Add to Cart</button>
-          <Link href="/products">
-            <button>{"<"} Back to Products</button>
-          </Link>
+    <Layout>
+      <section className="product-card-container">
+        <div className="product-images-wrapper">
+          {product.images.map((image, index) => (
+            <div key={index}>
+              <Image src={image} alt={product.title} width={220} height={200} />
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+        <div>
+          <h2>{product.title}</h2>
+          <p>{product.description}</p>
+          <p>Price: ${product.price}</p>
+          <div>
+            <button>Add to Cart</button>
+            <Link href="/products">
+              <button>{"<"} Back to Products</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 }
 

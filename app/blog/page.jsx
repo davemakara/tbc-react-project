@@ -1,10 +1,13 @@
 import BlogPosts from "../../components/BlogPosts";
+import Layout from "../../components/Layout";
 
 const BlogPage = () => {
   return (
-    <section className="blog-page-wrapper">
-      <BlogPosts />
-    </section>
+    <Layout>
+      <section className="blog-page-wrapper">
+        <BlogPosts />
+      </section>
+    </Layout>
   );
 };
 

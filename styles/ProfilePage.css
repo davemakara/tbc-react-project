@@ -1,7 +1,7 @@
 .profile-page-wrapper {
   background: linear-gradient(120deg, #053751, #021b28);
   display: block;
-  padding: 3rem;
+  padding: 6rem 3rem;
   min-height: 100vh;
   color: #fff;
 }
@@ -46,7 +46,7 @@
 
 @media only screen and (min-width: 780px) {
   .profile-page-wrapper {
-    padding: 3rem 0;
+    padding: 10rem 0 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;

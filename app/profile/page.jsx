@@ -1,10 +1,13 @@
+import Layout from "../../components/Layout";
 import ProfileForm from "../../components/ProfileForm";
 
 const ProfilePage = () => {
   return (
-    <section className="profile-page-wrapper">
-      <ProfileForm />
-    </section>
+    <Layout>
+      <section className="profile-page-wrapper">
+        <ProfileForm />
+      </section>
+    </Layout>
   );
 };
 export default ProfilePage;
