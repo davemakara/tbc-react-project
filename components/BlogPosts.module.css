@@ -1,0 +1,28 @@
+.blog-page-wrapper {
+  background: linear-gradient(120deg, #053751, #021b28);
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  padding: 0;
+}
+.blog-container {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+@media only screen and (min-width: 780px) {
+  .blog-page-wrapper {
+    padding: 8rem 2rem 4rem;
+  }
+  .blog-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .blog-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

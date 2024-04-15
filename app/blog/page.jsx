@@ -4,9 +4,7 @@ import Layout from "../../components/Layout";
 const BlogPage = () => {
   return (
     <Layout>
-      <section className="blog-page-wrapper">
-        <BlogPosts />
-      </section>
+      <BlogPosts />
     </Layout>
   );
 };

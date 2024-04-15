@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import styles from "./Header.module.css";
+
 import Navigation from "./Navigation";
 
 import outputLogo from "../public/output-onlinepngtools.png";
@@ -9,14 +11,18 @@ import menuIcon from "../public/burger-bar.png";
 
 const Header = () => {
   return (
-    <header className="header">
-      <span className="logo-wrapper">
-        <Image src={outputLogo} alt="logo" className="logo" fill />
+    <header className={styles.header}>
+      <span className={styles["logo-wrapper"]}>
+        <Image src={outputLogo} alt="logo" className={styles.logo} fill />
       </span>
 
-      {/* <img src={outputLogo} alt="logo" className="logo" /> */}
       <Navigation />
-      <Image src={menuIcon} alt="menu icon" className="menu-icon" fill />
+      <Image
+        src={menuIcon}
+        alt="menu icon"
+        className={styles["menu-icon"]}
+        fill
+      />
     </header>
   );
 };

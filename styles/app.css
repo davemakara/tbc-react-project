@@ -1,14 +1,14 @@
-@import url("../styles/Header.css");
-@import url("../styles/Navigation.css");
+/* @import url("../styles/Header.css"); */
+/* @import url("../styles/Navigation.css"); */
 @import url("../styles/Homepage.css");
 @import url("../styles/SearchBox.css");
 @import url("../styles/Products.css");
-@import url("../styles/Footer.css");
+/* @import url("../styles/Footer.css"); */
 @import url("../styles/ContactPage.css");
 @import url("../styles/ProfilePage.css");
-@import url("../styles/BlogPage.css");
+/* @import url("../styles/BlogPage.css"); */
 @import url("../styles/productsPage.css");
-@import url("../styles/BlogPost.css");
+/* @import url("../styles/BlogPost.css"); */
 @import url("../styles/ProductCardPage.css");
 
 .main-container {

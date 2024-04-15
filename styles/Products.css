@@ -1,7 +1,9 @@
 .products-wrapper {
   width: 100%;
+  min-height: 100vh;
   display: block;
   padding: 6rem 2rem;
+  background: linear-gradient(120deg, #053751, #021b28);
 }
 .products-heading {
   padding: 2rem;

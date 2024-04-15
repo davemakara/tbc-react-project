@@ -2,6 +2,7 @@ import { data } from "autoprefixer";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../../components/Layout";
+import BlogPostPage from "../../../components/BlogPostPage";
 
 export async function generateStaticParams() {
   const res = await fetch("https://dummyjson.com/recipes");
@@ -28,19 +29,7 @@ async function Post({ params }) {
   console.log(data);
   return (
     <Layout>
-      <section className="blog-post-container">
-        <div>
-          <span className="blog-post-img-wrapper">
-            <Image src={post.image} alt={post.name} width={600} height={400} />
-          </span>
-
-          <h2>{post.name}</h2>
-          <p>{post.ingredients.join(", ")}</p>
-          <Link href="/blog">
-            <button>{"<"} Back to Blogs</button>
-          </Link>
-        </div>
-      </section>
+      <BlogPostPage post={post} />
     </Layout>
   );
 }

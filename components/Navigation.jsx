@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 
+import styles from "./Navigation.module.css";
+
 const Navigation = () => {
   return (
-    <nav className="main-navigation">
+    <nav className={styles["main-navigation"]}>
       <ul>
         <Link href="/">
           <li>HOME</li>
