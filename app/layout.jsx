@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
 import "../styles/index.css";
-import "../styles/app.css";
 
 import FavIcon from "../public/favicon.png";
 

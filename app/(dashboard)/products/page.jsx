@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import Product from "../../components/Product";
-import Layout from "../../components/Layout";
+import Product from "../../../components/Product";
+import Layout from "../../../components/Layout";
 
-import styles from "../../components/ProductsList.module.css";
+import styles from "../../../components/ProductsList.module.css";
 
 const ProductsList = ({ isClicked, searchInp }) => {
   const [productsData, setProductsData] = useState([]);
@@ -46,21 +46,19 @@ const ProductsList = ({ isClicked, searchInp }) => {
   //   }, [searchInp, sortedData]);
 
   return (
-    <Layout>
-      <div>
-        <h1 className={styles["products-heading"]}>Products</h1>
-        <div className={styles["products-wrapper"]}>
-          <div className={styles["cards-container"]}>
-            {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
+    <div>
+      <h1 className={styles["products-heading"]}>Products</h1>
+      <div className={styles["products-wrapper"]}>
+        <div className={styles["cards-container"]}>
+          {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))} */}
-            {productsData.map((product) => (
-              <Product productData={product} key={product.id} />
-            ))}
-          </div>
+          {productsData.map((product) => (
+            <Product productData={product} key={product.id} />
+          ))}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 export default ProductsList;
