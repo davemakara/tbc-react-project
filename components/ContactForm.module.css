@@ -1,28 +1,3 @@
-.contactPage-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  display: block;
-  padding: 10rem 2rem 6rem;
-  background: linear-gradient(120deg, #053751, #021b28);
-}
-.contact-info-box {
-  max-width: 100%;
-  padding: 1.4rem 0 1rem 1rem;
-  margin-bottom: 1rem;
-  color: white;
-  background: #021b28;
-}
-.contact-info-box h1 {
-  font-size: 28px;
-}
-
-.contact-info-box ul {
-  padding: 10px 0;
-}
-.contact-info-box ul li {
-  padding: 5px 0 5px;
-  font-size: 16px;
-}
 .contact-form {
   display: block;
   background: #021b28;
@@ -71,27 +46,10 @@
   background: #2389bf;
   cursor: pointer;
 }
+
 @media only screen and (min-width: 780px) {
-  .contactPage-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-  }
-  .contact-info-box {
-    width: 40%;
-  }
   .contact-form {
     max-width: 40%;
     padding: 30px;
-  }
-}
-@media only screen and (min-width: 1250px) {
-  .contact-info-box {
-    width: 40%;
-    margin-bottom: 0;
-    padding: 3rem 0 0 2rem;
-  }
-  .contact-info-box ul {
-    padding: 3rem 0;
   }
 }

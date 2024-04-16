@@ -1,7 +1,10 @@
 "use client";
+
+import styles from "./ContactInfoBox.module.css";
+
 const ContactInfoBox = () => {
   return (
-    <div className="contact-info-box">
+    <div className={styles["contact-info-box"]}>
       <h1>CONTACT US</h1>
       <ul>
         <li>Email: companyinfo@gmail.com</li>

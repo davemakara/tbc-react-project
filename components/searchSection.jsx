@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "./SearchSection.module.css";
+
 const SearchSection = ({ setIsClicked, setSearchItem }) => {
   const handleSearch = (event) => {
     setSearchItem(event.target.value);
@@ -10,9 +12,9 @@ const SearchSection = ({ setIsClicked, setSearchItem }) => {
   };
 
   return (
-    <div className="search-box">
+    <div className={styles["search-box"]}>
       <h2>ddd</h2>
-      <div className="search-form">
+      <div className={styles["search-form"]}>
         <input type="search" placeholder="Search.." onChange={handleSearch} />
         <button onClick={handleSort}>Sort</button>
       </div>

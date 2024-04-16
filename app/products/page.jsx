@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Product from "../../components/Product";
 import Layout from "../../components/Layout";
 
+import styles from "../../components/ProductsList.module.css";
+
 const ProductsList = ({ isClicked, searchInp }) => {
   const [productsData, setProductsData] = useState([]);
 
@@ -46,9 +48,9 @@ const ProductsList = ({ isClicked, searchInp }) => {
   return (
     <Layout>
       <div>
-        <h1 className="products-heading">Products</h1>
-        <div className="products-wrapper">
-          <div className="cards-container">
+        <h1 className={styles["products-heading"]}>Products</h1>
+        <div className={styles["products-wrapper"]}>
+          <div className={styles["cards-container"]}>
             {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))} */}

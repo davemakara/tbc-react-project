@@ -5,13 +5,15 @@ import ProductsList from "../components/ProductsList";
 import SearchSection from "../components/searchSection";
 import Layout from "../components/Layout";
 
+import styles from "../components/Homepage.module.css";
+
 const Homepage = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [searchItem, setSearchItem] = useState("");
 
   return (
     <Layout>
-      <main className="main-wrapper">
+      <main className={styles["main-wrapper"]}>
         {/* <SearchSection
         setIsClicked={setIsClicked}
         setSearchItem={setSearchItem}

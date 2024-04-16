@@ -1,0 +1,33 @@
+.contact-info-box {
+  max-width: 100%;
+  padding: 1.4rem 0 1rem 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  background: #021b28;
+}
+.contact-info-box h1 {
+  font-size: 28px;
+}
+
+.contact-info-box ul {
+  padding: 10px 0;
+}
+.contact-info-box ul li {
+  padding: 5px 0 5px;
+  font-size: 16px;
+}
+@media only screen and (min-width: 780px) {
+  .contact-info-box {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .contact-info-box {
+    width: 40%;
+    margin-bottom: 0;
+    padding: 3rem 0 0 2rem;
+  }
+  .contact-info-box ul {
+    padding: 3rem 0;
+  }
+}

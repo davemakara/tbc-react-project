@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 
+import styles from "./ProfileForm.module.css";
+
 const ProfileForm = () => {
   let profile = {
     firstName: "",
@@ -22,11 +24,15 @@ const ProfileForm = () => {
     setProfileObj(profile);
   };
   return (
-    <form className="profile-details" onSubmit={handleSubit} autoComplete="off">
-      <div className="form-heading">
+    <form
+      className={styles["profile-details"]}
+      onSubmit={handleSubit}
+      autoComplete="off"
+    >
+      <div className={styles["form-heading"]}>
         <h1>Profile Details</h1>
       </div>
-      <div className="input-wrapper">
+      <div className={styles["input-wrapper"]}>
         <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
@@ -36,7 +42,7 @@ const ProfileForm = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="input-wrapper">
+      <div className={styles["input-wrapper"]}>
         <label htmlFor="lastName">Last Name:</label>
         <input
           type="text"
@@ -46,7 +52,7 @@ const ProfileForm = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="input-wrapper">
+      <div className={styles["input-wrapper"]}>
         <label htmlFor="email">Email Address:</label>
         <input
           type="email"
@@ -56,7 +62,7 @@ const ProfileForm = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="input-wrapper">
+      <div className={styles["input-wrapper"]}>
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -66,7 +72,7 @@ const ProfileForm = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="input-wrapper">
+      <div className={styles["input-wrapper"]}>
         <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
           type="password"
@@ -76,7 +82,7 @@ const ProfileForm = () => {
           onChange={handleInputChange}
         />
       </div>
-      <button className="profile-save-btn">Submit</button>
+      <button className={styles["profile-save-btn"]}>Submit</button>
     </form>
   );
 };

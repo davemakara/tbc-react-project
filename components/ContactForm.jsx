@@ -1,46 +1,49 @@
 "use client";
+
+import styles from "./ContactForm.module.css";
+
 const ContactForm = () => {
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
       }}
-      className="contact-form"
+      className={styles["contact-form"]}
     >
       <input
         type="text"
         id="firstName"
         name="firstName"
         placeholder="First Name"
-        className="form-input"
+        className={styles["form-input"]}
       />
       <input
         type="text"
         id="lastName"
         name="lastName"
         placeholder="Last Name"
-        className="form-input"
+        className={styles["form-input"]}
       />
       <input
         type="email"
         id="email"
         name="email"
         placeholder="Email Address"
-        className="form-input"
+        className={styles["form-input"]}
       />
       <input
         type="number"
         id="number"
         name="number"
         placeholder="Phone Number"
-        className="form-input"
+        className={styles["form-input"]}
       />
-      <div className="checkbox-wrapper">
+      <div className={styles["checkbox-wrapper"]}>
         <input
           type="checkbox"
           id="agree-checkbox"
           name="agree-checkbox"
-          className="check"
+          className={styles.check}
         />
         <label htmlFor="agree-checkbox">
           By clicking the button, I agree with the collection and processing of
@@ -48,7 +51,7 @@ const ContactForm = () => {
         </label>
       </div>
       <div>
-        <button type="submit" className="form-submit-btn">
+        <button type="submit" className={styles["form-submit-btn"]}>
           SUBMIT
         </button>
       </div>

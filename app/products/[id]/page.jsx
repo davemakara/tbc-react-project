@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../../components/Layout";
 
+import styles from "../../../components/ProductCardPage.module.css";
+
 export async function generateStaticParams() {
   const res = await fetch("https://dummyjson.com/products/");
   const data = await res.json();
@@ -22,8 +24,8 @@ async function ProductCardPage({ params }) {
 
   return (
     <Layout>
-      <section className="product-card-container">
-        <div className="product-images-wrapper">
+      <section className={styles["product-card-container"]}>
+        <div className={styles["product-images-wrapper"]}>
           {product.images.map((image, index) => (
             <div key={index}>
               <Image src={image} alt={product.title} width={220} height={200} />
