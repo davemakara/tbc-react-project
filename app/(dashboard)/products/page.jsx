@@ -1,32 +1,12 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import Product from "../../../components/Product";
-import Layout from "../../../components/Layout";
+
+import { fetchProducts } from "../../actions";
 
 import styles from "../../../components/ProductsList.module.css";
 
-const ProductsList = ({ isClicked, searchInp }) => {
-  const [productsData, setProductsData] = useState([]);
-
+const ProductsList = async ({ isClicked, searchInp }) => {
   //   const [sortedData, setSortedData] = useState([...productsData]);
   //   const [filteredData, setFilteredData] = useState([...productsData]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("https://dummyjson.com/products");
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-
-      const data = await response.json();
-      setProductsData(data.products.slice(0, 10));
-    };
-
-    fetchData();
-  }, []);
 
   //   useEffect(() => {
   //     if (isClicked) {
@@ -45,6 +25,8 @@ const ProductsList = ({ isClicked, searchInp }) => {
   //     setFilteredData(filtered);
   //   }, [searchInp, sortedData]);
 
+  const data = await fetchProducts();
+
   return (
     <div>
       <h1 className={styles["products-heading"]}>Products</h1>
@@ -53,7 +35,7 @@ const ProductsList = ({ isClicked, searchInp }) => {
           {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))} */}
-          {productsData.map((product) => (
+          {data.products.map((product) => (
             <Product productData={product} key={product.id} />
           ))}
         </div>

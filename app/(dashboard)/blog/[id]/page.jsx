@@ -1,7 +1,5 @@
 import { data } from "autoprefixer";
-import Link from "next/link";
-import Image from "next/image";
-import Layout from "../../../../components/Layout";
+
 import BlogPostPage from "../../../../components/BlogPostPage";
 
 export async function generateStaticParams() {

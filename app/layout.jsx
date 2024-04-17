@@ -1,7 +1,4 @@
-import Layout from "../components/Layout";
 import "../styles/index.css";
-
-import FavIcon from "../public/favicon.png";
 
 export const metadata = {
   title: "TBC App",

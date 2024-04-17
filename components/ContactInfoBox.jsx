@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./ContactInfoBox.module.css";
 
 const ContactInfoBox = () => {
