@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 // import ProductsList from "../components/ProductsList";
 // import SearchSection from "../components/searchSection";
-import Layout from "../../components/Layout";
 
 import styles from "../../components/Homepage.module.css";
 
