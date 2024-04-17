@@ -9,6 +9,8 @@ import Navigation from "./Navigation";
 import outputLogo from "../public/output-onlinepngtools.png";
 import menuIcon from "../public/burger-bar.png";
 
+import { logout } from "../app/actions";
+
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -23,6 +25,13 @@ const Header = () => {
         className={styles["menu-icon"]}
         fill
       />
+      <button
+        onClick={() => {
+          logout();
+        }}
+      >
+        Sign out
+      </button>
     </header>
   );
 };

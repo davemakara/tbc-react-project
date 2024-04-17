@@ -1,27 +1,67 @@
+"use server";
+
+import { cookies } from "next/headers";
+
+import { AUTH_COOKIE_KEY } from "../constants";
+import { redirect } from "next/navigation";
+
 export const fetchProducts = async () => {
-  const response = await fetch("https://dummyjson.com/products", {
-    cache: "no-cache",
-  });
+  try {
+    const response = await fetch("https://dummyjson.com/products", {
+      cache: "no-cache",
+    });
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const products = await response.json();
+
+    return products;
+  } catch {
+    return [];
   }
-
-  const products = await response.json();
-
-  return products;
 };
 
 export const fetchBlogRecipes = async () => {
-  const response = await fetch("https://dummyjson.com/recipes", {
-    cache: "no-cache",
+  try {
+    const response = await fetch("https://dummyjson.com/recipes", {
+      cache: "no-cache",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const blogs = await response.json();
+
+    return blogs;
+  } catch {
+    return [];
+  }
+};
+
+export const login = async (username, password) => {
+  "use server";
+  const response = await fetch("https://dummyjson.com/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username,
+      password,
+    }),
   });
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
+  const user = await response.json();
 
-  const blogs = await response.json();
+  const cookieStore = cookies();
 
-  return blogs;
+  cookieStore.set(AUTH_COOKIE_KEY, JSON.stringify(user));
+
+  console.log(response);
+};
+
+export const logout = async () => {
+  cookies().delete(AUTH_COOKIE_KEY);
+  redirect("/login");
 };
