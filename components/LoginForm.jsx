@@ -5,10 +5,15 @@ import { useState } from "react";
 const LoginForm = ({ handleLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [required, setRequired] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(username, password);
+    if (username === "" || password === "") {
+      setRequired(true);
+    } else {
+      handleLogin(username, password);
+    }
   };
 
   return (
@@ -20,7 +25,10 @@ const LoginForm = ({ handleLogin }) => {
           name="username"
           id="username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => {
+            setUsername(e.target.value);
+            setRequired(false);
+          }}
         />
       </div>
       <div>
@@ -30,9 +38,13 @@ const LoginForm = ({ handleLogin }) => {
           name="password"
           id="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setRequired(false);
+          }}
         />
       </div>
+      {required && <p>Username and Password required!</p>}
       <button type="submit">LOGIN</button>
     </form>
   );
