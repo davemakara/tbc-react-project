@@ -67,12 +67,12 @@ const LoginForm = ({ handleLogin }) => {
           </span>
         </div>
         <div className={styles["form-additions"]}>
-          <p>Sign up</p>
-          <p>forgot password?</p>
+          <p className={styles["sign-up"]}>Sign up</p>
+          <p className={styles["forgot-password"]}>forgot password?</p>
         </div>
         <div className={styles["form-submit"]}>
           <button type="submit">LOGIN</button>
-          {required && <p>Username and Password required!</p>}
+          {required && <p>Username and password required!</p>}
         </div>
       </form>
     </div>
