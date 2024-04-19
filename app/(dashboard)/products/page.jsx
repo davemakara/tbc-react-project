@@ -28,7 +28,7 @@ const ProductsList = async ({ isClicked, searchInp }) => {
   const data = await fetchProducts();
 
   return (
-    <div>
+    <div className={styles["products-main-container"]}>
       <h1 className={styles["products-heading"]}>Products</h1>
       <div className={styles["products-wrapper"]}>
         <div className={styles["cards-container"]}>

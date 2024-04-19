@@ -1,12 +1,16 @@
+.products-main-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #053751, #021b28);
+  padding: 8rem 0;
+}
+
 .products-wrapper {
   width: 100%;
-  min-height: 100vh;
   display: block;
-  padding: 6rem 2rem;
-  background: linear-gradient(120deg, #053751, #021b28);
+  padding: 3rem 3rem 0;
 }
 .products-heading {
-  padding: 2rem;
+  padding: 1rem 0 0;
   color: white;
 }
 
@@ -35,5 +39,6 @@
 @media only screen and (min-width: 1250px) {
   .cards-container {
     gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

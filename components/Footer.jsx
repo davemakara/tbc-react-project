@@ -5,7 +5,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className="w-full px-5 py-10 bg-black text-white">
       <div className={styles["footer-wrapper"]}>
         <div className={styles["terms-and-policy"]}>
           <p>
@@ -20,7 +20,7 @@ const Footer = () => {
           <input type="email" placeholder="Email address" />
           <button>Submit</button>
         </div> */}
-        <Navigation />
+        {/* <Navigation /> */}
       </div>
     </footer>
   );

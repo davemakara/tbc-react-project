@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import useLanguage from "../../hooks/useLanguage";
 
 // import ProductsList from "../components/ProductsList";
 // import SearchSection from "../components/searchSection";
@@ -9,6 +10,10 @@ import styles from "../../components/Homepage.module.css";
 const Homepage = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [searchItem, setSearchItem] = useState("");
+
+  const language = useLanguage();
+
+  // console.log(language);
 
   return (
     <main className={styles["main-wrapper"]}>
@@ -21,8 +26,8 @@ const Homepage = () => {
         searchInp={searchItem}
         productsData={productsData}
       /> */}
-      <h1>This is main page!</h1>
-      <h2>Content to be added soon..</h2>
+      <h1>{language.landing.title}</h1>
+      <h2>{language.landing.subTitle}</h2>
     </main>
   );
 };
