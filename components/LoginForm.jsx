@@ -1,5 +1,10 @@
 "use client";
 
+import Image from "next/image";
+
+import styles from "./LoginForm.module.css";
+import WelcomeIcon from "../public/welcome-icon.png";
+
 import { useState } from "react";
 
 const LoginForm = ({ handleLogin }) => {
@@ -17,36 +22,60 @@ const LoginForm = ({ handleLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-            setRequired(false);
-          }}
+    <div className={styles["login-form-container"]}>
+      <div className={styles["form-heading"]}>
+        <Image
+          src={WelcomeIcon}
+          alt="welcome icon"
+          className={styles["welcome-icon"]}
         />
+        <h2>Welcome!</h2>
+        <p>Sign to your account</p>
       </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setRequired(false);
-          }}
-        />
-      </div>
-      {required && <p>Username and Password required!</p>}
-      <button type="submit">LOGIN</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <div className={styles["form-row"]}>
+          <label htmlFor="username">Username</label>
+          <span>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              className={styles["form-input"]}
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setRequired(false);
+              }}
+            />
+          </span>
+        </div>
+
+        <div className={styles["form-row"]}>
+          <label htmlFor="password">Password</label>
+          <span>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              className={styles["form-input"]}
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setRequired(false);
+              }}
+            />
+          </span>
+        </div>
+        <div className={styles["form-additions"]}>
+          <p>Sign up</p>
+          <p>forgot password?</p>
+        </div>
+        <div className={styles["form-submit"]}>
+          <button type="submit">LOGIN</button>
+          {required && <p>Username and Password required!</p>}
+        </div>
+      </form>
+    </div>
   );
 };
 
