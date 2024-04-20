@@ -6,19 +6,12 @@ import WelcomeIcon from "../public/welcome-icon.png";
 
 import { useState } from "react";
 
-const LoginForm = ({ handleLogin }) => {
+import { handleLogin } from "../scripts/login";
+
+const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [required, setRequired] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (username === "" || password === "") {
-      setRequired(true);
-    } else {
-      handleLogin(username, password);
-    }
-  };
 
   return (
     <div className="w-4/5 bg-[#fff] h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-md sm:max-w-[400px]">
@@ -36,7 +29,13 @@ const LoginForm = ({ handleLogin }) => {
         <h2 className="mb-2 text-[22px] font-semibold">Welcome!</h2>
         <p className="mb-2 text-[#696687] text-[18px]">Sign to your account</p>
       </div>
-      <form onSubmit={handleSubmit} className="mt-8">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin(username, password).then(() => window.location.reload());
+        }}
+        className="mt-8"
+      >
         <div className="mb-5">
           <label htmlFor="username" className="text-[#696687] text-[18px]">
             Username

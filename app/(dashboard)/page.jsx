@@ -12,8 +12,6 @@ const Homepage = () => {
 
   const language = useLanguage();
 
-  // console.log(language);
-
   return (
     <main className="w-full min-h-screen pt-[13rem] pb-[3rem] bg-gradient-to-br from-[#053751] to-[#021b28]">
       {/* <SearchSection

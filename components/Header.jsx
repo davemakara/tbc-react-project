@@ -1,5 +1,5 @@
 "use client";
-import dynamic from "next/dynamic";
+
 import { useState } from "react";
 import Image from "next/image";
 
@@ -10,14 +10,11 @@ import Navigation from "./Navigation";
 import AppLogo from "../public/app-logo.png";
 import SignOut from "../public/sign-out.png";
 
-import { logout } from "../app/actions";
 import { useContextLanguage } from "../store/language";
-
-// import useLanguage from "../hooks/useLanguage";
+import { handleLogout } from "../scripts/logout";
 
 const Header = () => {
   const [curLanguage, setCurLanguage] = useState();
-  // const language = useLanguage(curLanguage);
 
   const { language, changeLanguage } = useContextLanguage();
 
@@ -31,10 +28,7 @@ const Header = () => {
 
       <div className={styles["lang-signout-box"]}>
         <select onChange={(e) => changeLanguage(e.currentTarget.value)}>
-          <option value="en">
-            {/* <Image src={UKflag} alt="uk flag" width={10} height={5} /> */}
-            EN
-          </option>
+          <option value="en">EN</option>
           <option value="ge">GE</option>
         </select>
         <Image
@@ -43,7 +37,7 @@ const Header = () => {
           width={26}
           height={26}
           onClick={() => {
-            logout();
+            handleLogout().then(() => window.location.reload());
           }}
         />
       </div>
