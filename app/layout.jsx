@@ -1,5 +1,5 @@
-import "../styles/index.css";
-import "../globals.css";
+import "./globals.css";
+
 import StoreProvider from "../store";
 
 export const metadata = {

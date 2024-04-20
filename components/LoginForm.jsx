@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-import styles from "./LoginForm.module.css";
 import WelcomeIcon from "../public/welcome-icon.png";
 
 import { useState } from "react";
@@ -22,25 +21,32 @@ const LoginForm = ({ handleLogin }) => {
   };
 
   return (
-    <div className={styles["login-form-container"]}>
-      <div className={styles["form-heading"]}>
-        <Image
-          src={WelcomeIcon}
-          alt="welcome icon"
-          className={styles["welcome-icon"]}
-        />
-        <h2>Welcome!</h2>
-        <p>Sign to your account</p>
+    <div className="w-4/5 bg-[#fff] h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-md sm:max-w-[400px]">
+      <div className="flex flex-col items-center">
+        <span>
+          <Image
+            src={WelcomeIcon}
+            alt="welcome icon"
+            width={30}
+            height={30}
+            className="mb-2"
+          />
+        </span>
+
+        <h2 className="mb-2 text-[22px] font-semibold">Welcome!</h2>
+        <p className="mb-2 text-[#696687] text-[18px]">Sign to your account</p>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className={styles["form-row"]}>
-          <label htmlFor="username">Username</label>
+      <form onSubmit={handleSubmit} className="mt-8">
+        <div className="mb-5">
+          <label htmlFor="username" className="text-[#696687] text-[18px]">
+            Username
+          </label>
           <span>
             <input
               type="text"
               name="username"
               id="username"
-              className={styles["form-input"]}
+              className="w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
               value={username}
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -50,14 +56,16 @@ const LoginForm = ({ handleLogin }) => {
           </span>
         </div>
 
-        <div className={styles["form-row"]}>
-          <label htmlFor="password">Password</label>
+        <div className="mb-5">
+          <label htmlFor="password" className="text-[#696687] text-[18px]">
+            Password
+          </label>
           <span>
             <input
               type="password"
               name="password"
               id="password"
-              className={styles["form-input"]}
+              className="w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -66,13 +74,24 @@ const LoginForm = ({ handleLogin }) => {
             />
           </span>
         </div>
-        <div className={styles["form-additions"]}>
-          <p className={styles["sign-up"]}>Sign up</p>
-          <p className={styles["forgot-password"]}>forgot password?</p>
+        <div className="flex justify-between">
+          <p className="text-[#696687] text-[18px] cursor-pointer">Sign up</p>
+          <p className="text-[#4d61fc] text-[18px] cursor-pointer">
+            forgot password?
+          </p>
         </div>
-        <div className={styles["form-submit"]}>
-          <button type="submit">LOGIN</button>
-          {required && <p>Username and password required!</p>}
+        <div className="flex pt-8">
+          <button
+            type="submit"
+            className="border-none rounded text-white text-[14px] font-semibold bg-[#3d61fc] py-2 px-4 cursor-pointer hover:bg-[#2b07fc]"
+          >
+            LOGIN
+          </button>
+          {required && (
+            <p className="ml-[30px] text-[14px] text-red-500">
+              USER AND PASSWORD REQUIRED!
+            </p>
+          )}
         </div>
       </form>
     </div>

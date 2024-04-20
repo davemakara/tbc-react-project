@@ -2,8 +2,6 @@
 
 import { cookies } from "next/headers";
 
-import styles from "../../components/LoginPage.module.css";
-
 import { AUTH_COOKIE_KEY } from "../../constants";
 import { redirect } from "next/navigation";
 import { login } from "../actions";
@@ -26,7 +24,7 @@ const LoginPage = async () => {
   };
 
   return (
-    <section className={styles["login-page-container"]}>
+    <section className="w-full min-h-screen flex justify-center items-center bg-gradient-to-br from-[#053751] to-[#021b28]">
       <LoginForm handleLogin={handleLogin} />
     </section>
   );
