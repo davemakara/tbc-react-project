@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 
+import { cookies } from "next/headers";
+
 export function middleware(request) {
-  const cookieStore = request.cookies.get("user");
+  const cookieStore = cookies().get("user");
   const { pathname } = request.nextUrl;
 
   if (!cookieStore?.value && !pathname.startsWith("/login")) {
