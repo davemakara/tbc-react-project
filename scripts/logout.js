@@ -1,5 +1,5 @@
 export const handleLogout = async () => {
-  const response = await fetch("http://localhost:3000/api/logout", {
+  const response = await fetch("https://dummyjson.com/auth/logout", {
     method: "POST",
   });
 };
