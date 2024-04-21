@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 
 import styles from "./Header.module.css";
@@ -8,16 +7,11 @@ import styles from "./Header.module.css";
 import Navigation from "./Navigation";
 
 import AppLogo from "../public/app-logo.png";
-import SignOut from "../public/sign-out.png";
 
-import { useContextLanguage } from "../store/language";
 import { handleLogout } from "../scripts/logout";
+import ThemeSwitcher from "./themeswitch/ThemeSwitcher";
 
 const Header = () => {
-  const [curLanguage, setCurLanguage] = useState();
-
-  const { language, changeLanguage } = useContextLanguage();
-
   return (
     <header className={styles.header}>
       <span className={styles["logo-wrapper"]}>
@@ -33,10 +27,11 @@ const Header = () => {
       <Navigation />
 
       <div className={styles["lang-signout-box"]}>
-        <select onChange={(e) => changeLanguage(e.currentTarget.value)}>
+        <select>
           <option value="en">EN</option>
           <option value="ge">GE</option>
         </select>
+        <ThemeSwitcher />
         <button
           className="px-2 py-1 bg-slate-500 border-none rounded bg-darkYellow"
           onClick={() => {
