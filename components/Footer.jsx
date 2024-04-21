@@ -5,7 +5,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-5 py-10 bg-black text-white">
+    <footer className="w-full px-5 py-10 bg-[#101010] text-white">
       <div className={styles["footer-wrapper"]}>
         <div className={styles["terms-and-policy"]}>
           <p>

@@ -4,7 +4,7 @@ import LoginForm from "../../components/LoginForm";
 
 const LoginPage = async () => {
   return (
-    <section className="w-full min-h-screen flex justify-center items-center bg-gradient-to-br from-[#053751] to-[#021b28]">
+    <section className="w-full min-h-screen flex justify-center items-center bg-mainDarkBG">
       <LoginForm />
     </section>
   );

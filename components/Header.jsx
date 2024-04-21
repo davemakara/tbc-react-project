@@ -21,7 +21,13 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <span className={styles["logo-wrapper"]}>
-        <Image src={AppLogo} alt="App logo" className={styles.logo} fill />
+        <Image
+          src={AppLogo}
+          alt="App logo"
+          className={styles.logo}
+          width={70}
+          height={70}
+        />
       </span>
 
       <Navigation />
@@ -31,15 +37,14 @@ const Header = () => {
           <option value="en">EN</option>
           <option value="ge">GE</option>
         </select>
-        <Image
-          src={SignOut}
-          alt="sign out"
-          width={26}
-          height={26}
+        <button
+          className="px-2 py-1 bg-slate-500 border-none rounded bg-darkYellow"
           onClick={() => {
             handleLogout().then(() => window.location.reload());
           }}
-        />
+        >
+          Sign out
+        </button>
       </div>
     </header>
   );

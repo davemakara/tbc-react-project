@@ -6,6 +6,19 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      mainLightBG: "#EEEEEE",
+      mainDarkBG: "#0a0a0a",
+      darkYellow: "#ffc700",
+      white: "#ffffff",
+      green: "#54B435",
+      red: "#E64848",
+      metal: "#565584",
+      tahiti: "#3ab7bf",
+      silver: "#ecebff",
+      "bubble-gum": "#ff77e9",
+      bermuda: "#78dcca",
+    },
     extend: {
       screens: {
         sm: "640px",

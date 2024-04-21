@@ -13,7 +13,7 @@ const Homepage = () => {
   const language = useLanguage();
 
   return (
-    <main className="w-full min-h-screen pt-[13rem] pb-[3rem] bg-gradient-to-br from-[#053751] to-[#021b28]">
+    <main className="w-full min-h-screen pt-[13rem] pb-[3rem] bg-mainLightBG">
       {/* <SearchSection
         setIsClicked={setIsClicked}
         setSearchItem={setSearchItem}

@@ -1,19 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "./Product.module.css";
-
 const Product = ({ productData }) => {
   return (
-    <div className={styles["card-box"]}>
-      <span>
+    <div className="max-w-[450px] bg-white rounded-lg overflow-hidden transition duration-300 ease-in-out hover:shadow-md hover:shadow-[#000]">
+      <span className="relative block w-full h-[200px]">
         <Image src={productData.images[0]} alt="crypto" fill />
       </span>
-      <h1>{productData.title}</h1>
-      <h4>{productData.description}</h4>
-      <Link href={`/products/${productData.id}`}>
-        <button className={styles["add-to-cart-btn"]}>See more</button>
-      </Link>
+      <div className="flex flex-col justify-between h-[240px] p-5">
+        <h1 className="text-[20px] font-semibold">{productData.title}</h1>
+        <h4 className="text-[16px]">{productData.description}</h4>
+        <Link href={`/products/${productData.id}`}>
+          <button className="py-2 px-3 border-none rounded text-[14px] text-white bg-darkYellow cursor-pointer hover:bg-green">
+            See more
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

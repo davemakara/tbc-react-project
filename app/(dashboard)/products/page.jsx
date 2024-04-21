@@ -2,8 +2,6 @@ import Product from "../../../components/Product";
 
 import { fetchProducts } from "../../actions";
 
-import styles from "../../../components/ProductsList.module.css";
-
 const ProductsList = async ({ isClicked, searchInp }) => {
   //   const [sortedData, setSortedData] = useState([...productsData]);
   //   const [filteredData, setFilteredData] = useState([...productsData]);
@@ -28,10 +26,12 @@ const ProductsList = async ({ isClicked, searchInp }) => {
   const data = await fetchProducts();
 
   return (
-    <div className={styles["products-main-container"]}>
-      <h1 className={styles["products-heading"]}>Products</h1>
-      <div className={styles["products-wrapper"]}>
-        <div className={styles["cards-container"]}>
+    <div className="min-h-screen bg-mainLightBG py-[8rem]">
+      <h1 className="pt-[1rem] pl-[3rem] text-[#000] font-semibold text-[30px] md:py-[2rem] px-16">
+        Products
+      </h1>
+      <div className="w-full block pt-[2rem] pl-12 pr-12 sm:flex flex-col items-center px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 md:gap-5">
           {/* {(searchInp === "" ? sortedData : filteredData).map((product) => (
             <Product productData={product} key={product.id} />
           ))} */}

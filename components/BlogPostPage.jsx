@@ -1,20 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "./BlogPostPage.module.css";
-
 const BlogPostPage = ({ post }) => {
   return (
-    <section className={styles["blog-post-container"]}>
+    <section className="w-full min-h-screen bg-mainLightBG pt-[10rem] pb-[6rem] flex flex-col items-center">
       <div>
-        <span className={styles["blog-post-img-wrapper"]}>
-          <Image src={post.image} alt={post.name} width={600} height={400} />
+        <span className="relative">
+          <Image src={post.image} alt={post.name} width={300} height={150} />
         </span>
 
-        <h2>{post.name}</h2>
-        <p>{post.ingredients.join(", ")}</p>
+        <h2 className="text-[30px] font-semibold mt-[30px]">{post.name}</h2>
+        <p className="text-[16px] mt-[15px]">{post.ingredients.join(", ")}</p>
         <Link href="/blog">
-          <button>{"<"} Back to Blogs</button>
+          <button className="bg-darkYellow text-white text-[18px] mt-[30px] border-none rounded px-2 py-1">
+            {"<"} Back to Blogs
+          </button>
         </Link>
       </div>
     </section>

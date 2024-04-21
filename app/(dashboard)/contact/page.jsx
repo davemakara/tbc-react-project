@@ -1,11 +1,9 @@
 import ContactForm from "../../../components/ContactForm";
 import ContactInfoBox from "../../../components/ContactInfoBox";
 
-import styles from "../../../components/ContactPage.module.css";
-
 const ContactPage = () => {
   return (
-    <section className={styles["contactPage-wrapper"]}>
+    <section className="w-full min-h-screen bg-mainLightBG pt-[10rem] px-[2rem] pb-[6rem] block md:flex md:justify-around md:items-stretch">
       <ContactInfoBox />
       <ContactForm />
     </section>

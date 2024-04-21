@@ -1,10 +1,8 @@
 import ProfileForm from "../../../components/ProfileForm";
 
-import styles from "../../../components/ProfilePage.module.css";
-
 const ProfilePage = () => {
   return (
-    <section className={styles["profile-page-wrapper"]}>
+    <section className="bg-mainLightBG w-full min-h-screen flex flex-col justify-center items-center py-[6rem] px-[3rem] text-[#000] md:px-0 pt-[9rem] pb-[6rem]">
       <ProfileForm />
     </section>
   );
