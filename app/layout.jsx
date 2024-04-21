@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import StoreProvider from "../store";
+import { Providers } from "./providers";
 
 export const metadata = {
   title: "My App",
@@ -12,9 +12,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <StoreProvider>{children}</StoreProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
