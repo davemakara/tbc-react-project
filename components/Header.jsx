@@ -31,9 +31,12 @@ const Header = () => {
           <option value="en">EN</option>
           <option value="ge">GE</option>
         </select>
-        <ThemeSwitcher />
+        <div className={styles["theme-wrapper"]}>
+          <ThemeSwitcher />
+        </div>
+
         <button
-          className="px-2 py-1 bg-slate-500 border-none rounded bg-darkYellow"
+          className="px-2 py-1 text-[14px] md:text-[16px] bg-slate-500 border-none rounded bg-darkYellow"
           onClick={() => {
             handleLogout().then(() => window.location.reload());
           }}

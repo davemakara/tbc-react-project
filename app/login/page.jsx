@@ -6,7 +6,7 @@ import ThemeSwitcher from "../../components/themeswitch/ThemeSwitcher";
 const LoginPage = async () => {
   return (
     <section className="w-full min-h-screen flex justify-center items-center bg-mainLightBG dark:bg-mainDarkBG">
-      <div className="absolute top-4 right-4 bg-metal dark:bg-silver p-2 border-none rounded-full cursor-pointer">
+      <div className="absolute top-5 right-5 bg-[#D8D9DA] dark:bg-silver p-2 border-none rounded-full cursor-pointer">
         <ThemeSwitcher />
       </div>
 

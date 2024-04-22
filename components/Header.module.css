@@ -14,7 +14,7 @@
 }
 
 .logo-wrapper {
-  width: 30%;
+  width: 40%;
   height: 70px;
   position: relative;
 }
@@ -25,29 +25,38 @@
 .lang-signout-box select {
   /* background: red; */
   padding: 4px;
-  margin-right: 5px;
+  margin-right: 15px;
+  display: none;
 }
 
 .lang-signout-box {
   height: 100%;
-  width: 30%;
+  width: 40%;
   display: flex;
   align-items: center;
+  justify-content: right;
+}
+
+.theme-wrapper {
   cursor: pointer;
-  /* padding: 0 5px 0 0; */
+  margin-right: 15px;
+  padding: 2px;
+}
+
+@media only screen and (min-width: 600px) {
 }
 
 @media only screen and (min-width: 780px) {
   .header {
-    padding: 0 2.5rem;
+    padding: 0 1.5rem;
     justify-content: space-between;
   }
-  .logo-wrapper {
-    width: 20%;
-  }
+
   .lang-signout-box {
     padding: 0 5px 0 0;
-    width: 20%;
+  }
+  .lang-signout-box select {
+    display: block;
   }
 }
 @media only screen and (min-width: 1250px) {
