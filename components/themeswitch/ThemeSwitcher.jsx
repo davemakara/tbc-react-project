@@ -7,6 +7,8 @@ import { useTheme } from "next-themes";
 
 import SunIcon from "../../public/icons/SunIcon.png";
 import MoonIcon from "../../public/icons/MoonIcon.png";
+import SunBlack from "../../public/icons/sun-black.png";
+import SunDark from "../../public/icons/sun-dark.png";
 
 import smth from "../../public/app-logo.png";
 
@@ -24,8 +26,8 @@ const ThemeSwitcher = () => {
     return (
       <Image
         src={smth}
-        width={36}
-        height={36}
+        width={26}
+        height={26}
         alt="Loading Light/Dark Toggle"
         priority={false}
         title="Loading Light/Dark Toggle"
@@ -37,8 +39,8 @@ const ThemeSwitcher = () => {
       <Image
         src={SunIcon}
         alt="sun"
-        width={30}
-        height={30}
+        width={26}
+        height={26}
         onClick={() => setTheme("light")}
       />
     );
@@ -47,10 +49,10 @@ const ThemeSwitcher = () => {
   if (resolvedTheme === "light") {
     return (
       <Image
-        src={MoonIcon}
+        src={SunDark}
         alt="moon"
-        width={30}
-        height={30}
+        width={26}
+        height={26}
         onClick={() => setTheme("dark")}
       />
     );

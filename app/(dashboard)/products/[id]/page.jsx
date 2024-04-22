@@ -20,7 +20,7 @@ async function ProductCardPage({ params }) {
   const product = await getProduct(params.id);
 
   return (
-    <section className="w-full min-h-screen bg-mainLightBG pt-[10rem] pb-[6rem] flex flex-col items-center">
+    <section className="w-full min-h-screen bg-mainLightBG dark:bg-mainDarkBG pt-[10rem] pb-[6rem] flex flex-col items-center">
       <div className="w-4/5 bg-white py-4 px-4">
         <div className="w-full flex flex-wrap gap-5">
           {product.images.map((image, index) => (

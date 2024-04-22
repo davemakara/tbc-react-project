@@ -12,19 +12,19 @@ const Navigation = () => {
     <nav className={styles["main-navigation"]}>
       <ul className={styles["main-nav-ul"]}>
         <Link href="/">
-          <li>HOME</li>
+          <li>Home</li>
         </Link>
         <Link href="/products">
-          <li>PRODUCTS</li>
+          <li>Products</li>
         </Link>
         <Link href="/profile">
-          <li>PROFILE</li>
+          <li>Profile</li>
         </Link>
         <Link href="/blog">
-          <li>BLOG</li>
+          <li>Blog</li>
         </Link>
         <Link href="/contact">
-          <li>CONTACT</li>
+          <li>Contact</li>
         </Link>
       </ul>
       <span className={styles["menu-icon"]}>

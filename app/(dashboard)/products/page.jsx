@@ -26,7 +26,7 @@ const ProductsList = async ({ isClicked, searchInp }) => {
   const data = await fetchProducts();
 
   return (
-    <div className="min-h-screen bg-mainLightBG py-[8rem]">
+    <div className="min-h-screen bg-mainLightBG dark:bg-mainDarkBG py-[8rem]">
       <h1 className="pt-[1rem] pl-[3rem] text-[#000] font-semibold text-[30px] md:py-[2rem] px-16">
         Products
       </h1>

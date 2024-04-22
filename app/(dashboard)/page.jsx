@@ -10,7 +10,7 @@ const Homepage = () => {
   const [searchItem, setSearchItem] = useState("");
 
   return (
-    <main className="w-full min-h-screen pt-[13rem] pb-[3rem] bg-mainLightBG">
+    <main className="w-full min-h-screen pt-[13rem] pb-[3rem] bg-mainLightBG dark:bg-mainDarkBG">
       {/* <SearchSection
         setIsClicked={setIsClicked}
         setSearchItem={setSearchItem}

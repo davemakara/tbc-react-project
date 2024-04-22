@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BlogPostPage = ({ post }) => {
   return (
-    <section className="w-full min-h-screen bg-mainLightBG pt-[10rem] pb-[6rem] flex flex-col items-center">
+    <section className="w-full min-h-screen bg-mainLightBG dark:bg-mainDarkBG pt-[10rem] pb-[6rem] flex flex-col items-center">
       <div>
         <span className="relative">
           <Image src={post.image} alt={post.name} width={300} height={150} />
