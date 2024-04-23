@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Product = ({ productData }) => {
+const ProductsStoreItem = ({ productData }) => {
   return (
     <Link href={`/products/${productData.id}`}>
       <div className="max-w-[450px] bg-white rounded-lg overflow-hidden transition duration-300 ease-in-out hover:shadow-md hover:shadow-[#000]">
@@ -24,4 +24,4 @@ const Product = ({ productData }) => {
   );
 };
 
-export default Product;
+export default ProductsStoreItem;

@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export async function generateStaticParams() {
+export const generateStaticParams = async () => {
   const res = await fetch("https://dummyjson.com/products/");
   const data = await res.json();
 
   return data.products.map((product) => ({
     id: product.id.toString(),
   }));
-}
+};
 
-async function getProduct(id) {
+const getProduct = async (id) => {
   const res = await fetch(`https://dummyjson.com/products/${id}`);
   const data = await res.json();
   return data;
-}
+};
 
 async function ProductCardPage({ params }) {
   const product = await getProduct(params.id);
