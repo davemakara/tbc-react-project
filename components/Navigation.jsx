@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
 
 import BurgerMenu from "./BurgerMenu";
 
+import { useTranslation } from "react-i18next";
+
 const Navigation = () => {
+  const { t } = useTranslation();
+
   return (
     <nav className="h-full flex relative">
       <ul className="hidden md:flex h-full text-[0.8rem] md:text-[1.1rem] xl:text-[1.2rem]">
@@ -11,31 +16,41 @@ const Navigation = () => {
           href="/"
           className="px-[1.2rem] lg:px-[1.5rem] transition-colors duration-400 ease text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">Home</li>
+          <li className="h-full flex items-center cursor-pointer">
+            {t("home")}
+          </li>
         </Link>
         <Link
           href="/products"
           className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">Products</li>
+          <li className="h-full flex items-center cursor-pointer">
+            {t("products")}
+          </li>
         </Link>
         <Link
           href="/profile"
           className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">Profile</li>
+          <li className="h-full flex items-center cursor-pointer">
+            {t("profile")}
+          </li>
         </Link>
         <Link
           href="/blog"
           className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">Blog</li>
+          <li className="h-full flex items-center cursor-pointer">
+            {t("blog")}
+          </li>
         </Link>
         <Link
           href="/contact"
           className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-all duration-400 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">Contact</li>
+          <li className="h-full flex items-center cursor-pointer">
+            {t("contact")}
+          </li>
         </Link>
       </ul>
       <span className="w-[30px] h-[30px] relative p-1 cursor-pointer self-center block md:hidden">

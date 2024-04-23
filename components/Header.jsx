@@ -9,10 +9,20 @@ import AppLogo from "../public/app-logo.png";
 import { handleLogout } from "../scripts/logout";
 import ThemeSwitcher from "./themeswitch/ThemeSwitcher";
 
+import { useTranslation } from "react-i18next";
+import i18n from "../app/i18n";
+
 const Header = () => {
+  const { t, i18n: translation } = useTranslation();
+
+  const toggleLanguage = (e) => {
+    const nextLanguage = e.target.value;
+    i18n.changeLanguage(nextLanguage);
+  };
+
   return (
     <div className="sticky z-10 top-0 w-full h-[100px] bg-mainLightBG dark:bg-mainDarkBG">
-      <header className="w-full h-full flex justify-around md:justify-between items-center md:rounded-b-full md:border-b-2 md:border-white px-[1.1rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
+      <header className="w-full h-full flex justify-around md:justify-between items-center md:rounded-b-full md:border-b-2 md:border-white md:shadow-md md:shadow-[#f4f4f4] px-[1.1rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
         <span className="w-2/5 h-[60px] relative">
           <Image
             src={AppLogo}
@@ -24,9 +34,11 @@ const Header = () => {
         </span>
 
         <Navigation />
-
         <div className="h-full w-2/5 flex items-center justify-end">
-          <select className="p-1 mr-[15px] hidden md:block">
+          <select
+            onChange={(e) => toggleLanguage(e)}
+            className="p-1 mr-[15px] hidden md:block"
+          >
             <option value="en">EN</option>
             <option value="ge">GE</option>
           </select>
