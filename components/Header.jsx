@@ -12,7 +12,7 @@ import ThemeSwitcher from "./themeswitch/ThemeSwitcher";
 const Header = () => {
   return (
     <div className="sticky z-10 top-0 w-full h-[100px] bg-mainLightBG dark:bg-mainDarkBG">
-      <header className="w-full h-full flex justify-around md:justify-between items-center md:rounded-b-full md:border-b-2 md:border-white px-[1.1rem] lg:px-[1.5rem] xl:px-[5.5rem]">
+      <header className="w-full h-full flex justify-around md:justify-between items-center md:rounded-b-full md:border-b-2 md:border-white px-[1.1rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
         <span className="w-2/5 h-[60px] relative">
           <Image
             src={AppLogo}

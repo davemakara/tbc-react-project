@@ -7,3 +7,4 @@ const LoadingScreen = () => {
 };
 
 export default LoadingScreen;
+// i18n.js

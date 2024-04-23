@@ -1,31 +1,58 @@
 "use client";
 
-import Image from "next/image";
-
 import { useState, useEffect } from "react";
 
 import ProductsStoreItem from "./ProductsStoreItem";
 
-const ProductsStore = () => {
+const ProductsStore = ({ isClicked, typed }) => {
   const [products, setProducts] = useState([]);
+  const [sortedProducts, setSortedProducts] = useState([]);
+  const [noProductsFound, setNoProductsFound] = useState(false);
 
   const getProducts = async () => {
     const response = await fetch("https://dummyjson.com/products");
     const productsData = await response.json();
     setProducts(productsData.products);
-    console.log(productsData.products);
   };
 
   useEffect(() => {
     getProducts();
   }, []);
+
+  useEffect(() => {
+    let filteredProducts = [...products];
+
+    if (typed !== "") {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.title.toLowerCase().startsWith(typed.toLowerCase())
+      );
+    }
+
+    if (isClicked) {
+      filteredProducts.sort((a, b) => b.price - a.price);
+    }
+
+    if (filteredProducts.length === 0) {
+      setNoProductsFound(true);
+    } else {
+      setNoProductsFound(false);
+      setSortedProducts(filteredProducts);
+    }
+  }, [typed, isClicked, products]);
+
   return (
     <div className="w-full block pt-[6rem] sm:flex sm:flex-col sm:items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 md:gap-5">
-        {products.map((prod) => (
-          <ProductsStoreItem productData={prod} key={prod.id} />
-        ))}
-      </div>
+      {noProductsFound ? (
+        <h1 className="font-semibold text-[26px] text-[#000] dark:text-white">
+          No products found.
+        </h1>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 md:gap-5">
+          {sortedProducts.map((prod) => (
+            <ProductsStoreItem productData={prod} key={prod.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
