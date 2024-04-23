@@ -5,7 +5,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-5 py-10 bg-[#101010] text-white">
+    <footer className="w-full px-5 py-10 bg-[#101010] dark:bg-darkYellow text-white">
       <div className={styles["footer-wrapper"]}>
         <div className={styles["terms-and-policy"]}>
           <p>
@@ -15,11 +15,11 @@ const Footer = () => {
             <a href="#">კონფიდენციალურობის პოლიტიკა</a>
           </p>
         </div>
-        {/* <div className="newsletter">
+        <div className="newsletter">
           <p>გამოიწერეთ სიახლეები</p>
           <input type="email" placeholder="Email address" />
           <button>Submit</button>
-        </div> */}
+        </div>{" "}
         {/* <Navigation /> */}
       </div>
     </footer>

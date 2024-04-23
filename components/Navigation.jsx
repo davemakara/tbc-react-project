@@ -6,10 +6,10 @@ import BurgerMenu from "./BurgerMenu";
 const Navigation = () => {
   return (
     <nav className="h-full flex relative">
-      <ul className="hidden md:flex h-full text-[0.8rem] md:text-[1.1rem] xl:text-[1.1rem]">
+      <ul className="hidden md:flex h-full text-[0.8rem] md:text-[1.1rem] xl:text-[1.2rem]">
         <Link
           href="/"
-          className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
+          className="px-[1.2rem] lg:px-[1.5rem] transition-colors duration-400 ease text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white font-semibold"
         >
           <li className="h-full flex items-center cursor-pointer">Home</li>
         </Link>

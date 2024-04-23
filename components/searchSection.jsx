@@ -1,24 +1,17 @@
 "use client";
 
-import styles from "./SearchSection.module.css";
-
-const SearchSection = ({ setIsClicked, setSearchItem }) => {
-  const handleSearch = (event) => {
-    setSearchItem(event.target.value);
-  };
-
-  const handleSort = () => {
-    setIsClicked((prev) => !prev);
-  };
-
+const SearchSection = () => {
   return (
-    <div className={styles["search-box"]}>
-      <h2>ddd</h2>
-      <div className={styles["search-form"]}>
-        <input type="search" placeholder="Search.." onChange={handleSearch} />
-        <button onClick={handleSort}>Sort</button>
-      </div>
-    </div>
+    <form className="py-2 w-full flex justify-center">
+      <input
+        type="search"
+        placeholder="Search.."
+        className="w-3/5 md:w-2/5 lg:w-1/3 px-6 py-2 md:py-4 rounded-full"
+      />
+      <button className="bg-darkYellow ml-2 px-8 rounded-3xl text-[14px] md:text-[18px] font-semibold">
+        Sort
+      </button>
+    </form>
   );
 };
 
