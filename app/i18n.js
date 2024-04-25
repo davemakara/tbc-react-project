@@ -10,6 +10,14 @@ const resources = {
       profile: "Profile",
       blog: "Blog",
       contact: "Contact",
+      signout: "Sign out",
+
+      // FOOTER
+      termsAndConditions: "Terms and Conditions",
+      privacyPolicy: "Privacy Policy",
+      newsletter: "Subscribe to our newsletter!",
+      newsletterInput: "Email address",
+      newsletterBtn: "Submit",
     },
   },
   ge: {
@@ -20,6 +28,14 @@ const resources = {
       profile: "პროფილი",
       blog: "ბლოგი",
       contact: "კონტაქტი",
+      signout: "გასვლა",
+
+      // FOOTER
+      termsAndConditions: "წესები და პირობები",
+      privacyPolicy: "კონფიდენციალურობის პოლიტიკა",
+      newsletter: "გამოიწერეთ სიახლეები",
+      newsletterInput: "ელ. ფოსტა",
+      newsletterBtn: "გაგზავნა",
     },
   },
 };

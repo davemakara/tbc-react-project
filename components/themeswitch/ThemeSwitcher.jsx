@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 import SunIcon from "../../public/icons/SunIcon.png";
-import MoonIcon from "../../public/icons/MoonIcon.png";
-import SunBlack from "../../public/icons/sun-black.png";
 import SunDark from "../../public/icons/sun-dark.png";
 
 import smth from "../../public/app-logo.png";

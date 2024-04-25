@@ -23,6 +23,7 @@ const HomeContent = () => {
       <SearchSection
         handleClick={handleClick}
         onInputChange={handleInputChange}
+        btnClicked={isClicked}
       />
       <ProductsStore isClicked={isClicked} typed={typed} />
     </div>
