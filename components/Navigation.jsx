@@ -11,10 +11,10 @@ const Navigation = () => {
 
   return (
     <nav className="h-full flex relative">
-      <ul className="hidden md:flex h-full text-[0.8rem] md:text-[1.1rem] xl:text-[1.2rem]">
+      <ul className="hidden lg:flex h-full text-[0.8rem] md:text-[1.1rem] xl:text-[1.2rem] xxl:text-[1.3rem]">
         <Link
           href="/"
-          className="px-[1.2rem] lg:px-[1.5rem] transition-colors duration-400 ease text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white font-semibold"
+          className="px-[1.2rem] xl:px-[1.5rem] transition-colors duration-500 ease text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-[#ffc700] font-semibold"
         >
           <li className="h-full flex items-center cursor-pointer">
             {t("home")}
@@ -22,7 +22,7 @@ const Navigation = () => {
         </Link>
         <Link
           href="/products"
-          className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
+          className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-[#ffc700] transition-colors duration-500 ease font-semibold"
         >
           <li className="h-full flex items-center cursor-pointer">
             {t("products")}
@@ -30,7 +30,7 @@ const Navigation = () => {
         </Link>
         <Link
           href="/profile"
-          className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
+          className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-500 ease font-semibold"
         >
           <li className="h-full flex items-center cursor-pointer">
             {t("profile")}
@@ -38,7 +38,7 @@ const Navigation = () => {
         </Link>
         <Link
           href="/blog"
-          className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
+          className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
         >
           <li className="h-full flex items-center cursor-pointer">
             {t("blog")}
@@ -46,14 +46,14 @@ const Navigation = () => {
         </Link>
         <Link
           href="/contact"
-          className="px-[1.2rem] lg:px-[1.5rem] text-[#000] dark:text-[#ffc700] hover:text-[#ffc700] dark:hover:text-white transition-all duration-400 ease font-semibold"
+          className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-white transition-all duration-400 ease font-semibold"
         >
           <li className="h-full flex items-center cursor-pointer">
             {t("contact")}
           </li>
         </Link>
       </ul>
-      <span className="w-[30px] h-[30px] relative p-1 cursor-pointer self-center block md:hidden">
+      <span className="w-[30px] h-[30px] relative p-1 cursor-pointer self-center block lg:hidden">
         <BurgerMenu />
       </span>
     </nav>

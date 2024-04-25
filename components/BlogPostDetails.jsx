@@ -3,20 +3,34 @@ import Link from "next/link";
 
 const BlogPostDetails = ({ blogData }) => {
   return (
-    <div className="max-w-[450px] pb-[20px] bg-white rounded overflow-hidden transition-all duration-300 ease hover:shadow-[#000] hover:shadow-md">
-      <span className="block relative w-full h-[200px]">
-        <Image src={blogData.image} alt={blogData.name} fill />
-      </span>
-      <h1 className="text-[1.5rem] py-[10px] px-[15px]">{blogData.name}</h1>
-      <h4 className="text-[1rem] py-[10px] px-[15px] font-thin">
-        {blogData.ingredients.join(", ")}
-      </h4>
-      <Link href={`blog/${blogData.id}`}>
-        <button className="bg-green text-white text-[14px] border-none rounded py-[8px] px-[10px] mt-[10px] ml-[15px] transition duration-200 ease cursor-pointer hover:bg-red">
-          See More
-        </button>
-      </Link>
-    </div>
+    <Link href={`blog/${blogData.id}`}>
+      <div className="p-4 max-w-[350px] bg-white rounded-lg overflow-hidden transition duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:mt-[-5px]">
+        <span className="relative block w-full h-[200px] rounded-lg overflow-hidden">
+          <Image src={blogData.image} alt={blogData.name} fill />
+        </span>
+
+        <div className="relative flex flex-col p-3">
+          <h1 className="h-[60px] md:h-[70px] text-[#000] text-[18px] md:text-[20px] font-bold">
+            {blogData.name}
+          </h1>
+          <p className="h-[70px] overflow-hidden text-[14px] text-[#000]">
+            {blogData.ingredients.join(", ")}
+          </p>
+
+          <span className="w-full flex justify-between">
+            <p className="py-2 text-[16px] text-[#000] font-semibold">
+              ⭐ {blogData.rating}
+            </p>
+            <p
+              type="button"
+              className="px-3 py-2 border-none rounded text-[16px] text-[#696687] cursor-pointer hover:bg-green"
+            >
+              See more..
+            </p>
+          </span>
+        </div>
+      </div>
+    </Link>
   );
 };
 
