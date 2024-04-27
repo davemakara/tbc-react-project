@@ -1,17 +1,19 @@
 "use client";
 
+import { FaSignOutAlt } from "react-icons/fa";
+
 import Image from "next/image";
 
 import Navigation from "./Navigation";
 
-import AppLogo from "../public/app-logo.png";
+import AppLogo from "../../public/app-logo.png";
 
-import { handleLogout } from "../scripts/logout";
-import ThemeSwitcher from "./themeswitch/ThemeSwitcher";
+import { handleLogout } from "../../scripts/logout";
+import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 
 import { useTranslation } from "react-i18next";
-import i18n from "../app/i18n";
-import LanguageSwitcher from "./languageswitch/LanguageSwitcher";
+import i18n from "../../app/i18n";
+import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -39,14 +41,21 @@ const Header = () => {
             <ThemeSwitcher />
           </div>
 
-          <button
+          <FaSignOutAlt
+            className="w-6 h-6 cursor-pointer text-[#000] dark:text-[#f4f4f4] hover:text-red hover:dark:text-red"
+            onClick={() => {
+              handleLogout().then(() => window.location.reload());
+            }}
+          />
+
+          {/* <button
             className="hidden lg:flex p-1 text-[14px] md:text-[16px] border-2 shadow-sm shadow-mainDarkBG dark:shadow-sm dark:shadow-[#f4f4f4] border-[#000] dark:border-white hover:bg-red rounded font-semibold text-[#000] dark:text-white"
             onClick={() => {
               handleLogout().then(() => window.location.reload());
             }}
           >
             {t("signout")}
-          </button>
+          </button> */}
         </div>
       </header>
     </div>

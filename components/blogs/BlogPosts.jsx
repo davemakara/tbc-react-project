@@ -1,6 +1,6 @@
 import BlogPostDetails from "./BlogPostDetails";
 
-import { fetchBlogRecipes } from "../app/actions";
+import { fetchBlogRecipes } from "../../app/actions";
 
 const BlogPosts = async () => {
   const data = await fetchBlogRecipes();
@@ -11,7 +11,7 @@ const BlogPosts = async () => {
         Choose Your Favorite Recipe!
       </h1>
       <div className="w-full pt-[2rem] px-12 flex flex-col items-center sm:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7 xxl:gap-10">
           {data.recipes.map((recipe) => (
             <BlogPostDetails blogData={recipe} key={recipe.id} />
           ))}

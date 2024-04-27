@@ -5,8 +5,8 @@ import { useState } from "react";
 
 import styles from "./BurgerMenu.module.css";
 
-import BurgerMenuImg from "../public/burger-menu.png";
-import BurgerMenuClose from "../public/burger-menu-close.png";
+import BurgerMenuImg from "../../public/burger-menu.png";
+import BurgerMenuClose from "../../public/burger-menu-close.png";
 
 const BurgerMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);

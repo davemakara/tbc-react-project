@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 
-import WelcomeIcon from "../public/welcome-icon.png";
+import WelcomeIcon from "../../public/welcome-icon.png";
 
 import { useState } from "react";
 
-import { handleLogin } from "../scripts/login";
+import { handleLogin } from "../../scripts/login";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");

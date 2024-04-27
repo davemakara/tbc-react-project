@@ -5,6 +5,10 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
+import { MdOutlineDownloading } from "react-icons/md";
+import { MdSunny } from "react-icons/md";
+import { GiMoon } from "react-icons/gi";
+
 import SunIcon from "../../public/icons/SunIcon.png";
 import SunDark from "../../public/icons/sun-dark.png";
 
@@ -20,25 +24,12 @@ const ThemeSwitcher = () => {
     return () => setMounted(false);
   }, []);
 
-  if (!mounted)
-    return (
-      <Image
-        src={smth}
-        width={26}
-        height={26}
-        alt="Loading Light/Dark Toggle"
-        priority={false}
-        title="Loading Light/Dark Toggle"
-      />
-    );
+  if (!mounted) return <MdOutlineDownloading className="w-7 h-7" />;
 
   if (resolvedTheme === "dark") {
     return (
-      <Image
-        src={SunIcon}
-        alt="sun"
-        width={26}
-        height={26}
+      <MdSunny
+        className="w-7 h-7 text-darkYellow"
         onClick={() => setTheme("light")}
       />
     );
@@ -46,11 +37,8 @@ const ThemeSwitcher = () => {
 
   if (resolvedTheme === "light") {
     return (
-      <Image
-        src={SunDark}
-        alt="moon"
-        width={26}
-        height={26}
+      <GiMoon
+        className="w-7 h-7 text-[#000]"
         onClick={() => setTheme("dark")}
       />
     );

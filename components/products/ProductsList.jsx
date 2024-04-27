@@ -1,6 +1,6 @@
 import Product from "./Product";
 
-import { fetchProducts } from "../app/actions";
+import { fetchProducts } from "../../app/actions";
 
 const ProductsList = async () => {
   const data = await fetchProducts();
@@ -11,7 +11,7 @@ const ProductsList = async () => {
         Explore Our Products!
       </h1>
       <div className="w-full pt-[2rem] px-12 flex flex-col items-center sm:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7 xxl:gap-10">
           {data.products.map((product) => (
             <Product productData={product} key={product.id} />
           ))}

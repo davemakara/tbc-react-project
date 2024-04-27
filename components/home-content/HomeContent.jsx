@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchSection from "./searchSection";
 import ProductsStore from "./ProductsStore";
 import { type } from "@testing-library/user-event/dist/type";
@@ -8,6 +8,11 @@ import { type } from "@testing-library/user-event/dist/type";
 const HomeContent = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [typed, setTyped] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleClick = () => {
     setIsClicked((prev) => !prev);
@@ -25,7 +30,13 @@ const HomeContent = () => {
         onInputChange={handleInputChange}
         btnClicked={isClicked}
       />
-      <ProductsStore isClicked={isClicked} typed={typed} />
+      {!mounted ? (
+        <h1 className="pt-[6rem] font-semibold text-center text-[26px] text-[#000] dark:text-white">
+          Loading...
+        </h1>
+      ) : (
+        <ProductsStore isClicked={isClicked} typed={typed} />
+      )}
     </div>
   );
 };

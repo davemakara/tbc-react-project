@@ -1,5 +1,5 @@
 "use client";
-import Navigation from "./Navigation";
+import Navigation from "../header/Navigation";
 
 import styles from "./Footer.module.css";
 
