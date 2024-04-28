@@ -1,0 +1,43 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+
+import { MdOutlineDownloading } from "react-icons/md";
+import { MdSunny } from "react-icons/md";
+import { GiMoon } from "react-icons/gi";
+
+const ThemeSwitcher: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+
+    return () => setMounted(false);
+  }, []);
+
+  if (!mounted) return <MdOutlineDownloading className="w-7 h-7" />;
+
+  if (resolvedTheme === "dark") {
+    return (
+      <MdSunny
+        className="w-7 h-7 text-darkYellow"
+        onClick={() => setTheme("light")}
+      />
+    );
+  }
+
+  if (resolvedTheme === "light") {
+    return (
+      <GiMoon
+        className="w-7 h-7 text-[#000]"
+        onClick={() => setTheme("dark")}
+      />
+    );
+  }
+
+  return null;
+};
+
+export default ThemeSwitcher;
