@@ -1,6 +1,9 @@
 "use client";
 
-import { FaSignOutAlt } from "react-icons/fa";
+import { useState } from "react";
+
+import { FaBars } from "react-icons/fa6";
+import { GrClose } from "react-icons/gr";
 
 import Image from "next/image";
 
@@ -8,15 +11,26 @@ import Navigation from "./Navigation";
 
 import AppLogo from "../../public/app-logo.png";
 
-import { handleLogout } from "../../scripts/logout";
 import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
-
 import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
+import BurgerMenu from "./BurgerMenu";
+import SignOutBtn from "./sign-out-btn/SignOutBtn";
 
-const Header = () => {
+const Header: React.FC = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setMenuIsOpen((prev) => !prev);
+
+    if (!menuIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
   return (
     <div className="sticky z-10 top-0 w-full h-[100px] bg-mainLightBG dark:bg-mainDarkBG">
-      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 lg:border-mainDarkBG dark:lg:border-[#6420AA] lg:shadow-md lg:shadow-mainDarkBG dark:lg:shadow-[#6420AA] px-[1.1rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
+      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 lg:border-mainDarkBG dark:lg:border-[#6420AA] lg:shadow-md lg:shadow-mainDarkBG dark:lg:shadow-[#6420AA] px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
         <span className="w-2/5 h-[60px] relative">
           <Image
             src={AppLogo}
@@ -28,8 +42,18 @@ const Header = () => {
         </span>
 
         <Navigation />
-        <div className="h-full w-2/5 flex items-center justify-end">
-          <span className="hidden lg:flex">
+
+        <div className="block lg:hidden absolute right-0 z-20 pr-6">
+          {menuIsOpen ? (
+            <GrClose className="w-7 h-7" onClick={toggleMenu} />
+          ) : (
+            <FaBars className="w-7 h-7" onClick={toggleMenu} />
+          )}
+        </div>
+        {menuIsOpen && <BurgerMenu toggleMenu={toggleMenu} />}
+
+        <div className="h-full w-2/5 hidden lg:flex items-center justify-end">
+          <span>
             <LanguageSwitcher />
           </span>
 
@@ -37,21 +61,7 @@ const Header = () => {
             <ThemeSwitcher />
           </div>
 
-          <FaSignOutAlt
-            className="w-6 h-6 cursor-pointer text-[#000] dark:text-[#f4f4f4] hover:text-red hover:dark:text-red"
-            onClick={() => {
-              handleLogout().then(() => window.location.reload());
-            }}
-          />
-
-          {/* <button
-            className="hidden lg:flex p-1 text-[14px] md:text-[16px] border-2 shadow-sm shadow-mainDarkBG dark:shadow-sm dark:shadow-[#f4f4f4] border-[#000] dark:border-white hover:bg-red rounded font-semibold text-[#000] dark:text-white"
-            onClick={() => {
-              handleLogout().then(() => window.location.reload());
-            }}
-          >
-            {t("signout")}
-          </button> */}
+          <SignOutBtn />
         </div>
       </header>
     </div>

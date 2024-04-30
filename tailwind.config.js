@@ -28,6 +28,12 @@ module.exports = {
         xl: "1300px",
         xxl: "1600px",
       },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        arsenal: ["var(--font-arsenal)"],
+        pacifico: ["var(--font-pacifico)"],
+        merienda: ["var(--font-merienda)"],
+      },
     },
   },
   plugins: [],

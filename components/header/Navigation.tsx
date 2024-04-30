@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-import BurgerMenu from "./BurgerMenu";
-
 import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
@@ -53,9 +51,6 @@ const Navigation = () => {
           </li>
         </Link>
       </ul>
-      <span className="w-[30px] h-[30px] relative p-1 cursor-pointer self-center block lg:hidden">
-        <BurgerMenu />
-      </span>
     </nav>
   );
 };

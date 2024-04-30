@@ -8,10 +8,7 @@ const LanguageSwitcher = () => {
     i18n.changeLanguage(nextLanguage);
   };
   return (
-    <select
-      onChange={(e) => toggleLanguage(e)}
-      className="p-1 mr-[15px] hidden md:block"
-    >
+    <select onChange={(e) => toggleLanguage(e)} className="p-1 mr-[15px]">
       <option value="en">EN</option>
       <option value="ge">GE</option>
     </select>

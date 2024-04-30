@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { ReactNode } from "react";
 import ThemeProviders from "./providers";
+import { merienda } from "../fonts/font";
 
 export const metadata = {
   title: "My App",
@@ -18,7 +19,7 @@ interface PageProps {
 export default function RootLayout({ children }: PageProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={`${merienda} font-merienda`}>
         <ThemeProviders>{children}</ThemeProviders>
       </body>
     </html>

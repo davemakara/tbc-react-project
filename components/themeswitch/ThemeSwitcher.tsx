@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 import { MdOutlineDownloading } from "react-icons/md";
 import { MdSunny } from "react-icons/md";
-import { GiMoon } from "react-icons/gi";
+import { MdDarkMode } from "react-icons/md";
 
 const ThemeSwitcher: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -30,7 +30,7 @@ const ThemeSwitcher: React.FC = () => {
 
   if (resolvedTheme === "light") {
     return (
-      <GiMoon
+      <MdDarkMode
         className="w-7 h-7 text-[#000]"
         onClick={() => setTheme("dark")}
       />
