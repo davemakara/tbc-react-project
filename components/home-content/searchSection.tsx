@@ -7,7 +7,7 @@ import { useState } from "react";
 // import { useTranslation } from "react-i18next";
 
 interface SearchSectionProps {
-  handleClick: () => void;
+  handleClick: (value: boolean) => void;
   onInputChange: (arg: string) => void;
   btnClicked: boolean;
 }
@@ -26,22 +26,41 @@ const SearchSection = ({
     onInputChange(e.target.value);
   };
 
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value === "true"; // Convert string to boolean
+    handleClick(value);
+  };
+
   return (
-    <form className="w-full flex justify-center">
+    <form className="w-full flex flex-col justify-center items-center">
       <input
         type="search"
         placeholder="Search.."
         value={inputText}
         onChange={handleInputChange}
-        className="w-3/5 md:w-1/3 px-8 py-2 md:py-3 rounded-full"
+        className="w-4/5 md:w-2/3 xl:w-3/5 xxl:w-2/5 px-8 py-2 md:py-3 rounded-full"
       />
-      <button
+      {/* <button
         type="button"
         onClick={handleClick}
         className="bg-darkYellow ml-2 w-[80px] md:w-[100px] rounded-3xl text-[14px] md:text-[18px] font-semibold"
       >
         {!btnClicked ? "Sort" : "Reset"}
-      </button>
+      </button> */}
+      <div className="flex items-center mt-10 text-[18px]">
+        <label htmlFor="products" className="mr-3">
+          Sort products by:
+        </label>
+        <select
+          name="products"
+          id="products"
+          onChange={handleSortChange}
+          className="p-1"
+        >
+          <option value="false">Default</option>
+          <option value="true">Price</option>
+        </select>
+      </div>
     </form>
   );
 };

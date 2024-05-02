@@ -13,15 +13,20 @@ import { handleLogout } from "../../scripts/logout";
 
 interface BurgerMenuProps {
   toggleMenu: () => void; // Define the prop here
+  menuOpened: boolean;
 }
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu }) => {
+const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
   const handleLinkClick = () => {
     toggleMenu();
   };
   return (
-    <section className="absolute top-0 left-0 z-10 w-full h-screen flex flex-col lg:hidden items-center justify-center bg-mainLightBG dark:bg-mainDarkBG px-10">
-      <ul className="w-full sm:w-4/5 md:w-3/5 mt-10">
+    <section
+      className={`absolute top-0 left-0 z-10 w-full overflow-hidden transition-all duration-1000 ease-in-out ${
+        menuOpened ? "h-screen" : "h-0"
+      } flex flex-col lg:hidden items-center justify-center bg-mainLightBG dark:bg-mainDarkBG px-10`}
+    >
+      <ul className="w-full sm:w-4/5 md:w-3/5 mt-6 sm:mt-10">
         <Link href="/" onClick={handleLinkClick}>
           <li className="w-full p-4 text-[20px] text-[#000] dark:text-[#f4f4f4] hover:text-green hover:dark:text-darkYellow flex items-center justify-between border-b-[1px] mb-2">
             Home <IoHomeOutline />

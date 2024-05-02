@@ -13,8 +13,9 @@ const HomeContent = () => {
     setMounted(true);
   }, []);
 
-  const handleClick = () => {
-    setIsClicked((prev) => !prev);
+  const handleClick = (value: boolean) => {
+    // setIsClicked((prev) => !prev);
+    setIsClicked(value);
   };
 
   const handleInputChange = (arg: string) => {
@@ -22,7 +23,7 @@ const HomeContent = () => {
   };
 
   return (
-    <div className="w-full bg-mainLightBG dark:bg-mainDarkBG pb-[2rem] px-12 sm:px-16">
+    <div className="w-full bg-[#E7F6F2] dark:bg-purple pb-[2rem] px-12 sm:px-16">
       <SearchSection
         handleClick={handleClick}
         onInputChange={handleInputChange}

@@ -27,7 +27,7 @@ const BlogPostDetails = ({ blogData }: Recipe) => {
           <h1 className="h-[60px] md:h-[70px] text-[#000] text-[18px] md:text-[20px] font-bold">
             {blogData.name}
           </h1>
-          <p className="h-[70px] overflow-hidden text-[14px] text-[#000]">
+          <p className="h-[70px] overflow-hidden text-[14px] text-[#000] mb-4">
             {blogData.ingredients.join(", ")}
           </p>
 

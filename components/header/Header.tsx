@@ -29,8 +29,8 @@ const Header: React.FC = () => {
     }
   };
   return (
-    <div className="sticky z-10 top-0 w-full h-[100px] bg-mainLightBG dark:bg-mainDarkBG">
-      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 lg:border-mainDarkBG dark:lg:border-[#6420AA] lg:shadow-md lg:shadow-mainDarkBG dark:lg:shadow-[#6420AA] px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
+    <div className="sticky z-10 top-0 w-full h-[100px] bg-mainLightBG dark:bg-purple">
+      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 bg-[#AAC8A7] dark:bg-mainDarkBG lg:border-mainDarkBG dark:lg:border-mainDarkBG lg:shadow-md lg:shadow-mainDarkBG dark:lg:shadow-mainDarkBG px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
         <span className="w-2/5 h-[60px] relative">
           <Image
             src={AppLogo}
@@ -50,7 +50,9 @@ const Header: React.FC = () => {
             <FaBars className="w-7 h-7" onClick={toggleMenu} />
           )}
         </div>
-        {menuIsOpen && <BurgerMenu toggleMenu={toggleMenu} />}
+        {menuIsOpen && (
+          <BurgerMenu toggleMenu={toggleMenu} menuOpened={menuIsOpen} />
+        )}
 
         <div className="h-full w-2/5 hidden lg:flex items-center justify-end">
           <span>
