@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useI18n } from "../../locales/client";
+// import { useI18n } from "../../locales/client";
 import { NAVIGATION_LINKS } from "../../constants";
 
 const Navigation = () => {
   const pathname = usePathname();
-  const t = useI18n();
+  // const t = useI18n();
 
   return (
     <nav className="h-full flex relative">
