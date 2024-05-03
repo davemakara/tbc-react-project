@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SearchSection from "./SearchSection";
+import SearchSection from "./SearchInputBox";
 import ProductsStore from "./ProductsStore";
 
 const HomeContent = () => {
