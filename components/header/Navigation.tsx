@@ -10,7 +10,7 @@ const Navigation = () => {
   // const t = useI18n();
 
   return (
-    <nav className="h-full flex relative">
+    <nav className="h-full flex">
       <ul className="hidden lg:flex h-full text-[0.8rem] md:text-[1.1rem] xl:text-[1.2rem] xxl:text-[1.3rem]">
         {NAVIGATION_LINKS.map((item) => {
           const isActive = pathname === item.href;
