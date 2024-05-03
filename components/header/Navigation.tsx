@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-
-import { useTranslation } from "react-i18next";
+import { useI18n } from "../../locales/client";
 
 const Navigation = () => {
-  const { t } = useTranslation();
+  const t = useI18n();
 
   return (
     <nav className="h-full flex relative">
@@ -22,33 +21,25 @@ const Navigation = () => {
           href="/products"
           className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-[#ffc700] transition-colors duration-500 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">
-            {t("products")}
-          </li>
+          <li className="h-full flex items-center cursor-pointer">Products</li>
         </Link>
         <Link
           href="/profile"
           className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-500 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">
-            {t("profile")}
-          </li>
+          <li className="h-full flex items-center cursor-pointer">Profile</li>
         </Link>
         <Link
           href="/blog"
           className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-white transition-colors duration-400 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">
-            {t("blog")}
-          </li>
+          <li className="h-full flex items-center cursor-pointer">Blog</li>
         </Link>
         <Link
           href="/contact"
           className="px-[1.2rem] xl:px-[1.5rem] text-[#000] dark:text-[#f4f4f4] hover:text-[#ffc700] dark:hover:text-white transition-all duration-400 ease font-semibold"
         >
-          <li className="h-full flex items-center cursor-pointer">
-            {t("contact")}
-          </li>
+          <li className="h-full flex items-center cursor-pointer">Contact</li>
         </Link>
       </ul>
     </nav>

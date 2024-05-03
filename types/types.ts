@@ -1,5 +1,3 @@
-// Single product Page [id]
-
 export interface Product {
   id: number;
   title: string;

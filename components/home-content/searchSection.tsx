@@ -4,21 +4,12 @@ import { ChangeEvent } from "react";
 
 import { useState } from "react";
 
-// import { useTranslation } from "react-i18next";
-
 interface SearchSectionProps {
   handleClick: (value: boolean) => void;
   onInputChange: (arg: string) => void;
-  btnClicked: boolean;
 }
 
-const SearchSection = ({
-  handleClick,
-  onInputChange,
-  btnClicked,
-}: SearchSectionProps) => {
-  // const { t } = useTranslation();
-
+const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
   const [inputText, setInputText] = useState<string>("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

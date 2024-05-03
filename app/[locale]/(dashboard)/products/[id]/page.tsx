@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Product } from "../../../../types/types";
+import { Product } from "../../../../../types/types";
 
 export const generateStaticParams = async () => {
   const res = await fetch("https://dummyjson.com/products/");

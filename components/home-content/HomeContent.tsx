@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SearchSection from "./searchSection";
+import SearchSection from "./SearchSection";
 import ProductsStore from "./ProductsStore";
 
 const HomeContent = () => {
@@ -27,7 +27,6 @@ const HomeContent = () => {
       <SearchSection
         handleClick={handleClick}
         onInputChange={handleInputChange}
-        btnClicked={isClicked}
       />
       {!mounted ? (
         <h1 className="pt-[6rem] font-semibold text-center text-[26px] text-[#000] dark:text-white">

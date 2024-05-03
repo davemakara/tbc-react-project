@@ -1,5 +1,5 @@
-import ContactForm from "../../../components/contact/ContactForm";
-import ContactInfoBox from "../../../components/contact/ContactInfoBox";
+import ContactForm from "../../../../components/contact/ContactForm";
+import ContactInfoBox from "../../../../components/contact/ContactInfoBox";
 
 const ContactPage = () => {
   return (
