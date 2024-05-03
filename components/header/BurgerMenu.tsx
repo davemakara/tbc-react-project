@@ -12,7 +12,7 @@ import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 import { handleLogout } from "../../scripts/logout";
 
 interface BurgerMenuProps {
-  toggleMenu: () => void; // Define the prop here
+  toggleMenu: () => void;
   menuOpened: boolean;
 }
 
@@ -24,7 +24,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
     <section
       className={`absolute top-0 left-0 z-10 w-full overflow-hidden transition-all duration-1000 ease-in-out ${
         menuOpened ? "h-screen" : "h-0"
-      } flex flex-col lg:hidden items-center justify-center bg-mainLightBG dark:bg-purple px-10`}
+      } flex flex-col lg:hidden items-center justify-center bg-[#DDDDDD] dark:bg-mainDarkBG2 px-10`}
     >
       <ul className="w-full sm:w-4/5 md:w-3/5 mt-6 sm:mt-10">
         <Link href="/" onClick={handleLinkClick}>
@@ -58,7 +58,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
         <ThemeSwitcher />
       </div>
       <button
-        className="px-3 py-2 bg-darkYellow rounded"
+        className="px-3 py-2 bg-red rounded"
         onClick={() => {
           handleLogout().then(() => window.location.reload());
         }}

@@ -31,12 +31,14 @@ const ProfileForm: React.FC = () => {
   };
   return (
     <form
-      className="w-full sm:w-3/5 md:w-2/5 xl:w-1/3"
+      className="w-full sm:w-4/5 md:w-3/5 xl:w-1/3 text-[#000] dark:text-[#f4f4f4]"
       onSubmit={handleSubit}
       autoComplete="off"
     >
       <div>
-        <h1 className="text-[30px] font-semibold mb-[2rem]">Profile Details</h1>
+        <h1 className="text-[30px] text-center font-semibold mb-[2rem]">
+          Profile Details
+        </h1>
       </div>
       <div className="w-full flex flex-col">
         <label htmlFor="firstName" className="text-[18px]">

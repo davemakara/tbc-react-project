@@ -1,13 +1,11 @@
 "use client";
-// import Navigation from "../header/Navigation";
-
-import styles from "./Footer.module.css";
+import Navigation from "../header/Navigation";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-5 py-10 bg-[#101010] dark:bg-darkYellow text-white">
-      <div className={styles["footer-wrapper"]}>
-        <div className={styles["terms-and-policy"]}>
+    <footer>
+      <div className="w-full px-8 py-10 bg-green3 dark:bg-mainDarkBG text-white block sm:flex sm:justify-between sm:items-center xxl:justify-around">
+        <div>
           <p>
             <a href="#">Terms And Conditions</a>
           </p>
@@ -15,12 +13,18 @@ const Footer = () => {
             <a href="#">Privacy policy</a>
           </p>
         </div>
-        <div className="newsletter">
-          <p>Newsletter</p>
-          <input type="email" placeholder="Email" />
-          <button>Submit</button>
+        <Navigation />
+        <div className="mt-5 sm:mt-0">
+          <p className="py-2">Subscribe To Our Newsletter</p>
+          <input
+            type="email"
+            placeholder="Email"
+            className="p-2 text-[#16px] text-[#000] dark:text-white "
+          />
+          <button className="ml-3 px-2 py-1 rounded bg-darkYellow">
+            Submit
+          </button>
         </div>{" "}
-        {/* <Navigation /> */}
       </div>
     </footer>
   );

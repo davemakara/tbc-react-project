@@ -36,7 +36,7 @@ const BlogPosts = () => {
   }, []);
 
   return (
-    <section className="bg-mainLightBG dark:bg-mainDarkBG w-full min-h-screen py-[2rem]">
+    <section className="bg-[#DDDDDD] dark:bg-[#2C3333] w-full min-h-screen py-[2rem]">
       <h1 className="text-center text-[#000] dark:text-[#f4f4f4] font-bold text-[24px] md:text-[30px] md:py-[3rem]">
         Choose Your Favorite Recipe!
       </h1>

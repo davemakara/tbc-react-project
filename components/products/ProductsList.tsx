@@ -39,7 +39,7 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <section className="min-h-screen w-full bg-mainLightBG dark:bg-mainDarkBG py-[2rem]">
+    <section className="min-h-screen w-full bg-[#DDDDDD] dark:bg-[#2C3333] py-[2rem]">
       {isMounted && (
         <h1 className="text-center text-[#000] dark:text-[#f4f4f4] font-bold text-[24px] md:text-[30px] md:py-[3rem]">
           Explore Our Products!

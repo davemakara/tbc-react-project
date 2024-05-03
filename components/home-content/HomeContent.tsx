@@ -23,7 +23,7 @@ const HomeContent = () => {
   };
 
   return (
-    <div className="w-full bg-[#E7F6F2] dark:bg-purple pb-[2rem] px-12 sm:px-16">
+    <div className="w-full pb-[2rem] px-12 sm:px-16">
       <SearchSection
         handleClick={handleClick}
         onInputChange={handleInputChange}

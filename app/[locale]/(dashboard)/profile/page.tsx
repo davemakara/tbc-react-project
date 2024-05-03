@@ -2,7 +2,7 @@ import ProfileForm from "../../../../components/profile-page/ProfileForm";
 
 const ProfilePage = () => {
   return (
-    <section className="bg-mainLightBG dark:bg-mainDarkBG w-full min-h-screen flex flex-col items-center py-[3rem] px-[3rem] text-[#000] md:px-0 md:py-[4rem]">
+    <section className="bg-[#DDDDDD] dark:bg-[#2C3333] w-full min-h-screen flex flex-col items-center px-[3rem] md:px-0 pt-[2rem] md:pt-[5rem] text-[#000]">
       <ProfileForm />
     </section>
   );

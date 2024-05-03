@@ -20,7 +20,7 @@ interface ProductDataProps {
 const Product = ({ productData }: ProductDataProps) => {
   return (
     <Link href={`/products/${productData.id}`}>
-      <div className="p-4 max-w-[350px] bg-white rounded-lg overflow-hidden transition duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:mt-[-5px]">
+      <div className="p-4 max-w-[350px] bg-white dark:bg-[#eee] border-4 border-[#000] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:mt-[-8px]">
         <span className="relative block w-full h-[200px] rounded-lg overflow-hidden">
           <Image src={productData.images[0]} alt="crypto" fill />
         </span>

@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     colors: {
       mainLightBG: "#EEEEEE",
+      mainDarkBG2: "#2C3333",
       mainDarkBG: "#0a0a0a",
       darkYellow: "#ffc700",
       white: "#ffffff",

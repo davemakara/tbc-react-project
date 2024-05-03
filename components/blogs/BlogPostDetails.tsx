@@ -18,7 +18,7 @@ interface Recipe {
 const BlogPostDetails = ({ blogData }: Recipe) => {
   return (
     <Link href={`blog/${blogData.id}`}>
-      <div className="p-4 max-w-[350px] bg-white rounded-lg overflow-hidden transition duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:mt-[-5px]">
+      <div className="p-4 max-w-[350px] bg-white dark:bg-[#eee] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:mt-[-8px]">
         <span className="relative block w-full h-[200px] rounded-lg overflow-hidden">
           <Image src={blogData.image} alt={blogData.name} fill />
         </span>

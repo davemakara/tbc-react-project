@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [required, setRequired] = useState<boolean>(false);
 
   return (
-    <div className="w-4/5 bg-[#fff] dark:bg-[#1E313B] h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
+    <div className="w-4/5 bg-[#fff] dark:bg-green3 h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
       <div className="flex flex-col items-center">
         <span>
           <Image
