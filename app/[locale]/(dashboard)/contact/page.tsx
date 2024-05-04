@@ -3,7 +3,7 @@ import ContactInfoBox from "../../../../components/contact/ContactInfoBox";
 
 const ContactPage = () => {
   return (
-    <section className="w-full min-h-screen bg-[#DDDDDD] dark:bg-[#2C3333] pt-[10rem] px-[2rem] pb-[6rem] block md:flex md:justify-around md:items-stretch">
+    <section className="w-full min-h-screen bg-[#DDDDDD] dark:bg-[#2C3333] px-[3rem] md:px-0 lg:px-[5rem] pt-[2rem] md:pt-[5rem] block md:flex md:justify-around">
       <ContactInfoBox />
       <ContactForm />
     </section>

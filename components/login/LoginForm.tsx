@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-
-import WelcomeIcon from "../../public/welcome-icon.png";
+import { BiDoorOpen } from "react-icons/bi";
 
 import { useState } from "react";
 
@@ -14,9 +12,11 @@ const LoginForm = () => {
   const [required, setRequired] = useState<boolean>(false);
 
   return (
-    <div className="w-4/5 bg-[#fff] dark:bg-green3 h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
+    <div className="w-4/5 bg-[#fff] dark:bg-[#2E4374] h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
       <div className="flex flex-col items-center">
-        <span>
+        <BiDoorOpen className="w-8 h-8 mb-2" />
+
+        {/* <span>
           <Image
             src={WelcomeIcon}
             alt="welcome icon"
@@ -24,10 +24,10 @@ const LoginForm = () => {
             height={30}
             className="mb-2"
           />
-        </span>
+        </span> */}
 
         <h2 className="mb-2 text-[22px] font-semibold">Welcome!</h2>
-        <p className="mb-2 text-[#696687] dark:text-[#94a3b8] text-[18px]">
+        <p className="mb-2 text-[#696687] dark:text-[#eee] text-[18px]">
           Sign in to your account
         </p>
       </div>
@@ -41,7 +41,7 @@ const LoginForm = () => {
         <div className="mb-5">
           <label
             htmlFor="username"
-            className="text-[#696687] dark:text-[#94a3b8] text-[18px]"
+            className="text-[#696687] dark:text-[#eee] text-[18px]"
           >
             Username
           </label>
@@ -50,7 +50,7 @@ const LoginForm = () => {
               type="text"
               name="username"
               id="username"
-              className="bg-white dark:bg-[#1E313B] w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
+              className="bg-white dark:bg-[#799f9c] w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
               value={username}
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -63,7 +63,7 @@ const LoginForm = () => {
         <div className="mb-5">
           <label
             htmlFor="password"
-            className="text-[#696687] dark:text-[#94a3b8] text-[18px]"
+            className="text-[#696687] dark:text-[#eee] text-[18px]"
           >
             Password
           </label>
@@ -72,7 +72,7 @@ const LoginForm = () => {
               type="password"
               name="password"
               id="password"
-              className="bg-white dark:bg-[#1E313B] w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
+              className="bg-white dark:bg-[#799f9c] w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -82,7 +82,7 @@ const LoginForm = () => {
           </span>
         </div>
         <div className="flex justify-between">
-          <p className="text-[#696687] dark:text-[#94a3b8] text-[18px] cursor-pointer">
+          <p className="text-[#696687] dark:text-[#eee] text-[18px] cursor-pointer">
             Sign up
           </p>
           <p className="text-[#4d61fc] text-[18px] cursor-pointer">

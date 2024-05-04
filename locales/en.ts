@@ -28,6 +28,9 @@ export default {
 
   // CONTACT PAGE
   contactUs: "CONTACT US",
+  contactInfo:
+    "Have a question or need assistance? We're here to help! Feel free to reach out to our friendly customer support team via email or phone. Whether you have inquiries about products, orders, or anything else, we're dedicated to providing prompt and helpful assistance to ensure your shopping experience is smooth and enjoyable.",
+  customerSupport: "Monday - Friday: 9:00 AM - 6:00 PM (GMT)",
   contactEmail: "Email",
   address: "Address",
   phone: "Phone",

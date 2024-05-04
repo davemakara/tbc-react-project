@@ -11,7 +11,7 @@ const ContactForm: React.FC = () => {
       onSubmit={(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
       }}
-      className="block w-full md:w-2/5 bg-mainDarkBG p-[15px] md:p-[30px]"
+      className="block w-full md:w-2/5 p-[15px] md:p-[30px]"
     >
       <input
         type="text"
@@ -48,7 +48,9 @@ const ContactForm: React.FC = () => {
           name="agree-checkbox"
           className="mr-[10px]"
         />
-        <label htmlFor="agree-checkbox">{t("agreeTerms")} *</label>
+        <label htmlFor="agree-checkbox" className="text-[#000] dark:text-white">
+          {t("agreeTerms")} *
+        </label>
       </div>
       <div>
         <button

@@ -13,6 +13,7 @@ const config: Config = {
       mainDarkBG2: "#2C3333",
       mainDarkBG: "#0a0a0a",
       darkYellow: "#ffc700",
+      gradient: "linear-gradient(135deg, #868F96, #596164)",
       white: "#ffffff",
       green: "#54B435",
       green2: "#C1D0B5",
