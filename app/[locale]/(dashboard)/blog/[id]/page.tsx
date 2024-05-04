@@ -47,7 +47,7 @@ async function Post({ params }: PageParams) {
           <p className="py-3">Ingredients: {post.ingredients.join(", ")}</p>
           <ul className="list-disc py-3">
             {post.instructions.map((recipe: string) => (
-              <li>{recipe}</li>
+              <li key={recipe}>{recipe}</li>
             ))}
           </ul>
           <div className="flex justify-between">
