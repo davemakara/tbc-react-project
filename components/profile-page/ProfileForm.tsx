@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useI18n } from "../../locales/client";
 
 interface Profile {
   firstName: string;
@@ -18,6 +19,7 @@ const ProfileForm: React.FC = () => {
     confirmPassword: "",
   };
 
+  const t = useI18n();
   const [profileObj, setProfileObj] = useState(initialProfile);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,12 +39,12 @@ const ProfileForm: React.FC = () => {
     >
       <div>
         <h1 className="text-[30px] text-center font-semibold mb-[2rem]">
-          Profile Details
+          {t("profileDetails")}
         </h1>
       </div>
       <div className="w-full flex flex-col">
         <label htmlFor="firstName" className="text-[18px]">
-          First Name:
+          {t("firstName")}:
         </label>
         <input
           type="text"
@@ -55,7 +57,7 @@ const ProfileForm: React.FC = () => {
       </div>
       <div className="w-full flex flex-col">
         <label htmlFor="lastName" className="text-[18px]">
-          Last Name:
+          {t("lastName")}:
         </label>
         <input
           type="text"
@@ -68,7 +70,7 @@ const ProfileForm: React.FC = () => {
       </div>
       <div className="w-full flex flex-col">
         <label htmlFor="email" className="text-[18px]">
-          Email Address:
+          {t("email")}:
         </label>
         <input
           type="email"
@@ -81,7 +83,7 @@ const ProfileForm: React.FC = () => {
       </div>
       <div className="w-full flex flex-col">
         <label htmlFor="password" className="text-[18px]">
-          Password:
+          {t("password")}:
         </label>
         <input
           type="password"
@@ -94,7 +96,7 @@ const ProfileForm: React.FC = () => {
       </div>
       <div className="w-full flex flex-col">
         <label htmlFor="confirmPassword" className="text-[18px]">
-          Confirm Password:
+          {t("confirmPassword")}:
         </label>
         <input
           type="password"
@@ -106,7 +108,7 @@ const ProfileForm: React.FC = () => {
         />
       </div>
       <button className="py-[8px] px-[14px] text-[14px] text-white font-semibold bg-darkYellow border-none cursor-pointer hover:bg-green">
-        SUBMIT
+        {t("submitBtn")}
       </button>
     </form>
   );

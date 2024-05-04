@@ -1,8 +1,11 @@
 "use client";
 
 import { FormEvent } from "react";
+import { useI18n } from "../../locales/client";
 
 const ContactForm: React.FC = () => {
+  const t = useI18n();
+
   return (
     <form
       onSubmit={(e: FormEvent<HTMLFormElement>) => {
@@ -14,28 +17,28 @@ const ContactForm: React.FC = () => {
         type="text"
         id="firstName"
         name="firstName"
-        placeholder="First Name"
+        placeholder={t("firstName")}
         className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000]"
       />
       <input
         type="text"
         id="lastName"
         name="lastName"
-        placeholder="Last Name"
+        placeholder={t("lastName")}
         className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000]"
       />
       <input
         type="email"
         id="email"
         name="email"
-        placeholder="Email Address"
+        placeholder={t("email")}
         className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000]"
       />
       <input
         type="number"
         id="number"
         name="number"
-        placeholder="Phone Number"
+        placeholder={t("phone")}
         className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000]"
       />
       <div className="flex items-start py-[15px] text-white text-[14px]">
@@ -45,17 +48,14 @@ const ContactForm: React.FC = () => {
           name="agree-checkbox"
           className="mr-[10px]"
         />
-        <label htmlFor="agree-checkbox">
-          By clicking the button, I agree with the collection and processing of
-          my personal data as described in the Privacy policy. *
-        </label>
+        <label htmlFor="agree-checkbox">{t("agreeTerms")} *</label>
       </div>
       <div>
         <button
           type="submit"
           className="w-full bg-green text-white text-[16px] p-[14px] my-[5px] font-semibold border-none cursor-pointer transition-all duration-300 ease hover:bg-red"
         >
-          SUBMIT
+          {t("submitBtn")}
         </button>
       </div>
     </form>

@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 
+import { useI18n } from "../../locales/client";
+
 // import { fetchProducts } from "../../app/actions";
 
 interface ProductDataProps {
@@ -26,6 +28,7 @@ interface ProductDataProps {
 const ProductsList = () => {
   const [data, setData] = useState([]);
   const [isMounted, setIsMounted] = useState(false);
+  const t = useI18n();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -42,7 +45,7 @@ const ProductsList = () => {
     <section className="min-h-screen w-full bg-[#DDDDDD] dark:bg-[#2C3333] py-[2rem]">
       {isMounted && (
         <h1 className="text-center text-[#000] dark:text-[#f4f4f4] font-bold text-[24px] md:text-[30px] md:py-[3rem]">
-          Explore Our Products!
+          {t("exploreProducts")}
         </h1>
       )}
       <div className="w-full pt-[2rem] px-12 flex flex-col items-center sm:px-16">

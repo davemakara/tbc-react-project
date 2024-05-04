@@ -3,14 +3,14 @@ export const TOKEN_COOKIE_KEY = "auth_token";
 
 interface NavigationProps {
   id: number;
-  page: string;
+  page: "home" | "products" | "profile" | "blog" | "contact";
   href: string;
 }
 
 export const NAVIGATION_LINKS: NavigationProps[] = [
-  { id: 1, page: "Home", href: "/" },
-  { id: 2, page: "Products", href: "/products" },
-  { id: 3, page: "Profile", href: "/profile" },
-  { id: 4, page: "Blog", href: "/blog" },
-  { id: 5, page: "Contact", href: "/contact" },
+  { id: 1, page: "home", href: "/" },
+  { id: 2, page: "products", href: "/products" },
+  { id: 3, page: "profile", href: "/profile" },
+  { id: 4, page: "blog", href: "/blog" },
+  { id: 5, page: "contact", href: "/contact" },
 ];

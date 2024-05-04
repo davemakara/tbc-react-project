@@ -1,5 +1,7 @@
 "use client";
 
+import { useI18n } from "../../locales/client";
+
 import BlogPostDetails from "./BlogPostDetails";
 
 // import { fetchBlogRecipes } from "../../app/actions";
@@ -23,6 +25,7 @@ interface Recipe {
 
 const BlogPosts = () => {
   const [data, setData] = useState([]);
+  const t = useI18n();
 
   useEffect(() => {
     const fetchBlogRecipes = async () => {
@@ -38,7 +41,7 @@ const BlogPosts = () => {
   return (
     <section className="bg-[#DDDDDD] dark:bg-[#2C3333] w-full min-h-screen py-[2rem]">
       <h1 className="text-center text-[#000] dark:text-[#f4f4f4] font-bold text-[24px] md:text-[30px] md:py-[3rem]">
-        Choose Your Favorite Recipe!
+        {t("chooseRecipe")}
       </h1>
       <div className="w-full pt-[2rem] px-12 flex flex-col items-center sm:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7 xxl:gap-10">

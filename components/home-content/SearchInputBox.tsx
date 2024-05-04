@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent } from "react";
+import { useI18n } from "../../locales/client";
 
 import { useState } from "react";
 
@@ -11,6 +12,7 @@ interface SearchSectionProps {
 
 const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
   const [inputText, setInputText] = useState<string>("");
+  const t = useI18n();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
@@ -26,7 +28,7 @@ const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
     <form className="w-full flex flex-col justify-center items-center">
       <input
         type="search"
-        placeholder="Search.."
+        placeholder={t("searchInput")}
         value={inputText}
         onChange={handleInputChange}
         className="w-4/5 md:w-2/3 xl:w-3/5 xxl:w-2/5 px-8 py-2 md:py-3 rounded-full"
@@ -40,7 +42,7 @@ const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
       </button> */}
       <div className="flex items-center mt-10 text-[18px]">
         <label htmlFor="products" className="mr-3">
-          Sort products by:
+          {t("sortBy")}
         </label>
         <select
           name="products"
@@ -48,8 +50,8 @@ const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
           onChange={handleSortChange}
           className="p-1"
         >
-          <option value="false">Default</option>
-          <option value="true">Price</option>
+          <option value="false">{t("sortDefault")}</option>
+          <option value="true">{t("sortPrice")}</option>
         </select>
       </div>
     </form>

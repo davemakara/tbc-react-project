@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { useI18n } from "../../locales/client";
+import { useI18n } from "../../locales/client";
 import { NAVIGATION_LINKS } from "../../constants";
 
 const Navigation = () => {
   const pathname = usePathname();
-  // const t = useI18n();
+  const t = useI18n();
 
   return (
     <nav className="h-full flex">
@@ -25,7 +25,7 @@ const Navigation = () => {
               }`}
             >
               <li className="h-full flex items-center cursor-pointer">
-                {item.page}
+                {t(item.page)}
               </li>
             </Link>
           );
