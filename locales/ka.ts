@@ -5,6 +5,7 @@ export default {
   profile: "პროფილი",
   blog: "ბლოგი",
   contact: "კონტაქტი",
+  signOut: "გასვლა",
 
   // SEARCH SECTION
   searchInput: "მოძებნე..",

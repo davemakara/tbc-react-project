@@ -5,6 +5,7 @@ export default {
   profile: "Profile",
   blog: "Blog",
   contact: "Contact",
+  signOut: "Sign Out",
 
   // SEARCH SECTION
   searchInput: "Search..",
