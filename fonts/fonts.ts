@@ -1,4 +1,11 @@
-import { Inter, Arsenal, Pacifico, Merienda } from "next/font/google";
+import {
+  Inter,
+  Arsenal,
+  Pacifico,
+  Merienda,
+  Noto_Sans_Georgian,
+  Noto_Serif_Georgian,
+} from "next/font/google";
 
 const inter_init = Inter({
   weight: "400",
@@ -31,3 +38,19 @@ const merienda_init = Merienda({
 });
 
 export const merienda = merienda_init.variable;
+
+const noto_sans_init = Noto_Sans_Georgian({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-noto_sans",
+});
+
+export const noto_sans = noto_sans_init.variable;
+
+const noto_serif_init = Noto_Serif_Georgian({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-noto_serif",
+});
+
+export const noto_serif = noto_serif_init.variable;

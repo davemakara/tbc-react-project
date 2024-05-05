@@ -12,7 +12,7 @@ const LoginForm = () => {
   const [required, setRequired] = useState<boolean>(false);
 
   return (
-    <div className="w-4/5 bg-[#fff] dark:bg-[#2E4374] h-auto py-10 px-8 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
+    <div className="w-4/5 bg-[#fff] dark:bg-cardsDarkBG h-auto py-10 px-8 dark:border-white dark:border-2 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
       <div className="flex flex-col items-center">
         <BiDoorOpen className="w-8 h-8 mb-2" />
 
@@ -50,7 +50,7 @@ const LoginForm = () => {
               type="text"
               name="username"
               id="username"
-              className="bg-white dark:bg-[#799f9c] w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
+              className="bg-white dark:bg-cardsDarkBG w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
               value={username}
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -72,7 +72,7 @@ const LoginForm = () => {
               type="password"
               name="password"
               id="password"
-              className="bg-white dark:bg-[#799f9c] w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
+              className="bg-white dark:bg-cardsDarkBG w-full h-12 text-[16px] border-b-2 border-[#696687] rounded outline-none px-5 transition-all duration-500 focus:border-[#4d61fc]"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);

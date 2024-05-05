@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { setStaticParamsLocale } from "next-international/server";
+
 // import { Recipe } from "../../../../../types/types";
 
 // export const generateStaticParams = async () => {
@@ -21,11 +23,13 @@ const getPost = async (id: string) => {
 interface PageParams {
   params: {
     id: string;
+    locale: string;
   };
 }
 
 async function Post({ params }: PageParams) {
   const post = await getPost(params.id);
+  setStaticParamsLocale(params.locale);
   console.log(post);
 
   return (

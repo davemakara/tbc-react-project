@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { ReactNode } from "react";
 import ThemeProviders from "./providers";
-import { merienda } from "../../fonts/fonts";
+import { noto_serif } from "../../fonts/fonts";
 
 import { I18nProviderClient } from "../../locales/client";
 
@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${merienda} font-merienda`}>
+      <body className={`${noto_serif} font-noto_serif`}>
         <I18nProviderClient locale={locale}>
           <ThemeProviders>{children}</ThemeProviders>
         </I18nProviderClient>

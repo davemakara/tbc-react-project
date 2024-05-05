@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Product from "./Product";
 
 import { useI18n } from "../../locales/client";
+import ProductsStoreItem from "../home-content/ProductsStoreItem";
 
 // import { fetchProducts } from "../../app/actions";
 
@@ -51,7 +52,8 @@ const ProductsList = () => {
       <div className="w-full pt-[2rem] px-12 flex flex-col items-center sm:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7 xxl:gap-10">
           {data.map((product: ProductDataProps) => (
-            <Product productData={product} key={product.id} />
+            // <Product productData={product} key={product.id} />
+            <ProductsStoreItem productData={product} key={product.id} />
           ))}
         </div>
       </div>

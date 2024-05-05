@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { setStaticParamsLocale } from "next-international/server";
+
 // import { Product } from "../../../../../types/types";
 import { IoCartOutline } from "react-icons/io5";
 
@@ -22,11 +24,13 @@ const getProduct = async (id: string) => {
 interface PageParams {
   params: {
     id: string;
+    locale: string;
   };
 }
 
 async function ProductCardPage({ params }: PageParams) {
   const product = await getProduct(params.id);
+  setStaticParamsLocale(params.locale);
 
   return (
     <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2 py-[5rem] xxl:pt-[10rem] flex flex-col items-center">
