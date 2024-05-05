@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Product } from "../../../../../types/types";
+// import { Product } from "../../../../../types/types";
 import { IoCartOutline } from "react-icons/io5";
 
-export const generateStaticParams = async () => {
-  const res = await fetch("https://dummyjson.com/products/");
-  const data = await res.json();
+// export const generateStaticParams = async () => {
+//   const res = await fetch("https://dummyjson.com/products/");
+//   const data = await res.json();
 
-  return data.products.map((product: Product) => ({
-    id: product.id.toString(),
-  }));
-};
+//   return data.products.map((product: Product) => ({
+//     id: product.id.toString(),
+//   }));
+// };
 
 const getProduct = async (id: string) => {
   const res = await fetch(`https://dummyjson.com/products/${id}`);
