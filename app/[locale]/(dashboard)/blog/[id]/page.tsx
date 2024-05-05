@@ -1,18 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Recipe } from "../../../../../types/types";
+// import { Recipe } from "../../../../../types/types";
 
-export const generateStaticParams = async () => {
-  const res = await fetch("https://dummyjson.com/recipes");
-  const data = await res.json();
+// export const generateStaticParams = async () => {
+//   const res = await fetch("https://dummyjson.com/recipes");
+//   const data = await res.json();
 
-  return data.recipes.map((recipe: Recipe) => ({
-    id: recipe.id.toString(),
-  }));
-};
+//   return data.recipes.map((recipe: Recipe) => ({
+//     id: recipe.id.toString(),
+//   }));
+// };
 
-const getPost = async (id: number) => {
+const getPost = async (id: string) => {
   const res = await fetch(`https://dummyjson.com/recipes/${id}`);
   const data = await res.json();
   return data;
@@ -20,7 +20,7 @@ const getPost = async (id: number) => {
 
 interface PageParams {
   params: {
-    id: number;
+    id: string;
   };
 }
 
