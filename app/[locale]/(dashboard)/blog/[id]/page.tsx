@@ -1,11 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Recipe } from "@/types/types";
-
-// interface Recipe {
-//   id: number;
-// }
+import { Recipe } from "../../../../../types/types";
 
 export const generateStaticParams = async () => {
   const res = await fetch("https://dummyjson.com/recipes");
@@ -16,7 +12,7 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const getPost = async (id: string) => {
+const getPost = async (id: number) => {
   const res = await fetch(`https://dummyjson.com/recipes/${id}`);
   const data = await res.json();
   return data;
@@ -24,12 +20,13 @@ const getPost = async (id: string) => {
 
 interface PageParams {
   params: {
-    id: string;
+    id: number;
   };
 }
 
 async function Post({ params }: PageParams) {
   const post = await getPost(params.id);
+  console.log(post);
 
   return (
     <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2 py-[5rem] xxl:pt-[10rem] flex flex-col items-center">
