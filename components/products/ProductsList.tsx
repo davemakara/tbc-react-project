@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Product from "./Product";
+// import Product from "./Product";
 
 import { useI18n } from "../../locales/client";
 import ProductsStoreItem from "../home-content/ProductsStoreItem";
