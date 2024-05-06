@@ -3,6 +3,10 @@ import Image from "next/image";
 
 import { setStaticParamsLocale } from "next-international/server";
 
+import { IoFastFoodOutline } from "react-icons/io5";
+import { IoMdTimer } from "react-icons/io";
+import { SiOpslevel } from "react-icons/si";
+
 // import { Recipe } from "../../../../../types/types";
 
 // export const generateStaticParams = async () => {
@@ -52,10 +56,16 @@ async function Post({ params }: PageParams) {
             ))}
           </ul>
           <div className="flex justify-between">
-            {/* <p>⭐ {post.rating}</p> */}
-            <p>Calories: {post.caloriesPerServing}</p>
-            <p>Cook Time: {post.cookTimeMinutes}m</p>
-            <p>{post.difficulty}</p>
+            <p className="flex items-center ">
+              <IoFastFoodOutline className="w-4 h-4 mr-1" />{" "}
+              {post.caloriesPerServing} ccal
+            </p>
+            <p className="flex items-center ">
+              <IoMdTimer className="w-4 h-4 mr-1" /> {post.cookTimeMinutes}m
+            </p>
+            <p className="flex items-center ">
+              <SiOpslevel className="w-4 h-4 mr-1" /> {post.difficulty}
+            </p>
           </div>
           <Link href="/blog">
             <button className="bg-red text-white text-[16px] mt-[30px] border-none rounded px-2 py-1">

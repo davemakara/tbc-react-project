@@ -5,7 +5,7 @@ const ContactInfoBox = async () => {
 
   return (
     <div className="w-full md:w-2/5 text-center text-[#000] dark:text-white mb-[1rem] md:mb-0 pt-[1.4rem] pb-[1rem] lg:pt-[3rem]">
-      <h1 className="text-[28px]">{t("contactUs")}</h1>
+      <h1 className="text-[28px] font-bold">{t("contactUs")}</h1>
       <p className="mt-3 lg:mt-6">{t("contactInfo")}</p>
       <ul className="py-[1rem] lg:py-[2rem]">
         <li className="pt-[5px] text-[16px]">{t("customerSupport")}</li>

@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { useI18n } from "../../locales/client";
 import ProductsStoreItem from "../home-content/ProductsStoreItem";
 
-// import { fetchProducts } from "../../app/actions";
-
 interface ProductDataProps {
   id: number;
   images: string[];
