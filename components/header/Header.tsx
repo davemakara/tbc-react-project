@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   // lg:bg-[#AAC8A7] dark:lg:bg-mainDarkBG
   return (
     <div className="sticky z-10 top-0 w-full h-[80px] lg:h-[100px] bg-[#DDDDDD] dark:bg-mainDarkBG2">
-      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 lg:border-mainDarkBG dark:lg:border-mainDarkBG lg:shadow-lg lg:shadow-mainDarkBG dark:lg:shadow-mainDarkBG px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[7rem]">
+      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 lg:border-mainDarkBG dark:lg:border-mainDarkBG lg:shadow-lg lg:shadow-mainDarkBG dark:lg:shadow-mainDarkBG px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[8rem]">
         <span className="w-2/5 h-[60px] relative">
           <Image
             src={AppLogo}
