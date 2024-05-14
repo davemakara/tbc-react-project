@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 import { deleteUserAction } from "../../app/actions";
 import { useRouter } from "next/navigation";
 

@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createUser, deleteUser } from "./api";
+import { createUser, deleteUser, updateUser } from "./api";
 
 export async function createUserAction(formData: FormData) {
   const { name, email, age } = Object.fromEntries(formData);
@@ -11,5 +11,11 @@ export async function createUserAction(formData: FormData) {
 
 export async function deleteUserAction(id: number) {
   await deleteUser(id);
+  revalidatePath("/admin");
+}
+
+export async function updateUserAction(formData: FormData) {
+  const { id, name, email, age } = Object.fromEntries(formData);
+  updateUser(id as string, name as string, email as string, age as string);
   revalidatePath("/admin");
 }
