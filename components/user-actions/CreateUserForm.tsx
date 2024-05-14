@@ -26,45 +26,44 @@ const CreateUserForm: React.FC<CreateUserFormProps> = ({
   return (
     <>
       {openModal && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50">
-          <div className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40"></div>
+        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 backdrop-blur">
           <form
             onSubmit={handleSubmit}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green shadow-lg rounded-md z-50 p-4"
+            className="md:w-[500px] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-cardsDarkBG shadow-lg rounded-md z-50 py-10 px-4"
           >
             <input
-              className="w-full h-full border-2 border-light_blue py-3 pl-1 text-secondary lg:text-[16px] rounded-[5px] focus:border-orange focus:outline-orange"
+              className="w-full md:w-4/5 h-full border-2 border-light_blue p-3 text-secondary lg:text-[16px] rounded-[5px] my-2"
               type="text"
               name="name"
               placeholder="Name"
               required
             />
             <input
-              className="w-full h-full border-2 border-light_blue py-3 pl-1 text-secondary lg:text-[16px] rounded-[5px] focus:border-orange focus:outline-orange"
+              className="w-full md:w-4/5 h-full border-2 border-light_blue p-3 text-secondary lg:text-[16px] rounded-[5px] my-2"
               type="email"
               name="email"
               placeholder="Email"
               required
             />
             <input
-              className="w-full h-full border-2 border-light_blue py-3 pl-1 text-secondary lg:text-[16px] rounded-[5px] focus:border-orange focus:outline-orange"
+              className="w-full md:w-4/5 border-2 border-light_blue p-3 text-secondary lg:text-[16px] rounded-[5px] my-2"
               type="text"
               name="age"
               placeholder="Age"
               required
             />
-            <div className="w-full flex gap-3">
+            <div className="w-full md:w-4/5 flex justify-around mt-8">
               <button
-                className="w-full h-full border-0 bg-yellow-600 dark:bg-blue-500 hover:bg-orange rounded-[5px] py-3 lg:py-auto px-7 font-small lg:text-[20px] lg:font-medium cursor-pointer transition-all transform duration-300 ease-linear"
+                onClick={() => setOpenModal(false)}
+                className="border-0 bg-red py-1 md:py-2 px-3 md:px-5 text-white text-[14px] lg:text-[20px] rounded-[5px] transition-all transform duration-300 ease-linear"
+              >
+                Cancel
+              </button>
+              <button
+                className="border-0 bg-darkYellow rounded-[5px] py-1 md:py-2 px-3 md:px-5 text-[14px] lg:text-[20px] cursor-pointer transition-all transform duration-300 ease-linear"
                 type="submit"
               >
                 Save
-              </button>
-              <button
-                onClick={() => setOpenModal(false)}
-                className="w-full h-full border-0 bg-red-800 py-3 mx-auto text-white lg:text-[20px] rounded-[5px] hover:bg-orange transition-all transform duration-300 ease-linear"
-              >
-                Cancel
               </button>
             </div>
           </form>

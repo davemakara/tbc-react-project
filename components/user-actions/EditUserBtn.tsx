@@ -9,7 +9,10 @@ const EditUserBtn = ({ user }: { user: User }) => {
 
   return (
     <>
-      <FaRegEdit className="w-5 h-5" onClick={() => setOpenModal(!openModal)} />
+      <FaRegEdit
+        className="w-5 h-5 cursor-pointer hover:text-darkYellow"
+        onClick={() => setOpenModal(!openModal)}
+      />
 
       {openModal ? (
         <EditUserForm setOpenModal={setOpenModal} user={user} />

@@ -15,7 +15,7 @@ const DeleteUserBtn = ({ id }: { id: number }) => {
   }
   return (
     <RiDeleteBin5Line
-      className="absolute right-0 w-5 h-5"
+      className="absolute right-0 w-5 h-5 cursor-pointer hover:text-red"
       onClick={() => handleClick()}
     />
   );

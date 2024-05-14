@@ -57,11 +57,11 @@ const Header: React.FC = () => {
         )}
 
         <div className="h-full w-2/5 hidden lg:flex items-center justify-end">
-          <span className="lg:mr-[15px]">
+          <span className="mr-[2px]">
             <LanguageSwitcher />
           </span>
 
-          <div className="p-[2px] lg:mr-[15px] cursor-pointer">
+          <div className="p-[1px] lg:mx-[15px]">
             <ThemeSwitcher />
           </div>
 

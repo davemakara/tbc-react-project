@@ -5,11 +5,16 @@ import CreateUserForm from "./CreateUserForm";
 const CreateUserBtn = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
 
+  const handleClick = () => {
+    setOpenModal(!openModal);
+    document.body.style.overflow = "hidden";
+  };
+
   return (
     <>
       <button
-        onClick={() => setOpenModal(!openModal)}
-        className="w-fit bg-darkYellow hover:bg-green rounded-2xl py-2 px-7 cursor-pointer transition-all transform duration-300 ease-linear"
+        onClick={handleClick}
+        className="bg-darkYellow hover:bg-green rounded-xl py-2 px-4 mb-5 cursor-pointer transition-all transform duration-300 ease-linear"
       >
         + Add User
       </button>

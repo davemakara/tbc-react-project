@@ -22,7 +22,7 @@ const ThemeSwitcher: React.FC = () => {
   if (resolvedTheme === "dark") {
     return (
       <MdSunny
-        className="w-7 h-7 text-darkYellow"
+        className="w-7 h-7 text-darkYellow cursor-pointer"
         onClick={() => setTheme("light")}
       />
     );
@@ -31,7 +31,7 @@ const ThemeSwitcher: React.FC = () => {
   if (resolvedTheme === "light") {
     return (
       <MdDarkMode
-        className="w-7 h-7 text-[#000]"
+        className="w-7 h-7 text-[#000] cursor-pointer"
         onClick={() => setTheme("dark")}
       />
     );
