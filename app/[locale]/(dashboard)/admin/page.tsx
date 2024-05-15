@@ -9,7 +9,6 @@ import CreateUserBtn from "@/components/user-actions/CreateUserBtn";
 
 const AdminPage = async () => {
   const users = await getUsers();
-  console.log(users);
   const sortedUsers = users.sort((a: User, b: User) => b.id - a.id);
 
   return (
