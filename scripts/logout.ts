@@ -1,7 +1,7 @@
-import { getBaseUrl } from "../utils/getBaseUrl";
+import { BASE_URL } from "@/constants";
 
 export const handleLogout = async () => {
-  await fetch(`${getBaseUrl()}api/logout`, {
+  await fetch(`${BASE_URL}/api/logout`, {
     method: "POST",
   });
 };

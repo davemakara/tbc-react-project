@@ -15,6 +15,7 @@ import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
 import BurgerMenu from "./BurgerMenu";
 import SignOutBtn from "./sign-out-btn/SignOutBtn";
+import Cart from "./cart/Cart";
 
 const Header: React.FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
@@ -56,12 +57,13 @@ const Header: React.FC = () => {
           <BurgerMenu toggleMenu={toggleMenu} menuOpened={menuIsOpen} />
         )}
 
-        <div className="h-full w-2/5 hidden lg:flex items-center justify-end">
+        <div className="h-full w-2/5 hidden lg:flex items-center justify-end gap-[15px]">
+          <Cart />
           <span className="mr-[2px]">
             <LanguageSwitcher />
           </span>
 
-          <div className="p-[1px] lg:mx-[15px]">
+          <div className="p-[1px]">
             <ThemeSwitcher />
           </div>
 
