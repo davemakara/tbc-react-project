@@ -8,7 +8,7 @@ const HomeContent = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [typed, setTyped] = useState<string>("");
   const [mounted, setMounted] = useState<boolean>(false);
-
+  
   useEffect(() => {
     setMounted(true);
   }, []);

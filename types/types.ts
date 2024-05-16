@@ -1,3 +1,5 @@
+// PRORDUCTS
+
 export interface Product {
   id: number;
   title: string;
@@ -10,6 +12,14 @@ export interface Product {
   category: string;
   images: string[];
 }
+
+export interface ProductsCart {
+  id: number
+  product_id: number
+  product_count: number
+}
+
+// RECIPES
 
 export interface Recipe {
   id: number;
@@ -29,6 +39,8 @@ export interface Recipe {
   reviewCount: number;
   mealType: string[];
 }
+
+// USERS
 
 export interface User {
   id: number;

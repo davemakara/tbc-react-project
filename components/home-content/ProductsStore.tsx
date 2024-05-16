@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 import ProductsStoreItem from "./ProductsStoreItem";
+// import { BASE_URL } from "@/constants";
 
 interface HomeProps {
   isClicked: boolean;
@@ -25,16 +26,33 @@ interface FilteredProductsProps {
 
 const ProductsStore = ({ isClicked, typed }: HomeProps) => {
   const [products, setProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [noProductsFound, setNoProductsFound] = useState(false);
 
   useEffect(() => {
     const getProducts = async () => {
-      const response = await fetch("https://dummyjson.com/products");
+      const response = await fetch("https://dummyjson.com/products", {
+        cache: "no-store",
+      });
+
       const productsData = await response.json();
+
       setProducts(productsData.products);
     };
+    const getCartProducts = async () => {
+      const response = await fetch(
+        "http://localhost:3000//api/products/get-products",
+        {
+          cache: "no-store",
+        }
+      );
+      const { products } = await response.json();
+
+      setCartProducts(products.rows);
+    };
     getProducts();
+    getCartProducts();
   }, []);
 
   useEffect(() => {
@@ -71,7 +89,11 @@ const ProductsStore = ({ isClicked, typed }: HomeProps) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7 xxl:gap-10">
           {sortedProducts.map((prod: FilteredProductsProps) => (
-            <ProductsStoreItem productData={prod} key={prod.id} />
+            <ProductsStoreItem
+              productData={prod}
+              key={prod.id}
+              productsCart={cartProducts}
+            />
           ))}
         </div>
       )}

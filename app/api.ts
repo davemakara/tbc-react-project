@@ -40,10 +40,19 @@ export async function updateUser(
 
 //PRODUCTS
 
-export async function addToCart(id:number){
-  return await fetch(BASE_URL + "/api/products/add-product", {
-    method: "POST",
-    body: JSON.stringify({id : id}),
+export async function getCartProducts() {
+  const response = await fetch(BASE_URL + "/api/products/get-products", {
     cache: "no-store",
   });
-}  
+  const { products } = await response.json();
+
+  return products.rows;
+}
+
+export async function addToCart(id: number) {
+  return await fetch(BASE_URL + "/api/products/add-product", {
+    method: "POST",
+    body: JSON.stringify({ id: id }),
+    cache: "no-store",
+  });
+}

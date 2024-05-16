@@ -7,16 +7,17 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { IoMdTimer } from "react-icons/io";
 import { SiOpslevel } from "react-icons/si";
 
-// import { Recipe } from "../../../../../types/types";
+import { Recipe } from "../../../../../types/types";
 
-// export const generateStaticParams = async () => {
-//   const res = await fetch("https://dummyjson.com/recipes");
-//   const data = await res.json();
+export const generateStaticParams = async () => {
+  const res = await fetch("https://dummyjson.com/recipes");
+  const data = await res.json();
 
-//   return data.recipes.map((recipe: Recipe) => ({
-//     id: recipe.id.toString(),
-//   }));
-// };
+  return data.recipes.map((recipe: Recipe) => ({
+    id: recipe.id.toString(),
+    locale: "en",
+  }));
+};
 
 const getPost = async (id: string) => {
   const res = await fetch(`https://dummyjson.com/recipes/${id}`);
@@ -32,9 +33,8 @@ interface PageParams {
 }
 
 async function Post({ params }: PageParams) {
-  const post = await getPost(params.id);
   setStaticParamsLocale(params.locale);
-  console.log(post);
+  const post = await getPost(params.id);
 
   return (
     <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2 py-[5rem] xxl:pt-[10rem] flex flex-col items-center">
