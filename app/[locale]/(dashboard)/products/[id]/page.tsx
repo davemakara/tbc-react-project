@@ -3,17 +3,17 @@ import Link from "next/link";
 
 import { setStaticParamsLocale } from "next-international/server";
 
-// import { Product } from "../../../../../types/types";
 import { IoCartOutline } from "react-icons/io5";
 
-// export const generateStaticParams = async () => {
-//   const res = await fetch("https://dummyjson.com/products/");
-//   const data = await res.json();
+export const generateStaticParams = async () => {
+  const res = await fetch("https://dummyjson.com/products/");
+  const data = await res.json();
 
-//   return data.products.map((product: Product) => ({
-//     id: product.id.toString(),
-//   }));
-// };
+  return data.products.map((product: { id: number }) => ({
+    id: product.id.toString(),
+    locale: "en",
+  }));
+};
 
 const getProduct = async (id: string) => {
   const res = await fetch(`https://dummyjson.com/products/${id}`);
@@ -29,8 +29,8 @@ interface PageParams {
 }
 
 async function ProductCardPage({ params }: PageParams) {
-  const product = await getProduct(params.id);
   setStaticParamsLocale(params.locale);
+  const product = await getProduct(params.id);
 
   return (
     <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2 py-[5rem] xxl:pt-[10rem] flex flex-col items-center">

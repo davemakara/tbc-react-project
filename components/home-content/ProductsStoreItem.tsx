@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AddToCartBtn from "../UI/AddToCartBtn";
+import { ProductsCart } from "@/types/types";
 
 interface ProductDataProps {
   productData: {
@@ -16,9 +17,13 @@ interface ProductDataProps {
     category: string;
     thumbnail: string;
   };
+  productsCart: ProductsCart[]
 }
 
-const ProductsStoreItem = ({ productData }: ProductDataProps) => {
+const ProductsStoreItem = ({ productData, productsCart }: ProductDataProps) => {
+
+  
+
   return (
     
       <div className="p-4 max-w-[350px] bg-white dark:bg-cardsDarkBG border-4 border-[#000] dark:border-[#eee] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:dark:shadow-white hover:mt-[-8px]">
@@ -43,7 +48,7 @@ const ProductsStoreItem = ({ productData }: ProductDataProps) => {
             <p className="px-3 py-2 border-none rounded text-[16px] text-[#000] dark:text-white hover:dark:text-[#696687] cursor-pointer">
               See more..
             </p>
-           <AddToCartBtn id={productData.id}/>
+           <AddToCartBtn id={productData.id} productsCart={productsCart}/>
           </span>
         </div>
       </div>

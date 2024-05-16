@@ -21,7 +21,6 @@ export async function updateUserAction(formData: FormData) {
 }
 
 export async function addToCartAction(id: number){
-  console.log(id)
   await addToCart(id)
   
 }
