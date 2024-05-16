@@ -1,8 +1,7 @@
 import { BASE_URL } from "../constants";
 
+//USERS
 export async function getUsers() {
-  console.log("This is !!!!!!!!!", BASE_URL);
-
   const response = await fetch(BASE_URL + "/api/users/get-users", {
     cache: "no-store",
   });
@@ -38,3 +37,13 @@ export async function updateUser(
     cache: "no-store",
   });
 }
+
+//PRODUCTS
+
+export async function addToCart(id:number){
+  return await fetch(BASE_URL + "/api/products/add-product", {
+    method: "POST",
+    body: JSON.stringify({id : id}),
+    cache: "no-store",
+  });
+}  
