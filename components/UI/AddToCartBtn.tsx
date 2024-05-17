@@ -11,14 +11,13 @@ interface AddToCartBtnProps {
 
 const initialStatus = (id: number, products: ProductsCart[]) => {
   const productExist = products?.find((p) => p.product_id === id);
-   return productExist ? true : false
+  return productExist ? true : false;
 };
 
 const AddToCartBtn = ({ id, productsCart }: AddToCartBtnProps) => {
   const [isInCart, setIsInCart] = useState(() =>
     initialStatus(id, productsCart)
   );
-
 
   const handleClick = () => {
     if (isInCart) {

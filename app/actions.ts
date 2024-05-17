@@ -1,7 +1,14 @@
 "use server";
 
-// import { revalidatePath } from "next/cache";
-import { addToCart, createUser, deleteUser, updateUser } from "./api";
+import {
+  addToCart,
+  createUser,
+  deleteCartItem,
+  deleteUser,
+  resetCart,
+  updateCartCount,
+  updateUser,
+} from "./api";
 
 export async function createUserAction(formData: FormData) {
   const { name, email, age } = Object.fromEntries(formData);
@@ -20,7 +27,18 @@ export async function updateUserAction(formData: FormData) {
   // revalidatePath("/admin");
 }
 
-export async function addToCartAction(id: number){
-  await addToCart(id)
-  
+export async function addToCartAction(id: number) {
+  await addToCart(id);
+}
+
+export async function updateCartCountAction(id: number, count: number) {
+  await updateCartCount(id, count);
+}
+
+export async function deleteCartItemAction(id: number) {
+  await deleteCartItem(id);
+}
+
+export async function resetCartAction() {
+  await resetCart();
 }
