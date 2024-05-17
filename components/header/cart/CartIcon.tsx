@@ -8,6 +8,7 @@ const CartIcon = () => {
         <div className="absolute -top-2 -right-4 rounded-full bg-darkYellow px-2">
           <span className="text-white">0</span>
         </div>
+
         <IoCartOutline className="text-[34px] cursor-pointer" />
       </div>
     </Link>

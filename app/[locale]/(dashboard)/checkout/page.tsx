@@ -1,7 +1,34 @@
-const CheckoutPage = () => {
+import { getCartProducts } from "@/app/api";
+import CartList from "@/components/checkout/CartList";
+
+export const revalidate = 0;
+
+const CheckoutPage = async () => {
+  const products = await getCartProducts();
+
+  const fetchProducts = async () => {
+    const fetchProduct = async (id: number) => {
+      const response = await fetch(`https://dummyjson.com/products/${id}`);
+      const data = await response.json();
+
+      return data;
+    };
+
+    const arr = [];
+
+    for (let index = 0; index < products.length; index++) {
+      const singleProduct = await fetchProduct(products[index].product_id);
+      arr.push({ ...singleProduct, count: products[index].product_count });
+    }
+
+    return arr;
+  };
+
+  const selectedProducts = await fetchProducts();
+
   return (
     <section className="w-full min-h-screen bg-[#eee] dark:bg-mainDarkBG2">
-      Hello
+      <CartList selectedProducts={selectedProducts} />
     </section>
   );
 };

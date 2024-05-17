@@ -13,10 +13,14 @@ export interface Product {
   images: string[];
 }
 
+export interface CartItemProps extends Product {
+  count: number;
+}
+
 export interface ProductsCart {
-  id: number
-  product_id: number
-  product_count: number
+  id: number;
+  product_id: number;
+  product_count: number;
 }
 
 // RECIPES

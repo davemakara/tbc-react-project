@@ -56,3 +56,26 @@ export async function addToCart(id: number) {
     cache: "no-store",
   });
 }
+
+export async function updateCartCount(id: number, count: number) {
+  return await fetch(BASE_URL + "/api/products/update-cart", {
+    method: "PUT",
+    body: JSON.stringify({ id, count }),
+    cache: "no-store",
+  });
+}
+
+export async function deleteCartItem(id: number) {
+  return await fetch(BASE_URL + "/api/products/delete-cart-item", {
+    method: "DELETE",
+    body: JSON.stringify({ id }),
+    cache: "no-store",
+  });
+}
+
+export async function resetCart() {
+  return await fetch(BASE_URL + "/api/products/reset-cart", {
+    method: "DELETE",
+    cache: "no-store",
+  });
+}
