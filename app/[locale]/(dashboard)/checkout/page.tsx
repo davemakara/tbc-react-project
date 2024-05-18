@@ -1,14 +1,16 @@
 import { getCartProducts } from "@/app/api";
 import CartList from "@/components/checkout/CartList";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 const CheckoutPage = async () => {
   const products = await getCartProducts();
 
   const fetchProducts = async () => {
     const fetchProduct = async (id: number) => {
-      const response = await fetch(`https://dummyjson.com/products/${id}`);
+      const response = await fetch(`https://dummyjson.com/products/${id}`, {
+        cache: "no-store",
+      });
       const data = await response.json();
 
       return data;
@@ -27,7 +29,7 @@ const CheckoutPage = async () => {
   const selectedProducts = await fetchProducts();
 
   return (
-    <section className="w-full min-h-screen bg-[#eee] dark:bg-mainDarkBG2">
+    <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2">
       <CartList selectedProducts={selectedProducts} />
     </section>
   );

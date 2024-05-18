@@ -45,14 +45,14 @@ export default function LanguageSwitcher() {
     <>
       {locale === "en" ? (
         <button
-          className="border rounded px-1"
+          className="border-2 rounded px-1"
           onClick={() => changeLocale("ka")}
         >
           GE
         </button>
       ) : (
         <button
-          className="border rounded px-1"
+          className="border-2 rounded px-1"
           onClick={() => changeLocale("en")}
         >
           EN

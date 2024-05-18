@@ -2,7 +2,10 @@
 
 import { addToCartAction } from "@/app/actions";
 import { ProductsCart } from "@/types/types";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 interface AddToCartBtnProps {
   id: number;
@@ -15,22 +18,39 @@ const initialStatus = (id: number, products: ProductsCart[]) => {
 };
 
 const AddToCartBtn = ({ id, productsCart }: AddToCartBtnProps) => {
+  const router = useRouter();
+
   const [isInCart, setIsInCart] = useState(() =>
     initialStatus(id, productsCart)
   );
 
   const handleClick = () => {
-    if (isInCart) {
-      console.log("is exist");
-    } else {
-      addToCartAction(id);
-      setIsInCart(true);
-    }
+    if (isInCart) return;
+
+    addToCartAction(id);
+    router.refresh();
+    setIsInCart(true);
   };
   return (
-    <button onClick={handleClick}>
-      {!isInCart ? "AddToCartBtn" : "In Cart"}
-    </button>
+    <>
+      {!isInCart ? (
+        <button
+          onClick={handleClick}
+          className="w-[80px] bg-darkYellow rounded-md flex justify-center items-center text-[14px]"
+        >
+          <MdOutlineShoppingCart className="mr-1 text-[20px]" />
+          add
+        </button>
+      ) : (
+        <button
+          onClick={handleClick}
+          className="w-[80px] bg-red rounded-md flex justify-center items-center text-[14px]"
+        >
+          <MdOutlineShoppingCart className="mr-1 text-[20px]" />
+          added
+        </button>
+      )}
+    </>
   );
 };
 
