@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 
 import ProductsStoreItem from "./ProductsStoreItem";
+import { ProductsCart } from "@/types/types";
 
 interface HomeProps {
+  productsCart: ProductsCart[];
   isClicked: boolean;
   typed: string;
 }
@@ -23,7 +25,7 @@ interface FilteredProductsProps {
   thumbnail: string;
 }
 
-const ProductsStore = ({ isClicked, typed }: HomeProps) => {
+const ProductsStore = ({ productsCart, isClicked, typed }: HomeProps) => {
   const [products, setProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [noProductsFound, setNoProductsFound] = useState(false);
@@ -31,9 +33,12 @@ const ProductsStore = ({ isClicked, typed }: HomeProps) => {
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetch("https://dummyjson.com/products");
+
       const productsData = await response.json();
+
       setProducts(productsData.products);
     };
+
     getProducts();
   }, []);
 
@@ -71,7 +76,11 @@ const ProductsStore = ({ isClicked, typed }: HomeProps) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7 xxl:gap-10">
           {sortedProducts.map((prod: FilteredProductsProps) => (
-            <ProductsStoreItem productData={prod} key={prod.id} />
+            <ProductsStoreItem
+              productData={prod}
+              key={prod.id}
+              productsCart={productsCart}
+            />
           ))}
         </div>
       )}

@@ -1,7 +1,7 @@
-import { getBaseUrl } from "../utils/getBaseUrl";
+import { BASE_URL } from "@/constants";
 
 export const handleLogin = async (username: string, password: string) => {
-  await fetch(`${getBaseUrl()}api/login`, {
+  await fetch(`${BASE_URL}/api/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

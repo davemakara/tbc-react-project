@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import SearchSection from "./SearchInputBox";
 import ProductsStore from "./ProductsStore";
+import { ProductsCart } from "@/types/types";
 
-const HomeContent = () => {
+const HomeContent = ({ productsCart }: { productsCart: ProductsCart[] }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [typed, setTyped] = useState<string>("");
   const [mounted, setMounted] = useState<boolean>(false);
@@ -33,7 +34,11 @@ const HomeContent = () => {
           Loading...
         </h1>
       ) : (
-        <ProductsStore isClicked={isClicked} typed={typed} />
+        <ProductsStore
+          productsCart={productsCart}
+          isClicked={isClicked}
+          typed={typed}
+        />
       )}
     </div>
   );
