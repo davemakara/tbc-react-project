@@ -3,8 +3,6 @@ import Link from "next/link";
 
 import { setStaticParamsLocale } from "next-international/server";
 
-import { IoCartOutline } from "react-icons/io5";
-
 export const generateStaticParams = async () => {
   const res = await fetch("https://dummyjson.com/products/");
   const data = await res.json();
@@ -54,9 +52,6 @@ async function ProductCardPage({ params }: PageParams) {
             <p className="line-through">{product.discountPercentage}%</p>
           </span>
           <div className="pt-6 lg:pr-6 flex justify-between">
-            <button className="bg-green text-white text-[14px] px-3 sm:px-4 py-3 flex gap-2 items-center rounded">
-              <IoCartOutline className="w-[18px] h-[18px]" /> Add to Cart
-            </button>
             <Link href="/products">
               <button className="bg-[#E64848] text-white text-[14px] px-3 sm:px-4 py-3 rounded">
                 {"<"} Back to Products

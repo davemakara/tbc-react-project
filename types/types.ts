@@ -11,6 +11,7 @@ export interface Product {
   brand: string;
   category: string;
   images: string[];
+  thumbnail: string;
 }
 
 export interface CartItemProps extends Product {

@@ -11,10 +11,15 @@ const CartList = ({
   selectedProducts: CartItemProps[];
 }) => {
   const [cartProducts, setCartProducts] = useState<CartItemProps[] | []>([]);
+  const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
     setCartProducts(selectedProducts);
   }, []);
+
+  useEffect(() => {
+    if (selectedProducts.length === 0) return setIsEmpty(true);
+  }, [selectedProducts]);
 
   const handleIncrement = (id: number) => {
     const updatedProduct = cartProducts.map((product: CartItemProps) => {
@@ -51,22 +56,48 @@ const CartList = ({
     }
   };
 
+  const handleDelete = (id: number) => {
+    const updatedProduct = cartProducts.filter((product) => {
+      return product.id !== id;
+    });
+    setCartProducts(updatedProduct);
+    deleteCartItemAction(id);
+  };
+
   const handleReset = () => {
     setCartProducts([]);
     resetCartAction();
   };
 
   return (
-    <div>
-      <button onClick={handleReset}>Reset</button>
-      {cartProducts.map((product) => (
-        <CartItem
-          key={product.id}
-          cartItem={product}
-          handleIncrement={handleIncrement}
-          handleDecrement={handleDecrement}
-        />
-      ))}
+    <div
+      className={`w-full p-10 flex flex-col items-center ${
+        isEmpty && "h-[300px] md:h-[600px] justify-center"
+      }`}
+    >
+      {!isEmpty ? (
+        <>
+          <button
+            onClick={handleReset}
+            className="p-2 rounded-lg bg-green3 my-6 md:my-10"
+          >
+            Reset
+          </button>
+          <div className="w-full flex flex-col items-center">
+            {cartProducts.map((product) => (
+              <CartItem
+                key={product.id}
+                cartItem={product}
+                handleIncrement={handleIncrement}
+                handleDecrement={handleDecrement}
+                handleDelete={handleDelete}
+              />
+            ))}
+          </div>{" "}
+        </>
+      ) : (
+        <h1 className="text-4xl bold">Cart is empty</h1>
+      )}
     </div>
   );
 };

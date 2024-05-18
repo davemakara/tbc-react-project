@@ -32,7 +32,11 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
         menuOpened ? "h-screen" : "h-0"
       } flex flex-col lg:hidden items-center justify-center bg-[#DDDDDD] dark:bg-mainDarkBG2 px-10`}
     >
-      <ul className="w-full sm:w-4/5 md:w-3/5 mt-6 sm:mt-10">
+      <div className="w-full sm:w-4/5 md:w-3/5 py-7 flex justify-around">
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+      </div>
+      <ul className="w-full sm:w-4/5 md:w-3/5 mt-1 mb-6 sm:mt-2">
         <Link href="/" onClick={handleLinkClick}>
           <li className="w-full p-4 text-[20px] text-[#000] dark:text-[#f4f4f4] hover:text-green hover:dark:text-darkYellow flex items-center justify-between border-b-[1px] mb-2">
             {t("home")} <IoHomeOutline />
@@ -59,10 +63,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
           </li>
         </Link>
       </ul>
-      <div className="w-full sm:w-4/5 md:w-3/5 py-7 flex justify-around">
-        <LanguageSwitcher />
-        <ThemeSwitcher />
-      </div>
+
       <button
         className="px-3 py-2 bg-red rounded"
         onClick={() => {

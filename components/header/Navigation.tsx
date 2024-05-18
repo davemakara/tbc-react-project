@@ -20,8 +20,8 @@ const Navigation = () => {
               href={item.href}
               className={`${
                 isActive
-                  ? "px-[1.2rem] xl:px-[1.5rem] transition-colors duration-500 ease text-silver dark:text-[#f4f4f4] hover:text-silver dark:hover:text-[#f4f4f4] font-semibold"
-                  : "px-[1.2rem] xl:px-[1.5rem] transition-colors duration-500 ease text-[#000] dark:text-red hover:text-silver dark:hover:text-[#f4f4f4] font-semibold"
+                  ? "px-[1.2rem] xl:px-[1.5rem] transition-colors duration-500 ease text-red dark:text-[#f4f4f4] hover:text-red dark:hover:text-[#f4f4f4] font-semibold"
+                  : "px-[1.2rem] xl:px-[1.5rem] transition-colors duration-500 ease text-[#000] dark:text-red hover:text-red dark:hover:text-[#f4f4f4] font-semibold"
               }`}
             >
               <li className="h-full flex items-center cursor-pointer">
