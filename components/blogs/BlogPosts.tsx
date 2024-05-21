@@ -39,8 +39,8 @@ const BlogPosts = () => {
   }, []);
 
   return (
-    <section className="bg-[#DDDDDD] dark:bg-[#2C3333] w-full min-h-screen py-[2rem]">
-      <h1 className="text-center text-[#000] dark:text-[#f4f4f4] font-bold text-[24px] md:text-[30px] md:py-[3rem]">
+    <section className="w-full min-h-screen pt-36 lg:pt-40">
+      <h1 className="text-center text-[#000] dark:text-[#f4f4f4] font-bold text-[24px] md:text-[30px] mb-8">
         {t("chooseRecipe")}
       </h1>
       <div className="w-full pt-[2rem] px-12 flex flex-col items-center sm:px-16">

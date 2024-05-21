@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 import { MdOutlineDownloading } from "react-icons/md";
-import { MdSunny } from "react-icons/md";
-import { MdDarkMode } from "react-icons/md";
+import { LuSun } from "react-icons/lu";
+import { AiOutlineMoon } from "react-icons/ai";
 
 const ThemeSwitcher: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -17,12 +17,12 @@ const ThemeSwitcher: React.FC = () => {
     return () => setMounted(false);
   }, []);
 
-  if (!mounted) return <MdOutlineDownloading className="w-7 h-7" />;
+  if (!mounted) return <MdOutlineDownloading className="text-3xl" />;
 
   if (resolvedTheme === "dark") {
     return (
-      <MdSunny
-        className="w-7 h-7 text-darkYellow cursor-pointer"
+      <LuSun
+        className="text-3xl text-white hover:text-darkYellow cursor-pointer"
         onClick={() => setTheme("light")}
       />
     );
@@ -30,8 +30,8 @@ const ThemeSwitcher: React.FC = () => {
 
   if (resolvedTheme === "light") {
     return (
-      <MdDarkMode
-        className="w-7 h-7 text-[#000] cursor-pointer"
+      <AiOutlineMoon
+        className="text-3xl text-[#000] hover:text-darkYellow cursor-pointer"
         onClick={() => setTheme("dark")}
       />
     );
