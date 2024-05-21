@@ -9,7 +9,7 @@ import Image from "next/image";
 
 import Navigation from "./Navigation";
 
-import AppLogo from "../../public/app-logo.png";
+import AppLogo from "../../public/musicLogo.png";
 
 import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
@@ -34,48 +34,46 @@ const Header: React.FC = () => {
 
   // lg:bg-[#AAC8A7] dark:lg:bg-mainDarkBG
   return (
-    <div className="sticky z-10 top-0 w-full h-[80px] lg:h-[100px] bg-[#DDDDDD] dark:bg-mainDarkBG2">
-      <header className="w-full h-full flex justify-between items-center lg:rounded-b-full lg:border-b-2 lg:border-mainDarkBG dark:lg:border-mainDarkBG lg:shadow-lg lg:shadow-mainDarkBG dark:lg:shadow-mainDarkBG px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[8rem]">
-        <span className="w-2/5 h-[60px] relative">
-          <Image
-            src={AppLogo}
-            alt="App logo"
-            className="p-1 cursor-pointer"
-            width={60}
-            height={60}
-          />
+    <header className="absolute z-10 top-0 w-full h-[80px] flex justify-between items-center px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[8rem] bg-mainLightBG dark:bg-mainDarkBG bg-opacity-50 dark:bg-opacity-50">
+      <span className="w-2/5 h-[60px]">
+        <Image
+          src={AppLogo}
+          alt="App logo"
+          className="p-1 cursor-pointer"
+          width={60}
+          height={60}
+        />
+      </span>
+
+      <Navigation />
+
+      <div className="block lg:hidden absolute right-0 z-20 pr-6">
+        {menuIsOpen ? (
+          <GrClose className="w-7 h-7" onClick={toggleMenu} />
+        ) : (
+          <FaBars className="w-7 h-7" onClick={toggleMenu} />
+        )}
+      </div>
+      {menuIsOpen && (
+        <BurgerMenu toggleMenu={toggleMenu} menuOpened={menuIsOpen} />
+      )}
+      <div className="lg:hidden absolute right-1/2 transform translate-x-1/2 z-9 pl-4">
+        <Cart />
+      </div>
+
+      <div className="h-full w-2/5 hidden lg:flex items-center justify-end gap-[15px]">
+        <Cart />
+        <span className="mr-[2px]">
+          <LanguageSwitcher />
         </span>
 
-        <Navigation />
-
-        <div className="block lg:hidden absolute right-0 z-20 pr-6">
-          {menuIsOpen ? (
-            <GrClose className="w-7 h-7" onClick={toggleMenu} />
-          ) : (
-            <FaBars className="w-7 h-7" onClick={toggleMenu} />
-          )}
-        </div>
-        {menuIsOpen && (
-          <BurgerMenu toggleMenu={toggleMenu} menuOpened={menuIsOpen} />
-        )}
-        <div className="lg:hidden absolute right-1/2 transform translate-x-1/2 z-9 pl-4">
-          <Cart />
+        <div className="p-[1px]">
+          <ThemeSwitcher />
         </div>
 
-        <div className="h-full w-2/5 hidden lg:flex items-center justify-end gap-[15px]">
-          <Cart />
-          <span className="mr-[2px]">
-            <LanguageSwitcher />
-          </span>
-
-          <div className="p-[1px]">
-            <ThemeSwitcher />
-          </div>
-
-          <SignOutBtn />
-        </div>
-      </header>
-    </div>
+        <SignOutBtn />
+      </div>
+    </header>
   );
 };
 

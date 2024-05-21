@@ -37,7 +37,7 @@ async function Post({ params }: PageParams) {
   const post = await getPost(params.id);
 
   return (
-    <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2 py-[5rem] xxl:pt-[10rem] flex flex-col items-center">
+    <section className="w-full min-h-screen pt-36 lg:pt-40 flex flex-col items-center">
       <div className="w-4/5 flex flex-col items-center lg:flex-row gap-5 lg:gap-10 xl:gap-20">
         <div className="w-full h-[200px] sm:h-[300px] md:w-2/3 lg:w-1/2 lg:h-[300px] xxl:h-[400px] relative rounded-lg overflow-hidden">
           <Image src={post.image} alt={post.name} fill />

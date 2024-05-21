@@ -27,6 +27,9 @@ const config: Config = {
       bermuda: "#78dcca",
     },
     extend: {
+      // backgroundImage: {
+      //   "tape-BG": "url('/public/tapeBG.jpg')",
+      // },
       screens: {
         sm: "640px",
         md: "780px",
