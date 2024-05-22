@@ -34,7 +34,7 @@ const Header: React.FC = () => {
 
   // lg:bg-[#AAC8A7] dark:lg:bg-mainDarkBG
   return (
-    <header className="absolute z-10 top-0 w-full h-[80px] flex justify-between items-center px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[8rem] bg-mainLightBG dark:bg-mainDarkBG bg-opacity-50 dark:bg-opacity-50">
+    <header className="absolute z-10 top-0 w-full h-[80px] flex justify-between items-center px-[1.5rem] lg:px-[1.5rem] xl:px-[5.5rem] xxl:px-[8rem] bg-mainLightBG dark:bg-mainDarkBG bg-opacity-50 dark:bg-opacity-50 transition-colors duration-300">
       <span className="w-2/5 h-[60px]">
         <Image
           src={AppLogo}

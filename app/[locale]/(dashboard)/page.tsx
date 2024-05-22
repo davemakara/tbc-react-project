@@ -12,7 +12,7 @@ const Homepage = async () => {
     <section className="w-full min-h-screen pt-36">
       <SocialBox />
       <div className="w-full py-4 md:px-10 flex flex-col items-center xl:items-start mb-10">
-        <div className="w-4/5 lg:w-3/5 xl:w-[500px] xxl:w-[700px] p-5 sm:p-10 lg:ml-32 bg-opacity-80 dark:bg-opacity-80 rounded-2xl flex flex-col bg-[#fff] dark:bg-[#afafaf] shadow-xl shadow-[#000]">
+        <div className="w-4/5 lg:w-3/5 xl:w-[500px] xxl:w-[700px] p-5 sm:p-10 lg:ml-32 bg-opacity-80 dark:bg-opacity-80 rounded-2xl flex flex-col bg-[#fff] dark:bg-[#afafaf] shadow-xl shadow-[#000] transition-colors duration-500 ease-in-out">
           <h1 className="text-3xl lg:text-5xl font-bold mb-5">
             Your music App
           </h1>

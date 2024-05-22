@@ -7,7 +7,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 const SocialBox = () => {
   return (
-    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-mainLightBG bg-opacity-80 dark:bg-opacity-80 dark:bg-mainDarkBG p-1 rounded-md hidden lg:block shadow-lg shadow-[#000] dark:shadow-white">
+    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-mainLightBG bg-opacity-80 dark:bg-opacity-80 dark:bg-mainDarkBG p-1 rounded-md hidden lg:block shadow-lg shadow-[#000] dark:shadow-white transition-colors duration-500 ease-in-out">
       <ul className="flex flex-col">
         <Link
           href="#"
