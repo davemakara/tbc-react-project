@@ -14,20 +14,10 @@ const LoginForm = () => {
   return (
     <div className="w-4/5 bg-[#fff] dark:bg-cardsDarkBG h-auto py-10 px-8 dark:border-white dark:border-2 rounded transition-shadow duration-500 ease hover:shadow-[2px_9px_49px_-17px_rgba(255,255,255,0.56)] shadow-sm sm:max-w-[400px]">
       <div className="flex flex-col items-center">
-        <BiDoorOpen className="w-8 h-8 mb-2" />
-
-        {/* <span>
-          <Image
-            src={WelcomeIcon}
-            alt="welcome icon"
-            width={30}
-            height={30}
-            className="mb-2"
-          />
-        </span> */}
+        <BiDoorOpen className="text-3xl mb-2" />
 
         <h2 className="mb-2 text-[22px] font-semibold">Welcome!</h2>
-        <p className="mb-2 text-[#696687] dark:text-[#eee] text-[18px]">
+        <p className="mb-1 text-[#696687] dark:text-[#eee] text-[18px]">
           Sign in to your account
         </p>
       </div>
@@ -36,12 +26,12 @@ const LoginForm = () => {
           e.preventDefault();
           handleLogin(username, password).then(() => window.location.reload());
         }}
-        className="mt-8"
+        className="mt-7"
       >
         <div className="mb-5">
           <label
             htmlFor="username"
-            className="text-[#696687] dark:text-[#eee] text-[18px]"
+            className="text-[#696687] dark:text-[#eee] text-[16px]"
           >
             Username
           </label>
@@ -63,7 +53,7 @@ const LoginForm = () => {
         <div className="mb-5">
           <label
             htmlFor="password"
-            className="text-[#696687] dark:text-[#eee] text-[18px]"
+            className="text-[#696687] dark:text-[#eee] text-[16px]"
           >
             Password
           </label>
@@ -82,10 +72,10 @@ const LoginForm = () => {
           </span>
         </div>
         <div className="flex justify-between">
-          <p className="text-[#696687] dark:text-[#eee] text-[18px] cursor-pointer">
+          <p className="text-[#696687] hover:text-[#31303b] dark:text-[#eee] dark:hover:text-[#b5b5b5] text-[16px] cursor-pointer">
             Sign up
           </p>
-          <p className="text-[#4d61fc] text-[18px] cursor-pointer">
+          <p className="text-[#4d61fc] text-[16px] cursor-pointer">
             forgot password?
           </p>
         </div>

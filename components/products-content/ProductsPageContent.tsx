@@ -5,7 +5,11 @@ import SearchSection from "./SearchInputBox";
 import ProductsStore from "./ProductsStore";
 import { ProductsCart } from "@/types/types";
 
-const HomeContent = ({ productsCart }: { productsCart: ProductsCart[] }) => {
+const ProductsPageContent = ({
+  productsCart,
+}: {
+  productsCart: ProductsCart[];
+}) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [typed, setTyped] = useState<string>("");
   const [mounted, setMounted] = useState<boolean>(false);
@@ -44,4 +48,4 @@ const HomeContent = ({ productsCart }: { productsCart: ProductsCart[] }) => {
   );
 };
 
-export default HomeContent;
+export default ProductsPageContent;

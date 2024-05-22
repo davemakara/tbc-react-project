@@ -11,7 +11,7 @@ const LoginPage = async () => {
       style={{ backgroundImage: `url(${tapeBG.src})` }}
       className="w-full min-h-screen flex justify-center items-center bg-cover bg-fixed bg-no-repeat"
     >
-      <div className="absolute top-5 right-5 bg-[#D8D9DA] dark:bg-[#f4f4f4] p-2 border-none rounded-full cursor-pointer">
+      <div className="absolute top-5 right-5 bg-[#D8D9DA] dark:bg-[#8c8d8d] p-2 border-none rounded-full cursor-pointer">
         <ThemeSwitcher />
       </div>
 

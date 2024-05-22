@@ -1,12 +1,12 @@
 import { getCartProducts } from "@/app/api";
-import HomeContent from "@/components/home-content/HomeContent";
+import ProductsPageContent from "@/components/products-content/ProductsPageContent";
 
 const ProductsPage = async () => {
   const products = await getCartProducts();
 
   return (
     <section className="w-full min-h-screen pt-36 lg:pt-40 flex justify-center pb-[3rem]">
-      <HomeContent productsCart={products} />
+      <ProductsPageContent productsCart={products} />
     </section>
   );
 };
