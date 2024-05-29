@@ -11,7 +11,7 @@ export const BASE_URL =
 
 interface NavigationProps {
   id: number;
-  page: "home" | "products" | "profile" | "blog" | "contact";
+  page: "home" | "products" | "blog" | "contact";
   href: string;
 }
 

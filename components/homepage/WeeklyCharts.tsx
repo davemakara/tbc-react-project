@@ -60,7 +60,7 @@ const WeeklyCharts = () => {
   return (
     <div className="w-[600px] sm:w-4/5 lg:w-[700px] xl:w-[500px] xxl:w-[650px] bg-red shadow-xl shadow-[#000] rounded-2xl text-[#000] dark:text-white transition-all duration-500 ease-in-out overflow-x-scroll sm:overflow-x-hidden">
       <h2 className="text-3xl text-center font-semibold py-5">
-        Week's Top Picks!
+        Week&apos;s Top Picks!
       </h2>
 
       <div className="w-full">
