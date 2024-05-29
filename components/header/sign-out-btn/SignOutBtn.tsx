@@ -4,12 +4,15 @@ import { handleLogout } from "../../../scripts/logout";
 
 const SignOutBtn = () => {
   return (
-    <MdExitToApp
-      className="w-7 h-7 cursor-pointer text-[#000] dark:text-[#f4f4f4] hover:text-red hover:dark:text-red"
+    <button
+      className="w-full p-2 hover:bg-green3 text-[16px] cursor-pointer flex items-center gap-1 border-t"
       onClick={() => {
         handleLogout().then(() => window.location.reload());
       }}
-    />
+    >
+      Sign out
+      <MdExitToApp className="text-xl" />
+    </button>
   );
 };
 

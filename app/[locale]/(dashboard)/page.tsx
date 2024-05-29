@@ -3,19 +3,19 @@ import Image from "next/image";
 import Carousel from "@/components/carousel/Carousel";
 import SocialBox from "@/components/homepage/SocialBox";
 
-// import downloadApp from "../../../public/mobileApp.png";
+// import LOGO from "../../../public/music_note.png";
 import playStore from "../../../public/playStore.png";
 import appStore from "../../../public/appStore.png";
+// import WeeklyCharts from "@/components/homepage/WeeklyCharts";
 
 const Homepage = async () => {
   return (
     <section className="w-full min-h-screen pt-36">
       <SocialBox />
-      <div className="w-full py-4 md:px-10 flex flex-col items-center xl:items-start mb-10">
-        <div className="w-4/5 lg:w-3/5 xl:w-[500px] xxl:w-[700px] p-5 sm:p-10 lg:ml-32 bg-opacity-80 dark:bg-opacity-80 rounded-2xl flex flex-col bg-[#fff] dark:bg-[#afafaf] shadow-xl shadow-[#000] transition-colors duration-500 ease-in-out">
-          <h1 className="text-3xl lg:text-5xl font-bold mb-5">
-            Your music App
-          </h1>
+      <div className="w-full py-4 md:px-10 flex flex-col items-center xl:items-start xl:justify-around xl:flex-row mb-10">
+        <div className="w-11/12 sm:w-4/5 lg:w-3/5 xl:w-[500px] xxl:w-[650px] p-5 sm:p-10 bg-opacity-80 dark:bg-opacity-80 rounded-2xl flex flex-col bg-[#fff] dark:bg-[#afafaf] shadow-xl shadow-[#000] transition-colors duration-500 ease-in-out">
+          <h1 className="text-3xl lg:text-5xl font-bold mb-5">FlowRecords</h1>
+
           <p className="text-lg md:text-xl font-semibold py-5 italic">
             Discover a world where you can not only buy and enjoy your favorite
             albums but also stay updated with the latest music news and trends.
@@ -39,11 +39,7 @@ const Homepage = async () => {
             </div>
           </div>
         </div>
-        {/* <div className="w-4/5 sm:w-3/5 md:w-2/5 rounded-lg flex flex-col xxl:flex-row xl:justify-between">
-          <div className="relative">
-            <Image src={downloadApp} alt="get app" width={300} height={300} />
-          </div>
-        </div> */}
+        {/* <WeeklyCharts /> */}
       </div>
       <Carousel />
     </section>

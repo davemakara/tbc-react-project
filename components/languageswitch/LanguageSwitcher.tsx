@@ -1,4 +1,7 @@
-// "use client";
+"use client";
+
+import GEORGIA_FLAG from "../../public/georgiaFLAG.png";
+import UK_FLAG from "../../public/ukFLAG.png";
 
 // import { ChangeEvent } from "react";
 // import { useEffect, useState } from "react";
@@ -33,9 +36,8 @@
 
 // export default LanguageSwitcher;
 
-"use client";
-
 import { useChangeLocale, useCurrentLocale } from "../../locales/client";
+import Image from "next/image";
 
 export default function LanguageSwitcher() {
   const changeLocale = useChangeLocale();
@@ -44,18 +46,12 @@ export default function LanguageSwitcher() {
   return (
     <>
       {locale === "en" ? (
-        <button
-          className="border-2 rounded px-1 text-[14px]"
-          onClick={() => changeLocale("ka")}
-        >
-          GE
+        <button onClick={() => changeLocale("ka")}>
+          <Image src={GEORGIA_FLAG} alt="georgia flag" width={26} height={52} />
         </button>
       ) : (
-        <button
-          className="border-2 rounded px-1 text-[14px]"
-          onClick={() => changeLocale("en")}
-        >
-          EN
+        <button onClick={() => changeLocale("en")}>
+          <Image src={UK_FLAG} alt="uk flag" width={26} height={52} />
         </button>
       )}
     </>

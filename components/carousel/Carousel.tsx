@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import TES from "../../public/tes.jpg";
+
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +20,7 @@ import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 const Carousel = () => {
   return (
     <>
-      <h1 className="my-10 text-center">Explore best of our products</h1>
+      <h1 className="mb-10 lg:ml-44 text-5xl font-bold">Trending Albums!</h1>
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -62,7 +64,7 @@ const Carousel = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="w-[300px] sm:w-[260px] xxl:w-[280px] h-[240px] sm:h-[160px] xxl:h-[220px] relative overflow-hidden rounded-xl">
+          <div className="w-[300px] sm:w-[260px] xxl:w-[280px] h-[240px] sm:h-[160px] xxl:h-[220px] relative rounded-xl overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <p className="absolute z-10 top-1/2 right-1/2 text-white">
               Slide 1
             </p>
@@ -78,11 +80,7 @@ const Carousel = () => {
             <p className="absolute z-10 top-1/2 right-1/2 text-white">
               Slide 2
             </p>
-            <Image
-              src="https://images.pexels.com/photos/1556704/pexels-photo-1556704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="image"
-              fill
-            />
+            <Image src={TES} alt="image" fill />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -102,11 +100,7 @@ const Carousel = () => {
             <p className="absolute z-10 top-1/2 right-1/2 text-white">
               Slide 4
             </p>
-            <Image
-              src="https://images.pexels.com/photos/1556704/pexels-photo-1556704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="image"
-              fill
-            />
+            <Image src={TES} alt="image" fill />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -126,11 +120,7 @@ const Carousel = () => {
             <p className="absolute z-10 top-1/2 right-1/2 text-white">
               Slide 6
             </p>
-            <Image
-              src="https://images.pexels.com/photos/1556704/pexels-photo-1556704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="image"
-              fill
-            />
+            <Image src={TES} alt="image" fill />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -150,11 +140,7 @@ const Carousel = () => {
             <p className="absolute z-10 top-1/2 right-1/2 text-white">
               Slide 8
             </p>
-            <Image
-              src="https://images.pexels.com/photos/1556704/pexels-photo-1556704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="image"
-              fill
-            />
+            <Image src={TES} alt="image" fill />
           </div>
         </SwiperSlide>
         <SwiperSlide>

@@ -28,9 +28,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
   };
   return (
     <section
-      className={`absolute top-0 left-0 z-10 w-full overflow-hidden transition-all duration-1000 ease-in-out ${
+      className={`absolute top-0 left-0 z-10 w-full bg-mainLightBG overflow-hidden transition-all duration-300 ease-in-out ${
         menuOpened ? "h-screen" : "h-0"
-      } flex flex-col lg:hidden items-center justify-center bg-[#DDDDDD] dark:bg-mainDarkBG2 px-10`}
+      } flex flex-col lg:hidden items-center justify-center bg-[#DDDDDD] dark:bg-mainDarkBG px-10`}
     >
       <div className="w-full sm:w-4/5 md:w-3/5 py-7 flex justify-around">
         <LanguageSwitcher />

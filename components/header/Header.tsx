@@ -9,13 +9,13 @@ import Image from "next/image";
 
 import Navigation from "./Navigation";
 
-import AppLogo from "../../public/musicLogo.png";
+import AppLogo from "../../public/music_note.png";
 
 import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
 import BurgerMenu from "./BurgerMenu";
-import SignOutBtn from "./sign-out-btn/SignOutBtn";
 import Cart from "./cart/Cart";
+import ProfileBtn from "./profile-btn/ProfileBtn";
 
 // export const dynamic = "force-dynamic";
 
@@ -63,15 +63,14 @@ const Header: React.FC = () => {
 
       <div className="h-full w-2/5 hidden lg:flex items-center justify-end gap-[15px]">
         <Cart />
-        <span className="mr-[2px]">
-          <LanguageSwitcher />
-        </span>
+
+        <LanguageSwitcher />
 
         <div className="p-[1px]">
           <ThemeSwitcher />
         </div>
 
-        <SignOutBtn />
+        <ProfileBtn />
       </div>
     </header>
   );
