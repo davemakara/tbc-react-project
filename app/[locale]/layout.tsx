@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+
 import { ReactNode } from "react";
 import ThemeProviders from "./providers";
 import { noto_serif } from "../../fonts/fonts";
@@ -27,11 +29,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${noto_serif} font-noto_serif`}>
-        <I18nProviderClient locale={locale}>
-          <ThemeProviders>{children}</ThemeProviders>
-        </I18nProviderClient>
-      </body>
+      <UserProvider>
+        <body className={`${noto_serif} font-noto_serif`}>
+          <I18nProviderClient locale={locale}>
+            <ThemeProviders>{children}</ThemeProviders>
+          </I18nProviderClient>
+        </body>
+      </UserProvider>
     </html>
   );
 }

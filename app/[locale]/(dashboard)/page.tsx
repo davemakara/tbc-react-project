@@ -6,7 +6,7 @@ import SocialBox from "@/components/homepage/SocialBox";
 // import LOGO from "../../../public/music_note.png";
 import playStore from "../../../public/playStore.png";
 import appStore from "../../../public/appStore.png";
-// import WeeklyCharts from "@/components/homepage/WeeklyCharts";
+import WeeklyCharts from "@/components/homepage/WeeklyCharts";
 
 const Homepage = async () => {
   return (
@@ -39,7 +39,7 @@ const Homepage = async () => {
             </div>
           </div>
         </div>
-        {/* <WeeklyCharts /> */}
+        <WeeklyCharts />
       </div>
       <Carousel />
     </section>

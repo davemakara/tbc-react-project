@@ -16,11 +16,14 @@ import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
 import BurgerMenu from "./BurgerMenu";
 import Cart from "./cart/Cart";
 import ProfileBtn from "./profile-btn/ProfileBtn";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 // export const dynamic = "force-dynamic";
 
 const Header: React.FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+
+  const { user } = useUser();
 
   const toggleMenu = () => {
     setMenuIsOpen((prev) => !prev);
@@ -44,9 +47,7 @@ const Header: React.FC = () => {
           height={60}
         />
       </span>
-
       <Navigation />
-
       <div className="block lg:hidden absolute right-0 z-20 pr-6">
         {menuIsOpen ? (
           <GrClose className="w-7 h-7" onClick={toggleMenu} />
@@ -60,7 +61,6 @@ const Header: React.FC = () => {
       <div className="lg:hidden absolute right-1/2 transform translate-x-1/2 z-9 pl-4">
         <Cart />
       </div>
-
       <div className="h-full w-2/5 hidden lg:flex items-center justify-end gap-[15px]">
         <Cart />
 
@@ -70,8 +70,9 @@ const Header: React.FC = () => {
           <ThemeSwitcher />
         </div>
 
-        <ProfileBtn />
+        {user ? <ProfileBtn /> : <a href="/api/auth/login">Login</a>}
       </div>
+      {/* <a href="/api/auth/login">Login</a> */}
     </header>
   );
 };
