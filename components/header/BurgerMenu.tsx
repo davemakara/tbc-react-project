@@ -13,8 +13,6 @@ import { LuContact2 } from "react-icons/lu";
 import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
 import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 
-import { handleLogout } from "../../scripts/logout";
-
 interface BurgerMenuProps {
   toggleMenu: () => void;
   menuOpened: boolean;
@@ -64,14 +62,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
         </Link>
       </ul>
 
-      <button
-        className="px-3 py-2 bg-red rounded"
-        onClick={() => {
-          handleLogout().then(() => window.location.reload());
-        }}
-      >
-        {t("signOut")}
-      </button>
+      <button className="px-3 py-2 bg-red rounded">{t("signOut")}</button>
     </section>
   );
 };

@@ -38,6 +38,18 @@ export async function updateUser(
   });
 }
 
+//STORE
+
+export async function getProducts() {
+  const response = await fetch(BASE_URL + "/api/store/get-all-products", {
+    cache: "no-store",
+  });
+
+  const { products } = await response.json();
+
+  return products.rows;
+}
+
 //PRODUCTS
 
 export async function getCartProducts() {

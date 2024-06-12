@@ -29,6 +29,8 @@ export async function updateUserAction(formData: FormData) {
   // revalidatePath("/admin");
 }
 
+//STORE
+
 export async function getProductsAction() {
   revalidatePath("/api/products/get-products");
   return await getCartProducts();

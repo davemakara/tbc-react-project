@@ -24,6 +24,7 @@ const Header: React.FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
 
   const { user } = useUser();
+  console.log(user);
 
   const toggleMenu = () => {
     setMenuIsOpen((prev) => !prev);

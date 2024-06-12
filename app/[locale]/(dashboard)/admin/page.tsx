@@ -6,6 +6,7 @@ import { User } from "../../../../types/types";
 import DeleteUserBtn from "../../../../components/user-actions/DeleteUserBtn";
 import EditUserBtn from "../../../../components/user-actions/EditUserBtn";
 import CreateUserBtn from "@/components/user-actions/CreateUserBtn";
+import Link from "next/link";
 
 const AdminPage = async () => {
   const users = await getUsers();
@@ -13,6 +14,7 @@ const AdminPage = async () => {
 
   return (
     <section className="w-full min-h-screen bg-[#DDDDDD] dark:bg-[#2C3333] flex flex-col items-center pt-[2rem] lg:pt-[5rem] xxl:pt-[7rem] overflow-hidden">
+      <Link href="/admin/add">Add Product</Link>
       <div className="w-4/5 overflow-x-scroll lg:overflow-x-hidden">
         <CreateUserBtn />
         <div className="flex flex-col min-w-[800px]">
