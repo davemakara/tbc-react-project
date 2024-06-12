@@ -5,6 +5,7 @@ import {
   addToCart,
   createUser,
   deleteCartItem,
+  deleteSingleProduct,
   deleteUser,
   getCartProducts,
   resetCart,
@@ -30,6 +31,13 @@ export async function updateUserAction(formData: FormData) {
 }
 
 //STORE
+
+export async function deleteSingleProductAction(id: number) {
+  revalidatePath("/products");
+  return await deleteSingleProduct(id);
+}
+
+// Azrze ar var
 
 export async function getProductsAction() {
   revalidatePath("/api/products/get-products");

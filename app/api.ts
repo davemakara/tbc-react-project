@@ -50,6 +50,25 @@ export async function getProducts() {
   return products.rows;
 }
 
+export async function getProductDetail(id: string) {
+  const response = await fetch(
+    `${BASE_URL}/api/store/get-single-product/${id}`
+  );
+  const data = await response.json();
+  const product = data.singleProd?.rows ? data.singleProd.rows[0] : null;
+  return product;
+}
+
+export async function deleteSingleProduct(id: number) {
+  const response = await fetch(BASE_URL + "/api/store/delete-product", {
+    method: "DELETE",
+    body: JSON.stringify({ id }),
+  });
+
+  const data = await response.json();
+  return data.response;
+}
+
 //PRODUCTS
 
 export async function getCartProducts() {

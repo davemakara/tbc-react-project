@@ -13,7 +13,7 @@ interface HomeProps {
 
 interface FilteredProductsProps {
   id: number;
-  images: string[];
+  photo: string;
   title: string;
   description: string;
   price: number;
@@ -31,16 +31,8 @@ const ProductsStore = ({ productsCart, isClicked, typed }: HomeProps) => {
   const [noProductsFound, setNoProductsFound] = useState(false);
 
   useEffect(() => {
-    const getProducts = async () => {
-      const response = await fetch("https://dummyjson.com/products");
-
-      const productsData = await response.json();
-
-      setProducts(productsData.products);
-    };
-
-    getProducts();
-  }, []);
+    setProducts(productsCart);
+  }, [productsCart]);
 
   useEffect(() => {
     let filteredProducts = [...products];

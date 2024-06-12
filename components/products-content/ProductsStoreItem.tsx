@@ -6,7 +6,6 @@ import { ProductsCart } from "@/types/types";
 interface ProductDataProps {
   productData: {
     id: number;
-    images: string[];
     title: string;
     description: string;
     price: number;
@@ -15,7 +14,7 @@ interface ProductDataProps {
     stock: number;
     brand: string;
     category: string;
-    thumbnail: string;
+    photo: string;
   };
   productsCart: ProductsCart[];
 }
@@ -25,7 +24,7 @@ const ProductsStoreItem = ({ productData, productsCart }: ProductDataProps) => {
     <div className="p-4 max-w-[350px] bg-white dark:bg-cardsDarkBG border-4 border-[#000] dark:border-[#eee] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:dark:shadow-white hover:mt-[-8px]">
       <Link href={`/products/${productData.id}`}>
         <span className="relative block w-full h-[200px] rounded-lg overflow-hidden">
-          <Image src={productData.thumbnail} alt={productData.title} fill />
+          <Image src={productData.photo} alt={productData.title} fill />
         </span>
       </Link>
       <div className="relative flex flex-col p-3">
