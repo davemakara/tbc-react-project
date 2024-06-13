@@ -18,10 +18,17 @@ export interface CartItemProps extends Product {
   count: number;
 }
 
-export interface ProductsCart {
+export interface ProductsStoreProps {
   id: number;
-  product_id: number;
-  product_count: number;
+  photo: string;
+  title: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  category: string;
+  thumbnail: string;
 }
 
 // RECIPES

@@ -1,39 +1,40 @@
-"use client";
+// "use client";
 
-import { addToCartAction } from "@/app/actions";
-import { ProductsCart } from "@/types/types";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+// import { addToCartAction } from "@/app/actions";
+// import { ProductsStoreProps } from "@/types/types";
+// import { useRouter } from "next/navigation";
+// import { useState } from "react";
 
-import { MdOutlineShoppingCart } from "react-icons/md";
+// import { MdOutlineShoppingCart } from "react-icons/md";
 
-interface AddToCartBtnProps {
-  id: number;
-  productsCart: ProductsCart[];
-}
+// interface AddToCartBtnProps {
+//   id: number;
+//   productsStore: ProductsStoreProps[];
+// }
 
-const initialStatus = (id: number, products: ProductsCart[]) => {
-  const productExist = products?.find((p) => p.product_id === id);
-  return productExist ? true : false;
-};
+// const initialStatus = (id: number, products: ProductsStoreProps[]) => {
+//   const productExist = products?.find((p) => p.product_id === id);
+//   return productExist ? true : false;
+// };
 
-const AddToCartBtn = ({ id, productsCart }: AddToCartBtnProps) => {
-  const router = useRouter();
+const AddToCartBtn = () => {
+  // const router = useRouter();
 
-  const [isInCart, setIsInCart] = useState(() =>
-    initialStatus(id, productsCart)
-  );
+  // const [isInCart, setIsInCart] = useState(() =>
+  //   initialStatus(id, productsStore)
+  // );
 
-  const handleClick = () => {
-    if (isInCart) return;
+  // const handleClick = () => {
+  //   if (isInCart) return;
 
-    addToCartAction(id);
-    router.refresh();
-    setIsInCart(true);
-  };
+  //   addToCartAction(id);
+  //   router.refresh();
+  //   setIsInCart(true);
+  // };
   return (
     <>
-      {!isInCart ? (
+      <button>Add</button>
+      {/* {!isInCart ? (
         <button
           onClick={handleClick}
           className="w-[80px] bg-darkYellow rounded-md flex justify-center items-center text-[14px]"
@@ -49,7 +50,7 @@ const AddToCartBtn = ({ id, productsCart }: AddToCartBtnProps) => {
           <MdOutlineShoppingCart className="mr-1 text-[20px]" />
           added
         </button>
-      )}
+      )} */}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AddToCartBtn from "../UI/AddToCartBtn";
-import { ProductsCart } from "@/types/types";
+import { ProductsStoreProps } from "@/types/types";
 
 interface ProductDataProps {
   productData: {
@@ -12,14 +12,16 @@ interface ProductDataProps {
     discountPercentage: number;
     rating: number;
     stock: number;
-    brand: string;
     category: string;
     photo: string;
   };
-  productsCart: ProductsCart[];
+  productsStore: ProductsStoreProps[];
 }
 
-const ProductsStoreItem = ({ productData, productsCart }: ProductDataProps) => {
+const ProductsStoreItem = ({
+  productData,
+}: // productsStore,
+ProductDataProps) => {
   return (
     <div className="p-4 max-w-[350px] bg-white dark:bg-cardsDarkBG border-4 border-[#000] dark:border-[#eee] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:dark:shadow-white hover:mt-[-8px]">
       <Link href={`/products/${productData.id}`}>
@@ -42,7 +44,7 @@ const ProductsStoreItem = ({ productData, productsCart }: ProductDataProps) => {
             ${productData.price}
           </p>
 
-          <AddToCartBtn id={productData.id} productsCart={productsCart} />
+          <AddToCartBtn />
         </span>
       </div>
     </div>

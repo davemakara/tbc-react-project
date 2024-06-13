@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import SearchSection from "./SearchInputBox";
 import ProductsStore from "./ProductsStore";
-import { ProductsCart } from "@/types/types";
+import { ProductsStoreProps } from "@/types/types";
 
 const ProductsPageContent = ({
-  productsCart,
+  productsStore,
 }: {
-  productsCart: ProductsCart[];
+  productsStore: ProductsStoreProps[];
 }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [typed, setTyped] = useState<string>("");
@@ -39,7 +39,7 @@ const ProductsPageContent = ({
         </h1>
       ) : (
         <ProductsStore
-          productsCart={productsCart}
+          productsStore={productsStore}
           isClicked={isClicked}
           typed={typed}
         />

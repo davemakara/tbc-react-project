@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 import ProductsStoreItem from "./ProductsStoreItem";
-import { ProductsCart } from "@/types/types";
+import { ProductsStoreProps } from "@/types/types";
 
 interface HomeProps {
-  productsCart: ProductsCart[];
+  productsStore: ProductsStoreProps[];
   isClicked: boolean;
   typed: string;
 }
@@ -20,22 +20,35 @@ interface FilteredProductsProps {
   discountPercentage: number;
   rating: number;
   stock: number;
-  brand: string;
   category: string;
   thumbnail: string;
 }
 
-const ProductsStore = ({ productsCart, isClicked, typed }: HomeProps) => {
-  const [products, setProducts] = useState([]);
-  const [sortedProducts, setSortedProducts] = useState([]);
+const ProductsStore = ({ productsStore, isClicked, typed }: HomeProps) => {
+  const [products, setProducts] = useState<ProductsStoreProps[]>([]);
+  const [sortedProducts, setSortedProducts] = useState<FilteredProductsProps[]>(
+    []
+  );
   const [noProductsFound, setNoProductsFound] = useState(false);
 
   useEffect(() => {
-    setProducts(productsCart);
-  }, [productsCart]);
+    const transformedProducts = productsStore.map((product) => ({
+      id: product.id,
+      photo: product.photo,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      discountPercentage: product.discountPercentage,
+      rating: product.rating,
+      stock: product.stock,
+      category: product.category,
+      thumbnail: product.thumbnail,
+    }));
+    setProducts(transformedProducts);
+  }, [productsStore]);
 
   useEffect(() => {
-    let filteredProducts = [...products];
+    let filteredProducts: FilteredProductsProps[] = [...products];
 
     if (typed !== "") {
       filteredProducts = filteredProducts.filter(
@@ -71,7 +84,7 @@ const ProductsStore = ({ productsCart, isClicked, typed }: HomeProps) => {
             <ProductsStoreItem
               productData={prod}
               key={prod.id}
-              productsCart={productsCart}
+              productsStore={productsStore}
             />
           ))}
         </div>
