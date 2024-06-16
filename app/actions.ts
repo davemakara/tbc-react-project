@@ -59,6 +59,8 @@ export async function getUserCartAction(id: string) {
   const response = await fetch(BASE_URL + `/api/cart/get-cart/${id}`, {
     cache: "no-store",
   });
+
+  revalidatePath("/");
   const carts = await response.json();
 
   const cart = carts.carts.rows;
@@ -92,3 +94,30 @@ export async function quantityChangeAction(
     console.error("Error updating quantity:", error);
   }
 }
+
+export const handleQuantityChange = async (
+  product_id: string,
+  auth_id: string,
+  action: "increment" | "decrement"
+) => {
+  try {
+    const response = await fetch(BASE_URL + "/api/cart/quantity-change", {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ product_id, auth_id, action }),
+    });
+
+    revalidatePath("/");
+    const result = await response.json();
+
+    if (response.ok) {
+    } else {
+      console.error("Error updating quantity:", result.message);
+    }
+  } catch (error) {
+    console.error("Error updating quantity:", error);
+  }
+};
