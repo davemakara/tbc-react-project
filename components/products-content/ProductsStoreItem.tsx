@@ -44,7 +44,7 @@ ProductDataProps) => {
             ${productData.price}
           </p>
 
-          <AddToCartBtn />
+          <AddToCartBtn id={productData.id} />
         </span>
       </div>
     </div>

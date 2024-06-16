@@ -1,57 +1,29 @@
-// "use client";
+"use client";
 
-// import { addToCartAction } from "@/app/actions";
-// import { ProductsStoreProps } from "@/types/types";
-// import { useRouter } from "next/navigation";
-// import { useState } from "react";
+import { addToCartAction } from "@/app/actions";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
-// import { MdOutlineShoppingCart } from "react-icons/md";
+import { useState, useEffect } from "react";
 
-// interface AddToCartBtnProps {
-//   id: number;
-//   productsStore: ProductsStoreProps[];
-// }
+interface addToCartBtnProps {
+  id: number;
+}
 
-// const initialStatus = (id: number, products: ProductsStoreProps[]) => {
-//   const productExist = products?.find((p) => p.product_id === id);
-//   return productExist ? true : false;
-// };
+const AddToCartBtn = ({ id }: addToCartBtnProps) => {
+  const { user } = useUser();
 
-const AddToCartBtn = () => {
-  // const router = useRouter();
+  const [authId, setAuthId] = useState("");
 
-  // const [isInCart, setIsInCart] = useState(() =>
-  //   initialStatus(id, productsStore)
-  // );
+  useEffect(() => {
+    if (user && user.sub) {
+      setAuthId(user.sub);
+    }
+  }, [user]);
 
-  // const handleClick = () => {
-  //   if (isInCart) return;
-
-  //   addToCartAction(id);
-  //   router.refresh();
-  //   setIsInCart(true);
-  // };
   return (
-    <>
-      <button>Add</button>
-      {/* {!isInCart ? (
-        <button
-          onClick={handleClick}
-          className="w-[80px] bg-darkYellow rounded-md flex justify-center items-center text-[14px]"
-        >
-          <MdOutlineShoppingCart className="mr-1 text-[20px]" />
-          add
-        </button>
-      ) : (
-        <button
-          onClick={handleClick}
-          className="w-[80px] bg-red rounded-md flex justify-center items-center text-[14px]"
-        >
-          <MdOutlineShoppingCart className="mr-1 text-[20px]" />
-          added
-        </button>
-      )} */}
-    </>
+    <button onClick={() => addToCartAction(Number(id), authId)}>
+      Add to cart
+    </button>
   );
 };
 

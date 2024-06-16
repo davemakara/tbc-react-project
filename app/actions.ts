@@ -1,17 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import {
-  addToCart,
-  createUser,
-  deleteCartItem,
-  deleteSingleProduct,
-  deleteUser,
-  getCartProducts,
-  resetCart,
-  updateCartCount,
-  updateUser,
-} from "./api";
+import { createUser, deleteSingleProduct, deleteUser, updateUser } from "./api";
+import { BASE_URL } from "@/constants";
 
 export async function createUserAction(formData: FormData) {
   const { name, email, age } = Object.fromEntries(formData);
@@ -37,29 +28,29 @@ export async function deleteSingleProductAction(id: number) {
   return await deleteSingleProduct(id);
 }
 
-// Azrze ar var
+// CART
 
-export async function getProductsAction() {
-  revalidatePath("/api/products/get-products");
-  return await getCartProducts();
-}
+export const addToCartAction = async (product_id: number, auth_id: string) => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/cart/add-to-cart`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        product_id,
+        auth_id: auth_id,
+        quantity: 1,
+      }),
+    });
+    revalidatePath("/");
 
-export async function addToCartAction(id: number) {
-  revalidatePath("/", "layout");
-  await addToCart(id);
-}
+    if (!response.ok) {
+      throw new Error("Failed to add item to cart");
+    }
 
-export async function updateCartCountAction(id: number, count: number) {
-  revalidatePath("/", "layout");
-  await updateCartCount(id, count);
-}
-
-export async function deleteCartItemAction(id: number) {
-  revalidatePath("/", "layout");
-  await deleteCartItem(id);
-}
-
-export async function resetCartAction() {
-  revalidatePath("/", "layout");
-  await resetCart();
-}
+    return response.json();
+  } catch (error) {
+    console.error("Error adding item to cart:", error);
+  }
+};
