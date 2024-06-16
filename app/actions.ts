@@ -54,3 +54,41 @@ export const addToCartAction = async (product_id: number, auth_id: string) => {
     console.error("Error adding item to cart:", error);
   }
 };
+
+export async function getUserCartAction(id: string) {
+  const response = await fetch(BASE_URL + `/api/cart/get-cart/${id}`, {
+    cache: "no-store",
+  });
+  const carts = await response.json();
+
+  const cart = carts.carts.rows;
+
+  return cart;
+}
+
+export async function quantityChangeAction(
+  product_id: any,
+  auth_id: any,
+  action: any
+) {
+  try {
+    const response = await fetch(BASE_URL + "/api/cart/quantity-change", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ product_id, auth_id, action }),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      console.log("Quantity updated:", result);
+      // Update your state or UI based on the result
+    } else {
+      console.error("Error updating quantity:", result.message);
+    }
+  } catch (error) {
+    console.error("Error updating quantity:", error);
+  }
+}

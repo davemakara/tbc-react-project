@@ -1,36 +1,105 @@
-import { getCartProducts } from "@/app/api";
-import CartList from "@/components/checkout/CartList";
+"use client";
+
+import { useEffect, useState } from "react";
+import { getUserCartAction } from "@/app/actions";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export const dynamic = "force-dynamic";
 
-const CheckoutPage = async () => {
-  const products = await getCartProducts();
+interface Product {
+  product_id: string;
+  auth_id: string;
+  quantity: number;
+}
 
-  const fetchProducts = async () => {
-    const fetchProduct = async (id: number) => {
-      const response = await fetch(`https://dummyjson.com/products/${id}`, {
-        cache: "no-store",
-      });
-      const data = await response.json();
+const CheckoutPage = () => {
+  const { user, isLoading } = useUser();
+  const [products, setProducts] = useState<Product[]>([]);
 
-      return data;
-    };
+  useEffect(() => {
+    if (user) {
+      const fetchProducts = async () => {
+        const id = user.sub;
 
-    const arr = [];
+        if (id) {
+          const fetchedProducts = await getUserCartAction(id);
+          setProducts(fetchedProducts);
+        }
+      };
 
-    for (let index = 0; index < products.length; index++) {
-      const singleProduct = await fetchProduct(products[index].product_id);
-      arr.push({ ...singleProduct, count: products[index].product_count });
+      fetchProducts();
     }
+  }, [user]);
 
-    return arr;
+  const handleQuantityChange = async (
+    product_id: string,
+    auth_id: string,
+    action: "increment" | "decrement"
+  ) => {
+    try {
+      const response = await fetch("/api/cart/quantity-change", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ product_id, auth_id, action }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setProducts((prevProducts) =>
+          prevProducts.map((product) =>
+            product.product_id === product_id
+              ? { ...product, quantity: result.updatedQuantity }
+              : product
+          )
+        );
+      } else {
+        console.error("Error updating quantity:", result.message);
+      }
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
   };
 
-  const selectedProducts = await fetchProducts();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <section className="w-full min-h-screen bg-[#ddd] dark:bg-mainDarkBG2">
-      <CartList selectedProducts={selectedProducts} />
+    <section className="w-full min-h-screen flex justify-center items-center flex-col bg-[#ddd] dark:bg-mainDarkBG2">
+      {products.map((product, index) => (
+        <div key={index} className="m-2">
+          <h1>
+            Product id: {product.product_id} - quantity: {product.quantity}{" "}
+            <button
+              className="p-2 mx-2 bg-red"
+              onClick={() =>
+                handleQuantityChange(
+                  product.product_id,
+                  product.auth_id,
+                  "decrement"
+                )
+              }
+            >
+              -
+            </button>
+            <button
+              className="p-2 mx-2 bg-green"
+              onClick={() =>
+                handleQuantityChange(
+                  product.product_id,
+                  product.auth_id,
+                  "increment"
+                )
+              }
+            >
+              +
+            </button>
+          </h1>
+        </div>
+      ))}
     </section>
   );
 };
