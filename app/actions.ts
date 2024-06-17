@@ -121,3 +121,9 @@ export const handleQuantityChange = async (
     console.error("Error updating quantity:", error);
   }
 };
+
+export async function resetCartAction(id: string) {
+  return await fetch(`${BASE_URL}/api/cart/reset-cart/${id}`, {
+    method: "DELETE",
+  });
+}

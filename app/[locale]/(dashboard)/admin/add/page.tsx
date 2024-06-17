@@ -4,6 +4,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
+    artist: "",
     price: "",
     category: "",
     stock: "",
@@ -49,6 +50,7 @@ const AddProduct = () => {
       console.error("Error:", error);
     }
     setFormData({
+      artist: "",
       price: "",
       category: "",
       stock: "",
@@ -78,6 +80,23 @@ const AddProduct = () => {
             id="title"
             name="title"
             value={formData.title}
+            onChange={handleChange}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="artist"
+          >
+            Artist
+          </label>
+          <input
+            type="text"
+            id="artist"
+            name="artist"
+            value={formData.artist}
             onChange={handleChange}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required

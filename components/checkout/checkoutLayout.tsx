@@ -1,6 +1,7 @@
 "use client";
 
 import { handleQuantityChange } from "@/app/actions";
+// import { resetCartAction } from "@/app/api";
 import { FC } from "react";
 
 export const dynamic = "force-dynamic";
@@ -15,10 +16,15 @@ interface Product {
 }
 
 interface iProducts {
-  products: Product;
+  products: Product[];
 }
 
 const CheckoutLayout: FC<iProducts> = ({ products }) => {
+  if (products.length <= 0) {
+    return <h1>Cart Is Empty!</h1>;
+  }
+  //   const userId = products[0]?.auth_id;
+
   return (
     <section className="w-full min-h-screen flex justify-center items-center flex-col bg-[#ddd] dark:bg-mainDarkBG2">
       {products.map((product: Product, index: number) => (
@@ -52,6 +58,8 @@ const CheckoutLayout: FC<iProducts> = ({ products }) => {
           </h1>
         </div>
       ))}
+
+      {/* {userId && <button onClick={() => resetCartAction(userId)}>RESET</button>} */}
     </section>
   );
 };

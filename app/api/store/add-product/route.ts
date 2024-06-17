@@ -3,15 +3,15 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    const { price, category, stock, photo, title, description } =
+    const { artist, price, category, stock, photo, title, description } =
       await request.json();
 
     await sql`
     INSERT INTO store (
-      price, category, stock, photo, title,
+      artist, price, category, stock, photo, title,
       description
     ) VALUES (
-      ${price}, ${category}, ${stock}, ${photo}, ${title},
+      ${artist}, ${price}, ${category}, ${stock}, ${photo}, ${title},
       ${description})
     `;
 
