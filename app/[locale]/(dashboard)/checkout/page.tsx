@@ -1,5 +1,5 @@
 import { getUserCartAction } from "@/app/actions";
-import CheckoutLayout from "@/components/checkout/CheckoutLayout";
+import CheckoutLayout from "../../../../components/checkout/CheckoutLayout";
 
 // import ResetCartBtn from "@/components/checkout/ResetCartBtn";
 
