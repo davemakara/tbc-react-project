@@ -50,7 +50,7 @@ export async function getProducts() {
   return products.rows;
 }
 
-export async function getProductDetail(id: string) {
+export async function getProductDetail(id: number) {
   const response = await fetch(
     `${BASE_URL}/api/store/get-single-product/${id}`
   );

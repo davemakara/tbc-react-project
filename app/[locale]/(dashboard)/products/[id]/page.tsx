@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface PageParams {
   params: {
-    id: string;
+    id: number;
     locale: string;
   };
 }
