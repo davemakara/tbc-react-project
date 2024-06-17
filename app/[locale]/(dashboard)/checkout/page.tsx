@@ -1,4 +1,5 @@
 import { getUserCartAction } from "@/app/actions";
+import CheckoutLayout from "@/components/checkout/CheckoutLayout";
 
 // import ResetCartBtn from "@/components/checkout/ResetCartBtn";
 
@@ -12,7 +13,7 @@ const CheckoutPage = async () => {
 
   return (
     <section className="w-full min-h-screen flex justify-center items-center flex-col bg-[#ddd] dark:bg-mainDarkBG2">
-      {/* <CheckoutLayout products={fetchedProducts} /> */}
+      <CheckoutLayout products={fetchedProducts} />
       {/* <ResetCartBtn id={id} /> */}
     </section>
   );
