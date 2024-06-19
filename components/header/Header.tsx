@@ -6,7 +6,6 @@ import AppLogo from "../../public/music_note.png";
 
 import ThemeSwitcher from "../themeswitch/ThemeSwitcher";
 import LanguageSwitcher from "../languageswitch/LanguageSwitcher";
-import ProfileBtn from "./profile-btn/ProfileBtn";
 import BurgerMenuicon from "./burgerMenuicon/BurgerMenuIcon";
 import ProfileInfo from "./profileInfo/ProfileInfo";
 import Cart from "./cart/Cart";

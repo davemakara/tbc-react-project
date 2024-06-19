@@ -7,10 +7,10 @@ import SocialBox from "@/components/homepage/SocialBox";
 import playStore from "../../../public/playStore.png";
 import appStore from "../../../public/appStore.png";
 import WeeklyCharts from "@/components/homepage/WeeklyCharts";
-import { getSession } from "@auth0/nextjs-auth0";
+// import { getSession } from "@auth0/nextjs-auth0";
 
 const Homepage = async () => {
-  const session = await getSession();
+  // const session = await getSession();
 
   return (
     <section className="w-full min-h-screen pt-36">
