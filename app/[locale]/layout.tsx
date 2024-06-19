@@ -7,6 +7,8 @@ import ThemeProviders from "./providers";
 import { noto_serif } from "../../fonts/fonts";
 
 import { I18nProviderClient } from "../../locales/client";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 export const metadata = {
   title: "My App",
@@ -32,7 +34,11 @@ export default function RootLayout({
       <UserProvider>
         <body className={`${noto_serif} font-noto_serif`}>
           <I18nProviderClient locale={locale}>
-            <ThemeProviders>{children}</ThemeProviders>
+            <ThemeProviders>
+              <Header />
+              {children}
+              <Footer />
+            </ThemeProviders>
           </I18nProviderClient>
         </body>
       </UserProvider>
