@@ -6,7 +6,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   const filename = searchParams.get("filename");
 
   if (!filename || !request.body) {
-    return NextResponse.json(new Error("No file provided"), { status: 400 });
+    return NextResponse.json(new Error("Miau"), { status: 200 });
   }
 
   const blob = await put(filename, request.body, {

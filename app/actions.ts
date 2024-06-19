@@ -23,6 +23,23 @@ export async function updateUserAction(formData: FormData) {
 
 //STORE
 
+// interface DetailProductData {
+//   title: string;
+//   description: string;
+//   stock: number;
+//   price: number;
+//   photo: string;
+//   category: string;
+//   artist: string;
+// }
+
+// export async function createNewProduct(formData: DetailProductData) {
+//   const { title, description, stock, price, photo, category, artist } =
+//     formData;
+//   addNewProduct(title, description, stock, price, photo, category, artist);
+//   revalidatePath("/products");
+// }
+
 export async function deleteSingleProductAction(id: number) {
   revalidatePath("/products");
   return await deleteSingleProduct(id);

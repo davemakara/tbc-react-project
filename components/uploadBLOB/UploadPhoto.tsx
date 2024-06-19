@@ -1,42 +1,51 @@
 "use client";
 
-import { type PutBlobResult } from "@vercel/blob";
-import { upload } from "@vercel/blob/client";
-import { useState, useRef } from "react";
+import React, { useRef } from "react";
+import { BASE_URL } from "@/constants";
 
-export default function UploadPhoto() {
+interface AddBlogPictureProps {
+  setBlobUrl: (url: string) => void;
+}
+
+const UploadPhoto: React.FC<AddBlogPictureProps> = ({ setBlobUrl }) => {
   const inputFileRef = useRef<HTMLInputElement>(null);
-  const [blob, setBlob] = useState<PutBlobResult | null>(null);
+
+  const handleUpload = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (!inputFileRef.current?.files) {
+      throw new Error("No file selected");
+    }
+
+    const file = inputFileRef.current.files[0];
+
+    const response = await fetch(
+      `${BASE_URL}/api/avatar/upload?filename=${file.name}`,
+      {
+        method: "POST",
+        body: file,
+      }
+    );
+
+    const newBlob = await response.json();
+    setBlobUrl(newBlob.url); // Update the photo URL in the parent component
+  };
+
   return (
-    <>
-      <h1>Upload Your Avatar</h1>
-
-      <form
-        onSubmit={async (event) => {
-          event.preventDefault();
-
-          if (!inputFileRef.current?.files) {
-            throw new Error("No file selected");
-          }
-
-          const file = inputFileRef.current.files[0];
-
-          const newBlob = await upload(file.name, file, {
-            access: "public",
-            handleUploadUrl: "/api/upload",
-          });
-
-          setBlob(newBlob);
-        }}
-      >
-        <input name="file" ref={inputFileRef} type="file" required />
+    <div>
+      <form onSubmit={handleUpload} className="upload-photo">
+        <label htmlFor="file-upload">Add photo</label>
+        <input
+          name="file"
+          ref={inputFileRef}
+          type="file"
+          required
+          id="file-upload"
+        />
         <button type="submit">Upload</button>
       </form>
-      {blob && (
-        <div>
-          Blob url: <a href={blob.url}>{blob.url}</a>
-        </div>
-      )}
-    </>
+    </div>
   );
-}
+};
+
+export default UploadPhoto;

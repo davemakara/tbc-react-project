@@ -12,8 +12,6 @@ import { getSession } from "@auth0/nextjs-auth0";
 const Homepage = async () => {
   const session = await getSession();
 
-  console.log(session);
-
   return (
     <section className="w-full min-h-screen pt-36">
       <SocialBox />

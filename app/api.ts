@@ -40,6 +40,29 @@ export async function updateUser(
 
 //STORE
 
+// export async function addNewProduct(
+//   title: string,
+//   description: string,
+//   price: string,
+//   stock: number,
+//   photo: string,
+//   category: string,
+//   artist: string
+// ) {
+//   return await fetch(BASE_URL + "/api/add-product", {
+//     method: "POST",
+//     body: JSON.stringify({
+//       title,
+//       description,
+//       price,
+//       stock,
+//       photo,
+//       category,
+//       artist,
+//     }),
+//   });
+// }
+
 export async function getProducts() {
   const response = await fetch(BASE_URL + "/api/store/get-all-products", {
     cache: "no-store",

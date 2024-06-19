@@ -1,7 +1,7 @@
 export default {
   // HEADER
   home: "მთავარი",
-  products: "პროდუქტები",
+  store: "მაღაზია",
   profile: "პროფილი",
   blog: "ბლოგი",
   contact: "კონტაქტი",

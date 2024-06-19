@@ -25,7 +25,6 @@ interface iProducts {
 const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  console.log(products);
   useEffect(() => {
     const fetchProducts = async () => {
       try {

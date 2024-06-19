@@ -11,13 +11,13 @@ export const BASE_URL =
 
 interface NavigationProps {
   id: number;
-  page: "home" | "products" | "blog" | "contact";
+  page: "home" | "store" | "blog" | "contact";
   href: string;
 }
 
 export const NAVIGATION_LINKS: NavigationProps[] = [
   { id: 1, page: "home", href: "/" },
-  { id: 2, page: "products", href: "/products" },
+  { id: 2, page: "store", href: "/store" },
   { id: 3, page: "blog", href: "/blog" },
   { id: 4, page: "contact", href: "/contact" },
 ];

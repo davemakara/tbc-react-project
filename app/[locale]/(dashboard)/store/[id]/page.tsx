@@ -30,7 +30,7 @@ const ProductCardPage = async ({ params }: PageParams) => {
           <p className="py-3">Price: ${product.price}</p>
 
           <div className="pt-6 lg:pr-6 flex justify-between">
-            <Link href="/products">
+            <Link href="/store">
               <button className="bg-[#E64848] text-white text-[14px] px-3 sm:px-4 py-3 rounded">
                 {"<"} Back to Products
               </button>
