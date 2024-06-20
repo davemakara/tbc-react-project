@@ -40,7 +40,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
             {t("home")} <IoHomeOutline />
           </li>
         </Link>
-        <Link href="/products" onClick={handleLinkClick}>
+        <Link href="/store" onClick={handleLinkClick}>
           <li className="w-full p-4 text-[20px] text-[#000] dark:text-[#f4f4f4] hover:text-green hover:dark:text-darkYellow flex items-center justify-between border-b-[1px] mb-2">
             {t("store")} <MdOutlineProductionQuantityLimits />
           </li>

@@ -39,7 +39,14 @@ const ContactForm: React.FC = () => {
         id="number"
         name="number"
         placeholder={t("phone")}
-        className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000]"
+        className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000] dark:text-white"
+      />
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Message"
+        rows={4}
+        className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000] dark:text-white"
       />
       <div className="flex items-start py-[15px] text-white text-[14px]">
         <input
@@ -55,7 +62,7 @@ const ContactForm: React.FC = () => {
       <div>
         <button
           type="submit"
-          className="w-full bg-green text-white text-[16px] p-[14px] my-[5px] font-semibold border-none cursor-pointer transition-all duration-300 ease hover:bg-red"
+          className="w-full bg-[#94c475] text-white text-[16px] p-[14px] my-[5px] font-semibold border-none cursor-pointer transition-all duration-300 ease hover:bg-green"
         >
           {t("submitBtn")}
         </button>
