@@ -115,6 +115,8 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
       >
         RESET
       </button>
+
+      <button className="p-4 bg-green">BUY NOW</button>
     </section>
   );
 };

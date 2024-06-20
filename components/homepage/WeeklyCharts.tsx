@@ -60,6 +60,7 @@ const WeeklyCharts = () => {
                 alt={artist.name}
                 width={40}
                 height={40}
+                className="rounded-sm"
               />
             </span>
 
@@ -87,7 +88,13 @@ const WeeklyCharts = () => {
             <p className="w-5">{song.rank}</p>
             <p className="w-1/5 text-center">{song.artist}</p>
             <p className="w-[150px] text-center">{song.name}</p>
-            <Image src={song.image} alt={song.name} width={40} height={40} />
+            <Image
+              src={song.image}
+              alt={song.name}
+              width={40}
+              height={40}
+              className="rounded-sm"
+            />
           </div>
         ))
       );
@@ -99,7 +106,7 @@ const WeeklyCharts = () => {
   return (
     <div className="w-full md:w-[600px] lg:w-[700px] xl:w-[550px] xxl:w-[700px] rounded-2xl sm:flex sm:justify-center overflow-x-auto lg:overflow-x-hidden">
       <div className="w-[600px] lg:w-[700px] xl:w-[550px] xxl:w-[700px] bg-red shadow-xl shadow-[#000] rounded-2xl text-[#000] dark:text-white transition-colors duration-500 ease-in-out">
-        <h2 className="text-2xl md:text-3xl text-center font-semibold py-5">
+        <h2 className="text-2xl md:text-3xl text-center font-semibold py-6">
           Top Weekly Picks!
         </h2>
 
