@@ -4,13 +4,15 @@ import { getI18n } from "../../locales/server";
 
 import Navigation from "../header/Navigation";
 
+import { FaRegCopyright } from "react-icons/fa";
+
 const Footer = async () => {
   const t = await getI18n();
 
   return (
-    <footer>
-      <div className="w-full px-8 py-10 bg-green3 dark:bg-mainDarkBG text-white block sm:flex sm:justify-between sm:items-center xxl:justify-around">
-        <div>
+    <footer className="w-full px-8 xxl:px-20 py-12 bg-[#d4d4d4] dark:bg-mainDarkBG transition-colors duration-300 block">
+      <div className="w-full block sm:flex sm:justify-between sm:items-center xxl:justify-around">
+        <div className="w-full sm:w-2/5 text-[#000] dark:text-white">
           <p>
             <a href="#">{t("termsAndConditions")}</a>
           </p>
@@ -19,17 +21,27 @@ const Footer = async () => {
           </p>
         </div>
         <Navigation />
-        <div className="mt-5 sm:mt-0">
-          <p className="py-2">{t("subscribeNewsletter")}</p>
-          <input
-            type="email"
-            placeholder={t("email")}
-            className="p-2 text-[#16px] text-[#000] dark:text-white "
-          />
-          <button className="ml-3 px-2 py-1 rounded bg-darkYellow">
-            {t("submitBtn")}
-          </button>
+        <div className="w-full sm:w-2/5 sm:flex sm:justify-end mt-5 sm:mt-0">
+          <div>
+            <p className="py-2 text-[#000] dark:text-white">
+              {t("subscribeNewsletter")}
+            </p>
+            <input
+              type="email"
+              placeholder={t("email")}
+              className="p-2 text-[#14px] text-[#000] dark:text-white rounded-lg"
+            />
+            <button className="ml-3 px-3 py-2 rounded-lg bg-green">
+              {t("submitBtn")}
+            </button>
+          </div>
         </div>{" "}
+      </div>
+      <div className="w-full flex justify-center pt-12 text-[#000] dark:text-white text-sm">
+        <p className="flex items-center gap-1">
+          <FaRegCopyright />
+          2024 FlowRecords | All Rights Reserved
+        </p>
       </div>
     </footer>
   );

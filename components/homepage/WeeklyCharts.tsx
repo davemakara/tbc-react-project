@@ -58,8 +58,8 @@ const WeeklyCharts = () => {
               <Image
                 src={artist.image}
                 alt={artist.name}
-                width={40}
-                height={40}
+                width={50}
+                height={50}
                 className="rounded-sm"
               />
             </span>
@@ -71,8 +71,8 @@ const WeeklyCharts = () => {
               <Image
                 src={SpotifyLogo}
                 alt="spotify logo"
-                width={36}
-                height={36}
+                width={40}
+                height={40}
               />
             </a>
           </div>
@@ -91,8 +91,8 @@ const WeeklyCharts = () => {
             <Image
               src={song.image}
               alt={song.name}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               className="rounded-sm"
             />
           </div>

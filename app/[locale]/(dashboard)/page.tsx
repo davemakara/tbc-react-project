@@ -1,12 +1,12 @@
-import Image from "next/image";
-
 import Carousel from "@/components/carousel/Carousel";
+import HomepageCard from "@/components/homepage/HomepageCard";
 import SocialBox from "@/components/homepage/SocialBox";
 
 // import LOGO from "../../../public/music_note.png";
-import playStore from "../../../public/playStore.png";
-import appStore from "../../../public/appStore.png";
+
 import WeeklyCharts from "@/components/homepage/WeeklyCharts";
+import { HomepageInfoCard } from "@/constants";
+import Image from "next/image";
 // import { getSession } from "@auth0/nextjs-auth0";
 
 const Homepage = async () => {
@@ -16,39 +16,34 @@ const Homepage = async () => {
     <section className="w-full min-h-screen pt-36">
       <SocialBox />
       <div className="w-full py-4 md:px-10 flex flex-col items-center xl:items-start xl:justify-around xl:flex-row mb-10">
-        <div className="w-11/12 sm:w-4/5 lg:w-[700px] xl:w-[550px] xxl:w-[650px] p-5 sm:p-10 bg-opacity-80 dark:bg-opacity-80 rounded-2xl flex flex-col bg-[#fff] dark:bg-[#afafaf] shadow-xl shadow-[#000] transition-colors duration-500 ease-in-out mb-10 xl:mb-0">
-          <h1 className="text-3xl lg:text-5xl xl:text-4xl xxl:text-5xl font-bold mb-5">
-            FlowRecords
-          </h1>
-
-          <p className="text-lg md:text-xl xl:text-lg xxl:text-xl font-semibold py-5 italic">
-            Discover a world where you can not only buy and enjoy your favorite
-            albums but also stay updated with the latest music news and trends.
-          </p>
-          <div className="flex flex-col justify-center mt-2">
-            <h2 className="text-xl md:text-3xl xl:text-2xl xxl:text-3xl font-bold mb-6">
-              Download App
-            </h2>
-            <div className="flex gap-2 md:gap-4">
-              <span className="flex items-center gap-2 py-2 px-3 md:px-4 bg-white dark:bg-cardsDarkBG rounded-full text-sm text-[#000] dark:text-white shadow-lg shadow-[#000] dark:shadow-white transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <p>Play Store</p>
-                <Image
-                  src={playStore}
-                  alt="play store"
-                  width={25}
-                  height={25}
-                />
-              </span>
-              <span className="flex items-center gap-2 py-2 px-3 md:px-4 bg-white dark:bg-cardsDarkBG rounded-full text-sm text-[#000] dark:text-white shadow-lg shadow-[#000] dark:shadow-white transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <p>App Store</p>
-                <Image src={appStore} alt="app store" width={25} height={25} />
-              </span>
-            </div>
-          </div>
-        </div>
+        <HomepageCard />
         <WeeklyCharts />
       </div>
       <Carousel />
+      <div className="w-full px-5 lg:px-10 py-32 mt-12 bg-[#9d9c9c] bg-opacity-90 flex flex-col items-center gap-10">
+        {HomepageInfoCard.map((card) => (
+          <div
+            key={card.id}
+            className="w-4/5 md:w-10/12 xl:w-4/5 h-[600px] md:h-[300px] md:flex bg-mainLightBG dark:bg-mainDarkBG2 rounded-xl overflow-hidden shadow-lg shadow-mainDarkBG"
+          >
+            <Image
+              src={card.photo}
+              alt={card.title}
+              width={200}
+              height={200}
+              className="w-full md:w-[250px] lg:w-[300px] xxl:w-[400px]"
+            />
+            <div className="flex flex-col justify-center px-4 py-4 xl:px-10">
+              <h2 className="text-3xl lg:text-4xl text-[#000] dark:text-[#eee] font-semibold text-center md:text-left py-4">
+                {card.title}
+              </h2>
+              <p className="text-md lg:text-lg xxl:text-xl italic text-center md:text-left py-4">
+                {card.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
