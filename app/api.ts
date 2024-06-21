@@ -92,4 +92,31 @@ export async function deleteSingleProduct(id: number) {
   return data.response;
 }
 
-// CART
+// BLOGS
+
+export async function getBlogs() {
+  const response = await fetch(BASE_URL + "/api/blogs/get-all-blogs", {
+    cache: "no-store",
+  });
+
+  const { products } = await response.json();
+
+  return products.rows;
+}
+
+export async function getBlogDetail(id: number) {
+  const response = await fetch(`${BASE_URL}/api/blogs/get-single-blog/${id}`);
+  const data = await response.json();
+  const product = data.singleProd?.rows ? data.singleProd.rows[0] : null;
+  return product;
+}
+
+export async function deleteSingleBlog(id: number) {
+  const response = await fetch(BASE_URL + "/api/blogs/delete-blog", {
+    method: "DELETE",
+    body: JSON.stringify({ id }),
+  });
+
+  const data = await response.json();
+  return data.response;
+}

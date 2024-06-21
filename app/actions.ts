@@ -145,3 +145,25 @@ export async function resetCartAction(id: string) {
   });
   revalidatePath("/checkout");
 }
+
+// BLOGS
+
+export async function addBlogPostAction(formData: any) {
+  try {
+    const response = await fetch(BASE_URL + "/api/blogs/add-blog", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      revalidatePath("/blogs");
+      return await response.json();
+    } else {
+      throw new Error(`Error: ${response.statusText}`);
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    throw new Error("Submission failed");
+  }
+}

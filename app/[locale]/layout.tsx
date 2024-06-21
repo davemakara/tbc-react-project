@@ -11,7 +11,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
 export const metadata = {
-  title: "My App",
+  title: "FlowRecords",
   description: "Your first NextJS app!",
   icons: {
     icon: "https://cdn.icon-icons.com/icons2/3833/PNG/512/logo_vercel_icon_234925.png",
