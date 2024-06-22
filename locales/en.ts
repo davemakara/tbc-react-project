@@ -2,7 +2,7 @@ export default {
   // HEADER
   home: "Home",
   store: "Store",
-  profile: "Profile",
+  events: "Events",
   blog: "Blog",
   contact: "Contact",
   signOut: "Sign Out",

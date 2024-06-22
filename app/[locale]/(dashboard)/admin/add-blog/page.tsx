@@ -8,11 +8,11 @@ const AddBlog = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    blogpost: "",
+    paragraph1: "",
+    paragraph2: "",
+    paragraph3: "",
     photo: "",
   });
-
-  console.log(formData);
 
   const inputFileRef = useRef<HTMLInputElement>(null);
 
@@ -56,7 +56,9 @@ const AddBlog = () => {
       setFormData({
         title: "",
         description: "",
-        blogpost: "",
+        paragraph1: "",
+        paragraph2: "",
+        paragraph3: "",
         photo: "",
       });
     } catch (error) {
@@ -87,10 +89,28 @@ const AddBlog = () => {
           />
         </label>
         <label>
-          Blog Post:
+          Paragraph 1:
           <textarea
-            name="blogpost"
-            value={formData.blogpost}
+            name="paragraph1"
+            value={formData.paragraph1}
+            onChange={handleInputChange}
+            required
+          />
+        </label>
+        <label>
+          Paragraph 2:
+          <textarea
+            name="paragraph2"
+            value={formData.paragraph2}
+            onChange={handleInputChange}
+            required
+          />
+        </label>
+        <label>
+          Paragraph 3:
+          <textarea
+            name="paragraph3"
+            value={formData.paragraph3}
             onChange={handleInputChange}
             required
           />

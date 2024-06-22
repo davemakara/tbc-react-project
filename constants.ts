@@ -13,7 +13,7 @@ export const BASE_URL =
 
 interface NavigationProps {
   id: number;
-  page: "home" | "store" | "blog" | "contact";
+  page: "home" | "store" | "blog" | "events" | "contact";
   href: string;
 }
 
@@ -21,7 +21,8 @@ export const NAVIGATION_LINKS: NavigationProps[] = [
   { id: 1, page: "home", href: "/" },
   { id: 2, page: "store", href: "/store" },
   { id: 3, page: "blog", href: "/blog" },
-  { id: 4, page: "contact", href: "/contact" },
+  { id: 4, page: "events", href: "/events" },
+  { id: 5, page: "contact", href: "/contact" },
 ];
 
 export const HomepageInfoCard = [

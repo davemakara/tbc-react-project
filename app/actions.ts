@@ -1,7 +1,13 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createUser, deleteSingleProduct, deleteUser, updateUser } from "./api";
+import {
+  createUser,
+  deleteSingleBlog,
+  deleteSingleProduct,
+  deleteUser,
+  updateUser,
+} from "./api";
 import { BASE_URL } from "@/constants";
 
 export async function createUserAction(formData: FormData) {
@@ -166,4 +172,9 @@ export async function addBlogPostAction(formData: any) {
     console.error("Error submitting form:", error);
     throw new Error("Submission failed");
   }
+}
+
+export async function deleteSingleBlogAction(id: number) {
+  revalidatePath("/blog");
+  return await deleteSingleBlog(id);
 }

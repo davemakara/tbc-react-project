@@ -27,6 +27,7 @@ const ProductCardPage = async ({ params }: PageParams) => {
             <p className="bg-green px-2 py-1 rounded-md">{product.category}</p>
           </div>
           <p className="py-3">{product.description}</p>
+          {product.artist && <p className="py-3">Artist: {product.artist}</p>}
           <p className="py-3">Price: ${product.price}</p>
 
           <div className="pt-6 lg:pr-6 flex justify-between">

@@ -33,23 +33,15 @@ export interface ProductsStoreProps {
 
 // RECIPES
 
-export interface Recipe {
+export interface BlogProps {
   id: number;
-  name: string;
-  ingredients: string[];
-  instructions: string[];
-  prepTimeMinutes: number;
-  cookTimeMinutes: number;
-  servings: number;
-  difficulty: string;
-  cuisine: string;
-  caloriesPerServing: number;
-  tags: string[];
-  userId: number;
-  image: string;
-  rating: number;
-  reviewCount: number;
-  mealType: string[];
+  title: string;
+  description: string;
+  paragraph1: string;
+  paragraph2: string;
+  paragraph3: string;
+  photo: string;
+  createdat: string;
 }
 
 // USERS

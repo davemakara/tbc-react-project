@@ -3,13 +3,14 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    const { title, description, blogpost, photo } = await request.json();
+    const { title, description, paragraph1, paragraph2, paragraph3, photo } =
+      await request.json();
 
     await sql`
     INSERT INTO blogs (
-      title, description, blogpost, photo
+      title, description, paragraph1, paragraph2, paragraph3, photo
     ) VALUES (
-      ${title}, ${description}, ${blogpost}, ${photo})
+      ${title}, ${description}, ${paragraph1}, ${paragraph2}, ${paragraph3}, ${photo})
     `;
 
     const blogs = await sql`SELECT * FROM blogs;`;
