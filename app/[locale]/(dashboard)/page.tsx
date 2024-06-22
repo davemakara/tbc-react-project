@@ -20,7 +20,7 @@ const Homepage = async () => {
         <WeeklyCharts />
       </div>
       <Carousel />
-      <div className="w-full px-5 lg:px-10 py-32 mt-12 bg-[#9d9c9c] bg-opacity-90 flex flex-col items-center gap-10">
+      <div className="w-full px-5 lg:px-10 py-32 mt-12 bg-mainLightBG bg-opacity-50 flex flex-col items-center gap-10">
         {HomepageInfoCard.map((card) => (
           <div
             key={card.id}

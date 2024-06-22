@@ -5,6 +5,7 @@ import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { getProductDetail } from "@/app/api";
 import { handleQuantityChange, resetCartAction } from "@/app/actions";
+import LoadingScreen from "../loading/LoadingScreen";
 
 export const dynamic = "force-dynamic";
 
@@ -52,7 +53,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
   }, [initialProducts]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingScreen />;
   }
 
   const totalQuantity = products.reduce(
@@ -65,18 +66,18 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
   );
 
   return (
-    <section className="bg-mainLightBG bg-opacity-90 p-5 rounded-lg sm:flex sm:flex-col">
+    <section className="min-h-[500px] bg-mainLightBG dark:bg-mainDarkBG bg-opacity-90 dark:bg-opacity-90 p-5 rounded-lg sm:flex sm:flex-col">
       <button
-        className="mt-8 px-4 py-2 bg-green text-white rounded"
+        className="mt-8 mx-auto w-20 h-10 bg-green text-white rounded"
         onClick={() => resetCartAction(products[0]?.auth_id)}
       >
         RESET
       </button>
-      <div className="w-full sm:flex sm:flex-wrap sm:justify-center gap-2">
+      <div className="w-full sm:flex sm:flex-wrap sm:justify-center gap-3 my-4">
         {products.map((product, index) => (
           <div
             key={index}
-            className="w-full sm:w-[250px] bg-darkYellow rounded-lg shadow-md p-4 flex flex-col items-center"
+            className="w-full sm:w-[300px] bg-[#fff] dark:bg-cardsDarkBG rounded-lg shadow-md p-4 mb-3 sm:mb-0 flex flex-col items-center text-[#000] dark:text-white"
           >
             <Image
               src={product.photo}
@@ -86,16 +87,14 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
               className="rounded-lg"
             />
 
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4">
-              {product.title}
-            </h2>
+            <h2 className="text-lg font-semibold mt-4">{product.title}</h2>
             <p>${product.price}</p>
             <div className="flex items-center mt-2">
               <span className="text-gray-600 dark:text-gray-400 mr-2">
                 Quantity: {product.quantity}
               </span>
               <button
-                className="p-2 mx-2 bg-red-600 text-white rounded hover:bg-red-700"
+                className="w-5 h-5 mx-2 text-[#000] dark:text-white rounded-full bg-red flex items-center justify-center"
                 onClick={() =>
                   handleQuantityChange(product.id, product.auth_id, "decrement")
                 }
@@ -103,7 +102,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
                 -
               </button>
               <button
-                className="p-2 mx-2 bg-green-600 text-white rounded hover:bg-green-700"
+                className="w-5 h-5 mx-2 text-[#000] dark:text-white rounded-full bg-green flex items-center justify-center"
                 onClick={() =>
                   handleQuantityChange(product.id, product.auth_id, "increment")
                 }
@@ -115,10 +114,18 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
         ))}
       </div>
 
-      <div>
-        <h1>Total Price: ${totalPrice.toFixed(2)}</h1>
-        <h1>Total Quantity: {totalQuantity}</h1>
-        <button className="p-4 bg-green">BUY NOW</button>
+      <div className="bg-white text-[#000] w-2/3 sm:w-[300px] h-[200px] my-4 p-4 mx-auto rounded-lg flex flex-col justify-between">
+        <div className="h-1/2 flex flex-col justify-around">
+          <p className="text-md font-semibold">
+            Total Price: ${totalPrice.toFixed(2)}
+          </p>
+          <p className="text-md font-semibold">
+            Total Quantity: {totalQuantity}
+          </p>
+        </div>
+        <button className="text-lg px-4 py-3 bg-green rounded-lg font-semibold">
+          BUY NOW
+        </button>
       </div>
     </section>
   );
