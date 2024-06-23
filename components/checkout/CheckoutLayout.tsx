@@ -4,8 +4,13 @@ import { FC, useEffect, useState } from "react";
 
 import Image from "next/image";
 import { getProductDetail } from "@/app/api";
-import { handleQuantityChange, resetCartAction } from "@/app/actions";
+import {
+  cartCheckoutAction,
+  handleQuantityChange,
+  resetCartAction,
+} from "@/app/actions";
 import LoadingScreen from "../loading/LoadingScreen";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +29,8 @@ interface iProducts {
 }
 
 const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
+  const { user } = useUser();
+
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
@@ -52,6 +59,14 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
     fetchProducts();
   }, [initialProducts]);
 
+  const handleCheckout = async () => {
+    try {
+      await cartCheckoutAction({ products: products, user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   if (loading) {
     return <LoadingScreen />;
   }
@@ -77,38 +92,49 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
         {products.map((product, index) => (
           <div
             key={index}
-            className="w-full sm:w-[300px] bg-[#fff] dark:bg-cardsDarkBG rounded-lg shadow-md p-4 mb-3 sm:mb-0 flex flex-col items-center text-[#000] dark:text-white"
+            className="w-full h-[400px] sm:w-[300px] bg-[#fff] dark:bg-cardsDarkBG rounded-lg shadow-md p-4 mb-3 sm:mb-0 flex flex-col items-center text-[#000] dark:text-white"
           >
             <Image
               src={product.photo}
               width={200}
               height={200}
               alt={product.title}
-              className="rounded-lg"
+              className="rounded-lg w-[200px] h-[200px]"
             />
-
-            <h2 className="text-lg font-semibold mt-4">{product.title}</h2>
-            <p>${product.price}</p>
-            <div className="flex items-center mt-2">
-              <span className="text-gray-600 dark:text-gray-400 mr-2">
-                Quantity: {product.quantity}
-              </span>
-              <button
-                className="w-5 h-5 mx-2 text-[#000] dark:text-white rounded-full bg-red flex items-center justify-center"
-                onClick={() =>
-                  handleQuantityChange(product.id, product.auth_id, "decrement")
-                }
-              >
-                -
-              </button>
-              <button
-                className="w-5 h-5 mx-2 text-[#000] dark:text-white rounded-full bg-green flex items-center justify-center"
-                onClick={() =>
-                  handleQuantityChange(product.id, product.auth_id, "increment")
-                }
-              >
-                +
-              </button>
+            <div className="h-[150px] flex flex-col justify-between">
+              <h2 className="h-[60px] text-lg font-semibold mt-4">
+                {product.title}
+              </h2>
+              <p>${product.price}</p>
+              <div className="flex items-center mt-2">
+                <span className="text-gray-600 dark:text-gray-400 mr-2">
+                  Quantity: {product.quantity}
+                </span>
+                <button
+                  className="w-5 h-5 mx-2 text-[#000] dark:text-white border flex items-center justify-center"
+                  onClick={() =>
+                    handleQuantityChange(
+                      product.id,
+                      product.auth_id,
+                      "decrement"
+                    )
+                  }
+                >
+                  -
+                </button>
+                <button
+                  className="w-5 h-5 mx-2 text-[#000] dark:text-white border flex items-center justify-center"
+                  onClick={() =>
+                    handleQuantityChange(
+                      product.id,
+                      product.auth_id,
+                      "increment"
+                    )
+                  }
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         ))}
@@ -123,7 +149,10 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
             Total Quantity: {totalQuantity}
           </p>
         </div>
-        <button className="text-lg px-4 py-3 bg-green rounded-lg font-semibold">
+        <button
+          onClick={handleCheckout}
+          className="text-lg px-4 py-3 bg-green rounded-lg font-semibold"
+        >
           BUY NOW
         </button>
       </div>

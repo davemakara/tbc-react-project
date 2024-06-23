@@ -14,7 +14,7 @@ const ProductCardPage = async ({ params }: PageParams) => {
   const product = await getProductDetail(params.id);
 
   return (
-    <section className="w-full min-h-screen pt-36 lg:pt-40 flex flex-col items-center">
+    <section className="w-full min-h-screen py-36 lg:py-40 flex flex-col items-center bg-[#eee] bg-opacity-70 dark:bg-mainDarkBG dark:bg-opacity-70">
       <div className="w-4/5 flex flex-col items-center lg:flex-row gap-5 lg:gap-10 xl:gap-20">
         <div className="w-full h-[200px] sm:h-[300px] md:w-2/3 lg:w-1/2 lg:h-[300px] xxl:h-[400px] relative rounded-lg overflow-hidden">
           {<Image src={product.photo} alt="product photo" layout="fill" />}
@@ -23,11 +23,13 @@ const ProductCardPage = async ({ params }: PageParams) => {
           <h2 className="text-[30px] font-semibold py-3 lg:py-0 lg:pb-3">
             {product.title}
           </h2>
-          <div className="flex gap-3 text-[14px] py-3">
-            <p className="bg-green px-2 py-1 rounded-md">{product.category}</p>
+          <div className="flex gap-3 text-[14px] pt-2 pb-5">
+            <p className="bg-red px-2 py-1 rounded-md">{product.category}</p>
           </div>
-          {product.artist && <p className="py-3">Artist: {product.artist}</p>}
-          <p className="py-3">Price: ${product.price}</p>
+          {product.artist && (
+            <p className="py-4 font-semibold">Artist: {product.artist}</p>
+          )}
+          <p className="pb-3 pt-1 font-semibold">Price: ${product.price}</p>
 
           <p className="py-3">{product.description}</p>
           {product.description2 && (

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { getBlogDetail } from "@/app/api";
 import DeleteBlogBtn from "@/components/UI/DeleteBlogBtn";
 
+import { FaCalendarAlt } from "react-icons/fa";
+
 interface PageParams {
   params: {
     id: number;
@@ -27,12 +29,12 @@ const BlogDetail = async ({ params }: PageParams) => {
   const formattedDate = formatDate(blog.createdat);
 
   return (
-    <section className="w-full min-h-screen py-36 lg:py-40 flex flex-col items-center">
+    <section className="w-full min-h-screen py-36 lg:pt-40 flex flex-col items-center bg-[#eee] dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70">
       <div className="w-4/5 flex flex-col items-center lg:flex-row lg:items-start gap-5 lg:gap-10">
         <div className="w-full h-[200px] sm:h-[300px] md:w-2/3 lg:w-1/2 lg:h-[300px] xxl:h-[400px] relative rounded-lg overflow-hidden">
           <Image src={blog.photo} alt={blog.title} fill />
         </div>
-        <div className="w-full md:w-2/3 lg:w-1/2 bg-mainLightBG p-5 rounded-lg">
+        <div className="w-full md:w-2/3 lg:w-1/2 p-5 rounded-lg">
           <h2 className="text-[30px] font-semibold py-3 lg:py-0 lg:pb-3">
             {blog.title}
           </h2>
@@ -45,7 +47,9 @@ const BlogDetail = async ({ params }: PageParams) => {
             <p className="py-3">{blog.paragraph2}</p>
             <p className="py-3">{blog.paragraph3}</p>
           </div>
-          <p className="my-8">Published: {formattedDate}</p>
+          <p className="my-8 flex gap-1 items-center">
+            <FaCalendarAlt /> {formattedDate}
+          </p>
           <div className="w-full flex justify-between">
             <Link href="/blog">
               <button className="bg-red text-white text-[16px] mt-[30px] border-none rounded px-2 py-1">

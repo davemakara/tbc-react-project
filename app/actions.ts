@@ -10,6 +10,7 @@ import {
   updateUser,
 } from "./api";
 import { BASE_URL } from "@/constants";
+import { redirect } from "next/navigation";
 
 export async function createUserAction(formData: FormData) {
   const { name, email, age } = Object.fromEntries(formData);
@@ -206,3 +207,28 @@ export async function deleteSingleEventAction(id: number) {
   revalidatePath("/events");
   return await deleteSingleEvent(id);
 }
+
+// CHECKOUT
+
+// cart checkout route
+export const cartCheckoutAction = async ({ products: products, user }: any) => {
+  await fetch(`${BASE_URL}/api/checkout`, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      products: products,
+      user,
+    }),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      console.log(response);
+      if (response.url) {
+        redirect(response.url);
+      }
+    });
+};

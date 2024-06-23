@@ -79,7 +79,7 @@ const SearchSection = ({
           placeholder={t("searchInput")}
           value={inputText}
           onChange={handleInputChange}
-          className="w-4/5 md:w-2/3 lg:w-[600px] xl:w-[500px] px-8 py-2 md:py-3 rounded-full"
+          className="w-4/5 md:w-2/3 lg:w-[600px] xl:w-[500px] xxl:w-[550px] px-8 py-2 md:py-3 rounded-full bg-[#eee] dark:bg-mainDarkBG"
         />
         <div className="flex items-center mt-10 text-[18px]">
           <label htmlFor="products" className="mr-3 text-white">
