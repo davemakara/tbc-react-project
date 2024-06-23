@@ -45,14 +45,15 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ toggleMenu, menuOpened }) => {
             {t("store")} <MdOutlineProductionQuantityLimits />
           </li>
         </Link>
-        <Link href="/profile" onClick={handleLinkClick}>
-          <li className="w-full p-4 text-[20px] text-[#000] dark:text-[#f4f4f4] hover:text-green hover:dark:text-darkYellow flex items-center justify-between border-b-[1px] mb-2">
-            {t("profile")} <CgProfile />
-          </li>
-        </Link>
+
         <Link href="/blog" onClick={handleLinkClick}>
           <li className="w-full p-4 text-[20px] text-[#000] dark:text-[#f4f4f4] hover:text-green hover:dark:text-darkYellow flex items-center justify-between border-b-[1px] mb-2">
             {t("blog")} <TbLogicAnd />
+          </li>
+        </Link>
+        <Link href="/events" onClick={handleLinkClick}>
+          <li className="w-full p-4 text-[20px] text-[#000] dark:text-[#f4f4f4] hover:text-green hover:dark:text-darkYellow flex items-center justify-between border-b-[1px] mb-2">
+            {t("events")} <CgProfile />
           </li>
         </Link>
         <Link href="/contact" onClick={handleLinkClick}>
