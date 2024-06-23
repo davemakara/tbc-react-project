@@ -13,7 +13,7 @@ const BlogPosts = ({ blogs }: Blogs) => {
       <div className="w-full pt-[2rem] px-12 sm:px-16">
         <div className="flex flex-col sm:items-center gap-5 md:gap-7 xxl:gap-10">
           {blogs.map((blog: BlogProps) => (
-            <BlogPostDetails blog={blog} />
+            <BlogPostDetails blog={blog} key={blog.id} />
           ))}
         </div>
       </div>
