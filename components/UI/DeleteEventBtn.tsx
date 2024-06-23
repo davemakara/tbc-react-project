@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteSingleBlogAction } from "@/app/actions";
+import { deleteSingleEventAction } from "@/app/actions";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
 
@@ -8,7 +8,7 @@ interface DeleteButtonProps {
   id: number;
 }
 
-const DeleteBlogBtn = ({ id }: DeleteButtonProps) => {
+const DeleteEventBtn = ({ id }: DeleteButtonProps) => {
   const { user } = useUser();
   const isAdmin = Array.isArray(user?.role)
     ? user?.role.includes("admin")
@@ -18,8 +18,8 @@ const DeleteBlogBtn = ({ id }: DeleteButtonProps) => {
 
   const handleDelete = async () => {
     try {
-      await deleteSingleBlogAction(id);
-      route.push("/blog");
+      await deleteSingleEventAction(id);
+      route.push("/events");
     } catch (error) {
       console.error("Failed to delete product:", error);
       // You might want to show an error message to the user here
@@ -33,4 +33,4 @@ const DeleteBlogBtn = ({ id }: DeleteButtonProps) => {
   return <button onClick={handleDelete}>DELETE</button>;
 };
 
-export default DeleteBlogBtn;
+export default DeleteEventBtn;
