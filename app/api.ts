@@ -149,3 +149,11 @@ export async function deleteSingleEvent(id: number) {
   const data = await response.json();
   return data.response;
 }
+
+export const getOrders = async () => {
+  const res = await fetch(`${BASE_URL}/api/orders`, {
+    cache: "no-store",
+  });
+  const orders = await res.json();
+  return orders;
+};
