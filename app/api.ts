@@ -120,3 +120,32 @@ export async function deleteSingleBlog(id: number) {
   const data = await response.json();
   return data.response;
 }
+
+// EVENT
+
+export async function getEvents() {
+  const response = await fetch(BASE_URL + "/api/events/get-all-events", {
+    cache: "no-store",
+  });
+
+  const { events } = await response.json();
+
+  return events.rows;
+}
+
+export async function getEventDetail(id: number) {
+  const response = await fetch(`${BASE_URL}/api/events/get-single-event/${id}`);
+  const data = await response.json();
+  const event = data.singleEvent?.rows ? data.singleEvent.rows[0] : null;
+  return event;
+}
+
+export async function deleteSingleEvent(id: number) {
+  const response = await fetch(BASE_URL + "/api/events/delete-event", {
+    method: "DELETE",
+    body: JSON.stringify({ id }),
+  });
+
+  const data = await response.json();
+  return data.response;
+}

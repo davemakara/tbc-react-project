@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import {
   createUser,
   deleteSingleBlog,
+  deleteSingleEvent,
   deleteSingleProduct,
   deleteUser,
   updateUser,
@@ -177,4 +178,31 @@ export async function addBlogPostAction(formData: any) {
 export async function deleteSingleBlogAction(id: number) {
   revalidatePath("/blog");
   return await deleteSingleBlog(id);
+}
+
+// EVENTS
+
+export async function addEventAction(formData: any) {
+  try {
+    const response = await fetch(BASE_URL + "/api/events/add-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      revalidatePath("/events");
+      return await response.json();
+    } else {
+      throw new Error(`Error: ${response.statusText}`);
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    throw new Error("Submission failed");
+  }
+}
+
+export async function deleteSingleEventAction(id: number) {
+  revalidatePath("/events");
+  return await deleteSingleEvent(id);
 }

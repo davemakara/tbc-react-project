@@ -2,7 +2,7 @@ export default {
   // HEADER
   home: "მთავარი",
   store: "მაღაზია",
-  events: "ღონისძიებები",
+  events: "ივენთები",
   blog: "ბლოგი",
   contact: "კონტაქტი",
   signOut: "გასვლა",

@@ -20,6 +20,10 @@ const AddToCartBtn = ({ id }: addToCartBtnProps) => {
     }
   }, [user]);
 
+  if (!user) {
+    return <a href="/api/auth/login">Add to cart</a>;
+  }
+
   return (
     <button onClick={() => addToCartAction(Number(id), authId)}>
       Add to cart
