@@ -26,9 +26,16 @@ const ProductCardPage = async ({ params }: PageParams) => {
           <div className="flex gap-3 text-[14px] py-3">
             <p className="bg-green px-2 py-1 rounded-md">{product.category}</p>
           </div>
-          <p className="py-3">{product.description}</p>
           {product.artist && <p className="py-3">Artist: {product.artist}</p>}
           <p className="py-3">Price: ${product.price}</p>
+
+          <p className="py-3">{product.description}</p>
+          {product.description2 && (
+            <p className="py-3">{product.description2}</p>
+          )}
+          {product.description3 && (
+            <p className="py-3">{product.description3}</p>
+          )}
 
           <div className="pt-6 lg:pr-6 flex justify-between">
             <Link href="/store">

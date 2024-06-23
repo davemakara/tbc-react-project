@@ -38,7 +38,7 @@ const ScrollToTop = () => {
         onClick={scrollToTop}
         className={`${
           isVisible ? "opacity-100" : "opacity-0"
-        } bg-mainLightBG hover:bg-green3 inline-flex items-center rounded-md p-3 text-[#000] shadow-sm transition-opacity`}
+        } bg-mainLightBG hover:bg-red inline-flex items-center rounded-md p-3 text-[#000] shadow-sm transition-opacity`}
       >
         <RiArrowUpDoubleFill className="h-6 w-8" />
       </button>

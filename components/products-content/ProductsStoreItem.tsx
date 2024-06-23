@@ -8,9 +8,9 @@ interface ProductDataProps {
     id: number;
     title: string;
     description: string;
+    description2: string;
+    description3: string;
     price: number;
-    discountPercentage: number;
-    rating: number;
     stock: number;
     category: string;
     photo: string;

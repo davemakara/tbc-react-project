@@ -21,17 +21,17 @@ export interface CartItemProps extends Product {
 export interface ProductsStoreProps {
   id: number;
   photo: string;
+  artist: string;
   title: string;
   description: string;
+  description2: string;
+  description3: string;
   price: number;
-  discountPercentage: number;
-  rating: number;
   stock: number;
   category: string;
-  thumbnail: string;
 }
 
-// RECIPES
+// BLOGS
 
 export interface BlogProps {
   id: number;
@@ -42,6 +42,16 @@ export interface BlogProps {
   paragraph3: string;
   photo: string;
   createdat: string;
+}
+
+export interface EventProps {
+  id: number;
+  title: string;
+  description: string;
+  photo: string;
+  artist: string;
+  venue: string;
+  date: string;
 }
 
 // USERS

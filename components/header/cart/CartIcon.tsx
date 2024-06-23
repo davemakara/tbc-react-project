@@ -11,7 +11,7 @@ const CartIcon = ({ fetchedProducts }: any) => {
   return (
     <Link href="/cart">
       <div className="relative mr-[15px]">
-        <div className="absolute w-6 h-6 -top-3 -right-4 rounded-full bg-darkYellow flex items-center justify-center">
+        <div className="absolute w-6 h-6 -top-3 -right-4 rounded-full bg-red flex items-center justify-center">
           <span className="text-white text-[16px]">{totalQuantity}</span>
         </div>
         <IoCartOutline className="text-3xl cursor-pointer" />

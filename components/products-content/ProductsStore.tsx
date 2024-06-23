@@ -14,14 +14,14 @@ interface HomeProps {
 interface FilteredProductsProps {
   id: number;
   photo: string;
+  artist: string;
   title: string;
   description: string;
+  description2: string;
+  description3: string;
   price: number;
-  discountPercentage: number;
-  rating: number;
   stock: number;
   category: string;
-  thumbnail: string;
 }
 
 const ProductsStore = ({ productsStore, isClicked, typed }: HomeProps) => {
@@ -35,14 +35,14 @@ const ProductsStore = ({ productsStore, isClicked, typed }: HomeProps) => {
     const transformedProducts = productsStore.map((product) => ({
       id: product.id,
       photo: product.photo,
+      artist: product.artist,
       title: product.title,
       description: product.description,
+      description2: product.description2,
+      description3: product.description3,
       price: product.price,
-      discountPercentage: product.discountPercentage,
-      rating: product.rating,
       stock: product.stock,
       category: product.category,
-      thumbnail: product.thumbnail,
     }));
     setProducts(transformedProducts);
   }, [productsStore]);
