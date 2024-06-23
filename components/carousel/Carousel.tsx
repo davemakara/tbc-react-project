@@ -20,7 +20,9 @@ import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 const Carousel = () => {
   return (
     <>
-      <h1 className="mb-10 lg:ml-44 text-5xl font-bold">Trending Albums!</h1>
+      <span className="w-full mb-10 text-5xl font-bold flex justify-center md:justify-start lg:ml-44">
+        <h1 className="bg-red py-4 px-8 rounded-full">Trending Albums!</h1>
+      </span>
       <Swiper
         slidesPerView={1}
         breakpoints={{
