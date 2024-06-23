@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
 import ProductsStoreItem from "./ProductsStoreItem";
 import { ProductsStoreProps } from "@/types/types";
 
@@ -9,6 +8,7 @@ interface HomeProps {
   productsStore: ProductsStoreProps[];
   isClicked: boolean;
   typed: string;
+  category: string;
 }
 
 interface FilteredProductsProps {
@@ -24,7 +24,12 @@ interface FilteredProductsProps {
   category: string;
 }
 
-const ProductsStore = ({ productsStore, isClicked, typed }: HomeProps) => {
+const ProductsStore = ({
+  productsStore,
+  isClicked,
+  typed,
+  category,
+}: HomeProps) => {
   const [products, setProducts] = useState<ProductsStoreProps[]>([]);
   const [sortedProducts, setSortedProducts] = useState<FilteredProductsProps[]>(
     []
@@ -57,6 +62,12 @@ const ProductsStore = ({ productsStore, isClicked, typed }: HomeProps) => {
       );
     }
 
+    if (category !== "All") {
+      filteredProducts = filteredProducts.filter(
+        (product: FilteredProductsProps) => product.category === category
+      );
+    }
+
     if (isClicked) {
       filteredProducts.sort(
         (a: FilteredProductsProps, b: FilteredProductsProps) =>
@@ -70,7 +81,7 @@ const ProductsStore = ({ productsStore, isClicked, typed }: HomeProps) => {
       setNoProductsFound(false);
       setSortedProducts(filteredProducts);
     }
-  }, [typed, isClicked, products]);
+  }, [typed, isClicked, category, products]);
 
   return (
     <div className="w-full flex flex-col items-center pt-[6rem] sm:flex sm:flex-col sm:items-center">

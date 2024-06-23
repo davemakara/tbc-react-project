@@ -1,17 +1,21 @@
 "use client";
 
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import { useI18n } from "../../locales/client";
-
-import { useState } from "react";
 
 interface SearchSectionProps {
   handleClick: (value: boolean) => void;
   onInputChange: (arg: string) => void;
+  onCategoryChange: (category: string) => void;
 }
 
-const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
+const SearchSection = ({
+  handleClick,
+  onInputChange,
+  onCategoryChange,
+}: SearchSectionProps) => {
   const [inputText, setInputText] = useState<string>("");
+  const [activeCategory, setActiveCategory] = useState<string>("All");
   const t = useI18n();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,37 +28,61 @@ const SearchSection = ({ handleClick, onInputChange }: SearchSectionProps) => {
     handleClick(value);
   };
 
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+    onCategoryChange(category);
+  };
+
+  const getButtonClass = (category: string) => {
+    return `w-full h-12 text-sm border-2 font-semibold ${
+      activeCategory === category
+        ? "border-red"
+        : "border-[#000] dark:border-white"
+    }`;
+  };
+
   return (
     <div className="w-full flex flex-col-reverse xl:flex-row xl:justify-around xl:items-center">
-      <div className="w-full md:w-[640px] lg:w-[500px] xxl:w-[640px] md:mx-auto xl:mx-0 p-6 bg-mainLightBG dark:bg-mainDarkBG dark:bg-opacity-90 bg-opacity-90 rounded-2xl">
-        <p className="font-semibold mb-4 text-lg lg:text-xl">
-          Choose Your Category:
-        </p>
-        <div className="flex w-full justify-between">
-          <button className="w-32 h-12 bg-red rounded-lg">All</button>
-          <button className="w-32 h-12 bg-red rounded-lg">Albums</button>
-          <button className="w-32 h-12 bg-red rounded-lg">Accessories</button>
-          <button className="w-32 h-12 bg-red rounded-lg">Instruments</button>
+      <div className="w-full md:w-[640px] lg:w-[600px] xl:w-[550px] xxl:w-[640px] md:mx-auto xl:mx-0 p-6 bg-[#eee] dark:bg-mainDarkBG dark:bg-opacity-90 bg-opacity-90 shadow-md shadow-mainDarkBG">
+        <p className="font-semibold mb-4 text-lg lg:text-xl">Categories:</p>
+        <div className="flex flex-col gap-4 sm:flex-row w-full md:justify-between">
+          <button
+            onClick={() => handleCategoryClick("All")}
+            className={getButtonClass("All")}
+          >
+            All
+          </button>
+          <button
+            onClick={() => handleCategoryClick("Albums")}
+            className={getButtonClass("Albums")}
+          >
+            Albums
+          </button>
+          <button
+            onClick={() => handleCategoryClick("Accessories")}
+            className={getButtonClass("Accessories")}
+          >
+            Accessories
+          </button>
+          <button
+            onClick={() => handleCategoryClick("Instruments")}
+            className={getButtonClass("Instruments")}
+          >
+            Instruments
+          </button>
         </div>
       </div>
 
-      <form className="flex flex-col justify-center items-center">
+      <form className="flex flex-col justify-center items-center mb-8 xl:mb-0">
         <input
           type="search"
           placeholder={t("searchInput")}
           value={inputText}
           onChange={handleInputChange}
-          className="w-4/5 md:w-2/3 xl:w-[400px] xxl:w-[500px] px-8 py-2 md:py-3 rounded-full"
+          className="w-4/5 md:w-2/3 lg:w-[600px] xl:w-[500px] px-8 py-2 md:py-3 rounded-full"
         />
-        {/* <button
-        type="button"
-        onClick={handleClick}
-        className="bg-darkYellow ml-2 w-[80px] md:w-[100px] rounded-3xl text-[14px] md:text-[18px] font-semibold"
-      >
-        {!btnClicked ? "Sort" : "Reset"}
-      </button> */}
         <div className="flex items-center mt-10 text-[18px]">
-          <label htmlFor="products" className="mr-3">
+          <label htmlFor="products" className="mr-3 text-white">
             {t("sortBy")}
           </label>
           <select
