@@ -44,7 +44,7 @@ const ContactForm: React.FC = () => {
       <textarea
         id="message"
         name="message"
-        placeholder="Message"
+        placeholder={t("message")}
         rows={4}
         className="w-full text-[16px] py-[14px] px-[12px] my-[5px] text-[#000] dark:text-white"
       />
@@ -55,14 +55,14 @@ const ContactForm: React.FC = () => {
           name="agree-checkbox"
           className="mr-[10px]"
         />
-        <label htmlFor="agree-checkbox" className="text-[#000] dark:text-white">
+        <label htmlFor="agree-checkbox" className="text-white">
           {t("agreeTerms")} *
         </label>
       </div>
       <div>
         <button
           type="submit"
-          className="w-full bg-[#94c475] text-white text-[16px] p-[14px] my-[5px] font-semibold border-none cursor-pointer transition-all duration-300 ease hover:bg-green"
+          className="w-full bg-red text-white text-[16px] p-[14px] my-[5px] font-semibold border-none cursor-pointer transition-all duration-300 ease hover:bg-[#b23535]"
         >
           {t("submitBtn")}
         </button>

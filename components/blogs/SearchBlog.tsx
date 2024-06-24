@@ -1,5 +1,6 @@
 "use client";
 
+import { useI18n } from "@/locales/client";
 import { ChangeEvent } from "react";
 
 interface SearchInputProps {
@@ -7,6 +8,8 @@ interface SearchInputProps {
 }
 
 const SearchBlog = ({ onSearch }: SearchInputProps) => {
+  const t = useI18n();
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     onSearch(e.target.value);
   };
@@ -15,7 +18,7 @@ const SearchBlog = ({ onSearch }: SearchInputProps) => {
     <div className="w-full flex justify-center mb-16">
       <input
         type="search"
-        placeholder="Search.."
+        placeholder={t("searchInput")}
         onChange={handleInputChange}
         className="w-4/5 md:w-2/3 xl:w-[550px] px-8 py-2 md:py-3 rounded-full"
       />

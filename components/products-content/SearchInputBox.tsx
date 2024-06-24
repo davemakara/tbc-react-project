@@ -43,32 +43,34 @@ const SearchSection = ({
 
   return (
     <div className="w-full flex flex-col-reverse xl:flex-row xl:justify-around xl:items-center">
-      <div className="w-full md:w-[640px] lg:w-[600px] xl:w-[550px] xxl:w-[640px] md:mx-auto xl:mx-0 p-6 bg-[#eee] dark:bg-mainDarkBG dark:bg-opacity-90 bg-opacity-90 shadow-md shadow-mainDarkBG">
-        <p className="font-semibold mb-4 text-lg lg:text-xl">Categories:</p>
+      <div className="w-full md:w-[640px] lg:w-[600px] xl:w-[570px] xxl:w-[640px] md:mx-auto xl:mx-0 p-6 bg-[#eee] dark:bg-mainDarkBG dark:bg-opacity-90 bg-opacity-90 shadow-md shadow-mainDarkBG">
+        <p className="font-semibold mb-4 text-lg lg:text-xl">
+          {t("categories")}:
+        </p>
         <div className="flex flex-col gap-4 sm:flex-row w-full md:justify-between">
           <button
             onClick={() => handleCategoryClick("All")}
             className={getButtonClass("All")}
           >
-            All
+            {t("all")}
           </button>
           <button
             onClick={() => handleCategoryClick("Albums")}
             className={getButtonClass("Albums")}
           >
-            Albums
+            {t("albums")}
           </button>
           <button
             onClick={() => handleCategoryClick("Accessories")}
             className={getButtonClass("Accessories")}
           >
-            Accessories
+            {t("accessories")}
           </button>
           <button
             onClick={() => handleCategoryClick("Instruments")}
             className={getButtonClass("Instruments")}
           >
-            Instruments
+            {t("instruments")}
           </button>
         </div>
       </div>
@@ -82,14 +84,14 @@ const SearchSection = ({
           className="w-4/5 md:w-2/3 lg:w-[600px] xl:w-[500px] xxl:w-[550px] px-8 py-2 md:py-3 rounded-full bg-[#eee] dark:bg-mainDarkBG"
         />
         <div className="flex items-center mt-10 text-[18px]">
-          <label htmlFor="products" className="mr-3 text-white">
+          <label htmlFor="products" className="mr-3 text-white text-base">
             {t("sortBy")}
           </label>
           <select
             name="products"
             id="products"
             onChange={handleSortChange}
-            className="p-1"
+            className="p-1 text-base"
           >
             <option value="false">{t("sortDefault")}</option>
             <option value="true">{t("sortPrice")}</option>

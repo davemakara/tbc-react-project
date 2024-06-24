@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useI18n } from "../../locales/client";
 
 import SpotifyLogo from "../../public/Spotify_icon-icons.com_66783.png";
 
@@ -23,6 +24,7 @@ const WeeklyCharts = () => {
   const [songsChart, setSongsChart] = useState<Song[]>([]);
   const [artistsChart, setArtistsChart] = useState<Artist[]>([]);
   const [chartContent, setChartContent] = useState<JSX.Element[]>([]);
+  const t = useI18n();
 
   const toggleChartContent = (arg: boolean) => {
     setIsClicked(arg);
@@ -107,30 +109,30 @@ const WeeklyCharts = () => {
     <div className="w-full md:w-[600px] lg:w-[700px] xl:w-[550px] xxl:w-[700px] rounded-2xl sm:flex sm:justify-center overflow-x-auto lg:overflow-x-hidden">
       <div className="w-[600px] lg:w-[700px] xl:w-[550px] xxl:w-[700px] bg-red shadow-xl shadow-[#000] rounded-2xl text-[#000] dark:text-white transition-colors duration-500 ease-in-out">
         <h2 className="text-2xl md:text-3xl text-center font-semibold py-6">
-          Top Weekly Picks!
+          {t("chartHeadline")}
         </h2>
 
         <div className="w-full">
           <div className="flex">
             <button
-              className={`w-[100px] h-[50px] font-semibold tracking-wide ${
+              className={`w-[110px] h-[50px] font-semibold tracking-wide ${
                 !isclicked
                   ? "bg-mainLightBG dark:bg-mainDarkBG rounded-t-xl"
                   : ""
               }`}
               onClick={() => toggleChartContent(false)}
             >
-              Songs
+              {t("songs")}
             </button>
             <button
-              className={`w-[100px] h-[50px] font-semibold tracking-wide ${
+              className={`w-[110px] h-[50px] font-semibold tracking-wide ${
                 isclicked
                   ? "bg-mainLightBG dark:bg-mainDarkBG rounded-t-xl"
                   : ""
               }`}
               onClick={() => toggleChartContent(true)}
             >
-              Artists
+              {t("artists")}
             </button>
           </div>
           <div className="bg-mainLightBG dark:bg-mainDarkBG rounded-b-2xl min-h-[350px] md:min-h-[450px]">

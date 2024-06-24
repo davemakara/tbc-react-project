@@ -38,7 +38,7 @@ const Footer = async () => {
       <div className="w-full flex justify-center pt-12 text-[#000] dark:text-white text-sm">
         <p className="flex items-center gap-1">
           <FaRegCopyright />
-          2024 FlowRecords | All Rights Reserved
+          2024 FlowRecords | {t("copyright")}
         </p>
       </div>
     </footer>
