@@ -47,7 +47,7 @@ const ProfileBtn = () => {
       </button>
       <div
         className={`absolute top-full right-0 w-40 transition duration-200 ease-in-out ${
-          expanded ? "max-h-40" : "max-h-0"
+          expanded ? "max-h-60" : "max-h-0"
         } bg-[#eee] text-[#000] rounded-md overflow-hidden`}
         style={{ transitionProperty: "max-height" }}
       >
@@ -55,7 +55,9 @@ const ProfileBtn = () => {
           <Link href="/profile" onClick={toggleExpanded}>
             <p className="p-2 hover:bg-green3">Profile</p>
           </Link>
-          <a href="/api/auth/logout">Logout</a>
+          <a href="/api/auth/logout" className="w-full p-2 hover:bg-green3">
+            Logout
+          </a>
         </div>
       </div>
     </div>

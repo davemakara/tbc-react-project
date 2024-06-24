@@ -29,11 +29,9 @@ const Footer = async () => {
             <input
               type="email"
               placeholder={t("email")}
-              className="p-2 text-[#14px] text-[#000] dark:text-white rounded-lg"
+              className="p-2 text-[#14px] text-[#000] dark:text-white"
             />
-            <button className="ml-3 px-3 py-2 rounded-lg bg-green">
-              {t("submitBtn")}
-            </button>
+            <button className="ml-3 px-3 py-2 bg-red">{t("submitBtn")}</button>
           </div>
         </div>{" "}
       </div>

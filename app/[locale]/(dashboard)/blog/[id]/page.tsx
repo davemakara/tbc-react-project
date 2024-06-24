@@ -52,7 +52,7 @@ const BlogDetail = async ({ params }: PageParams) => {
           </p>
           <div className="w-full flex justify-between">
             <Link href="/blog">
-              <button className="bg-red text-white text-[16px] mt-[30px] border-none rounded px-2 py-1">
+              <button className="bg-[#E64848] text-white text-[14px] mt-[30px] px-3 sm:px-4 py-3">
                 {"<"} Back to Blogs
               </button>
             </Link>

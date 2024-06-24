@@ -151,7 +151,7 @@ export async function resetCartAction(id: string) {
   await fetch(`${BASE_URL}/api/cart/reset-cart/${id}`, {
     method: "DELETE",
   });
-  revalidatePath("/checkout");
+  revalidatePath("/cart");
 }
 
 // BLOGS

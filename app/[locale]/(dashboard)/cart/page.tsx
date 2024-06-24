@@ -12,7 +12,7 @@ const CheckoutPage = async () => {
   const fetchedProducts = await getUserCartAction(id);
 
   return (
-    <section className="w-full min-h-screen px-8 pt-36 lg:pt-40">
+    <section className="w-full min-h-screen px-8 py-36 lg:pt-40">
       <CheckoutLayout products={fetchedProducts} />
       {/* <ResetCartBtn id={id} /> */}
     </section>
