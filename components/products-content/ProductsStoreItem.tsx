@@ -23,7 +23,7 @@ const ProductsStoreItem = ({
 }: // productsStore,
 ProductDataProps) => {
   return (
-    <div className="p-4 max-w-[350px] bg-white dark:bg-[#692727] border-4 border-[#000] dark:border-[#eee] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:dark:shadow-[#000]">
+    <div className="p-4 max-w-[350px] bg-white dark:bg-[#1e1b1b] border-4 border-[#000] dark:border-[#eee] rounded-lg overflow-hidden transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-[#000] hover:dark:shadow-[#000]">
       <Link href={`/store/${productData.id}`}>
         <span className="relative block w-full h-[200px] rounded-lg overflow-hidden">
           <Image src={productData.photo} alt={productData.title} fill />

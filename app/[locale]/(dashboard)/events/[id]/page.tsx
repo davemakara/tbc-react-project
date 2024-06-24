@@ -4,6 +4,11 @@ import Image from "next/image";
 import DeleteBlogBtn from "@/components/UI/DeleteBlogBtn";
 import { getEventDetail } from "@/app/api";
 
+import { MdStadium } from "react-icons/md";
+import { PiMicrophoneStageFill } from "react-icons/pi";
+import { FaCalendarAlt } from "react-icons/fa";
+import { IoTicket } from "react-icons/io5";
+
 interface PageParams {
   params: {
     id: number;
@@ -27,26 +32,37 @@ const EventDetail = async ({ params }: PageParams) => {
   //   const formattedDate = formatDate(blog.createdat);
 
   return (
-    <section className="w-full min-h-screen py-36 lg:py-40 flex flex-col items-center">
+    <section className="w-full min-h-screen py-36 lg:py-40 flex flex-col items-center bg-[#eee] dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70">
       <div className="w-4/5 flex flex-col items-center lg:flex-row lg:items-start gap-5 lg:gap-10">
         <div className="w-full h-[200px] sm:h-[300px] md:w-2/3 lg:w-1/2 lg:h-[300px] xxl:h-[400px] relative rounded-lg overflow-hidden">
           <Image src={event.photo} alt={event.title} fill />
         </div>
-        <div className="w-full md:w-2/3 lg:w-1/2 bg-mainLightBG p-5 rounded-lg">
+        <div className="w-full md:w-2/3 lg:w-1/2 p-5 rounded-lg">
           <h2 className="text-[30px] font-semibold py-3 lg:py-0 lg:pb-3">
             {event.title}
           </h2>
-          <div className="text-[14px] py-10">
+          <div className="text-[14px] py-7 lg:py-10">
             <p className="font-semibold">{event.description}</p>
           </div>
-
-          <div>
-            <p className="py-3">{event.venue}</p>
-            <p className="py-3">{event.artist}</p>
+          <div className="py-3 flex items-center gap-1">
+            <PiMicrophoneStageFill />
+            <p className="font-semibold">Artist:</p>
+            {event.artist}
           </div>
-          <p className="my-8">Date: {event.date}</p>
-          <p className="my-8">
-            You can find more info about it here:{" "}
+          <div className="py-3 flex items-center gap-1">
+            <MdStadium />
+            <p className="font-semibold">Venue:</p>
+            {event.venue}
+          </div>
+
+          <div className="py-3 flex items-center gap-1">
+            <FaCalendarAlt />
+            <p className="font-semibold">Date:</p>
+            {event.date}
+          </div>
+          <div className="my-8 flex items-center gap-1">
+            <IoTicket />
+            <p className="font-semibold">Ticket Information:</p>
             <a
               href="https://www.ticketmaster.com/discover/concerts"
               target="_blank"
@@ -54,7 +70,8 @@ const EventDetail = async ({ params }: PageParams) => {
             >
               Click
             </a>
-          </p>
+          </div>
+
           <div className="w-full flex justify-between">
             <Link href="/events">
               <button className="bg-red text-white text-[16px] mt-[30px] border-none rounded px-2 py-1">
