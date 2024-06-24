@@ -133,7 +133,7 @@ const WeeklyCharts = () => {
               Artists
             </button>
           </div>
-          <div className="bg-mainLightBG dark:bg-mainDarkBG rounded-b-2xl min-h-[350px]">
+          <div className="bg-mainLightBG dark:bg-mainDarkBG rounded-b-2xl min-h-[350px] md:min-h-[450px]">
             {chartContent}
           </div>
         </div>

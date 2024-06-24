@@ -1,3 +1,4 @@
+import { getProducts } from "@/app/api";
 import Carousel from "@/components/carousel/Carousel";
 import HomepageCard from "@/components/homepage/HomepageCard";
 import SocialBox from "@/components/homepage/SocialBox";
@@ -7,10 +8,9 @@ import SocialBox from "@/components/homepage/SocialBox";
 import WeeklyCharts from "@/components/homepage/WeeklyCharts";
 import { HomepageInfoCard } from "@/constants";
 import Image from "next/image";
-// import { getSession } from "@auth0/nextjs-auth0";
 
 const Homepage = async () => {
-  // const session = await getSession();
+  const storeProducts = await getProducts();
 
   return (
     <section className="w-full min-h-screen pt-36">
@@ -19,7 +19,7 @@ const Homepage = async () => {
         <HomepageCard />
         <WeeklyCharts />
       </div>
-      <Carousel />
+      <Carousel storeProducts={storeProducts} />
       <div className="w-full px-5 lg:px-10 py-32 mt-12 bg-mainLightBG bg-opacity-50 flex flex-col items-center gap-10">
         {HomepageInfoCard.map((card) => (
           <div

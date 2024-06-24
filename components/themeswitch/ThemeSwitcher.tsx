@@ -22,7 +22,7 @@ const ThemeSwitcher: React.FC = () => {
   if (resolvedTheme === "dark") {
     return (
       <LuSun
-        className="text-3xl text-white hover:text-darkYellow cursor-pointer"
+        className="text-3xl text-white hover:text-red cursor-pointer"
         onClick={() => setTheme("light")}
       />
     );
@@ -31,7 +31,7 @@ const ThemeSwitcher: React.FC = () => {
   if (resolvedTheme === "light") {
     return (
       <AiOutlineMoon
-        className="text-3xl text-[#000] hover:text-darkYellow cursor-pointer"
+        className="text-3xl text-[#000] hover:text-red cursor-pointer"
         onClick={() => setTheme("dark")}
       />
     );
