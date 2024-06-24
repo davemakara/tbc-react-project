@@ -8,7 +8,7 @@ import {
   cartCheckoutAction,
   handleQuantityChange,
   resetCartAction,
-} from "@/app/actions";
+} from "../../app/actions";
 import LoadingScreen from "../loading/LoadingScreen";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
