@@ -14,7 +14,8 @@ export async function GET(
       throw new Error("User ID is required");
     }
 
-    const carts = await sql`SELECT * FROM cart WHERE auth_id = ${id}`;
+    const carts =
+      await sql`SELECT * FROM cart WHERE auth_id = ${id} ORDER BY id DESC`;
 
     return NextResponse.json({ carts }, { status: 200 });
   } catch (error: any) {

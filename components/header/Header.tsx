@@ -37,7 +37,7 @@ const Header: React.FC = () => {
 
         <BurgerMenuicon />
         <div className="w-2/5 flex justify-end">
-          <ProfileInfo />
+          <Cart />
         </div>
       </div>
       {/* <div className="lg:hidden absolute right-1/2 transform translate-x-1/2 z-9">

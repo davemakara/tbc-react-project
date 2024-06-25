@@ -22,11 +22,11 @@ const HomepageCard = async () => {
           {t("downloadApp")}
         </h2>
         <div className="flex gap-2 md:gap-4">
-          <span className="flex items-center gap-2 py-2 px-3 md:px-4 bg-white dark:bg-cardsDarkBG rounded-full text-sm text-[#000] dark:text-white shadow-lg shadow-[#000] dark:shadow-white transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span className="flex items-center gap-2 py-2 px-3 md:px-4 bg-white dark:bg-cardsDarkBG rounded-full text-sm text-[#000] dark:text-white shadow-lg shadow-[#000] dark:shadow-white hover:-translate-y-1 cursor-pointer">
             <p>Play Store</p>
             <Image src={playStore} alt="play store" width={25} height={25} />
           </span>
-          <span className="flex items-center gap-2 py-2 px-3 md:px-4 bg-white dark:bg-cardsDarkBG rounded-full text-sm text-[#000] dark:text-white shadow-lg shadow-[#000] dark:shadow-white transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span className="flex items-center gap-2 py-2 px-3 md:px-4 bg-white dark:bg-cardsDarkBG rounded-full text-sm text-[#000] dark:text-white shadow-lg shadow-[#000] dark:shadow-white hover:-translate-y-1 cursor-pointer">
             <p>App Store</p>
             <Image src={appStore} alt="app store" width={25} height={25} />
           </span>

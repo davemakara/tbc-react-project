@@ -7,6 +7,7 @@ export default {
   contact: "Contact",
   profile: "Profile",
   signOut: "Sign Out",
+  login: "Login",
 
   // HOMEPAGE CARD
 

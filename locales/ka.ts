@@ -7,6 +7,7 @@ export default {
   contact: "კონტაქტი",
   profile: "პროფილი",
   signOut: "გასვლა",
+  login: "შესვლა",
 
   // HOMEPAGE CARD
 

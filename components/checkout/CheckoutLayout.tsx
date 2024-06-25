@@ -81,9 +81,9 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
   );
 
   return (
-    <section className="min-h-[500px] bg-mainLightBG dark:bg-mainDarkBG bg-opacity-90 dark:bg-opacity-90 p-5 rounded-lg sm:flex sm:flex-col">
+    <section className="min-h-[500px] p-5 rounded-lg sm:flex sm:flex-col">
       <button
-        className="mt-8 mx-auto w-20 h-10 bg-green text-white rounded"
+        className="mb-8 mx-auto w-20 h-10 bg-red text-white rounded"
         onClick={() => resetCartAction(products[0]?.auth_id)}
       >
         RESET
@@ -101,17 +101,17 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
               alt={product.title}
               className="rounded-lg w-[200px] h-[200px]"
             />
-            <div className="h-[150px] flex flex-col justify-between">
+            <div className="h-[150px] w-[210px] flex flex-col justify-between">
               <h2 className="h-[60px] text-lg font-semibold mt-4">
                 {product.title}
               </h2>
-              <p>${product.price}</p>
+              <p>Price: ${product.price}</p>
               <div className="flex items-center mt-2">
                 <span className="text-gray-600 dark:text-gray-400 mr-2">
                   Quantity: {product.quantity}
                 </span>
                 <button
-                  className="w-5 h-5 mx-2 text-[#000] dark:text-white border flex items-center justify-center"
+                  className="w-5 h-5 mx-2 text-[#000] bg-red dark:text-white border flex items-center justify-center"
                   onClick={() =>
                     handleQuantityChange(
                       product.id,
@@ -123,7 +123,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
                   -
                 </button>
                 <button
-                  className="w-5 h-5 mx-2 text-[#000] dark:text-white border flex items-center justify-center"
+                  className="w-5 h-5 mx-2 text-[#000] bg-green dark:text-white border flex items-center justify-center"
                   onClick={() =>
                     handleQuantityChange(
                       product.id,

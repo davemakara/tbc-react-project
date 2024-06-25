@@ -10,7 +10,7 @@ const CartPage = async () => {
   const fetchedProducts = await getUserCartAction(id);
 
   return (
-    <section className="w-full min-h-screen px-8 py-36 lg:pt-40">
+    <section className="w-full min-h-screen px-8 py-36 lg:pt-40 bg-mainLightBG dark: dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70">
       <CheckoutLayout products={fetchedProducts} />
     </section>
   );
