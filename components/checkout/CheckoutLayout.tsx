@@ -71,6 +71,14 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
     return <LoadingScreen />;
   }
 
+  if (products.length === 0) {
+    return (
+      <h1 className="text-center text-4xl font-semibold mt-10 ">
+        No Items Chosen!
+      </h1>
+    );
+  }
+
   const totalQuantity = products.reduce(
     (acc, product) => acc + product.quantity,
     0
@@ -101,15 +109,13 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
               alt={product.title}
               className="rounded-lg w-[200px] h-[200px]"
             />
-            <div className="h-[150px] w-[210px] flex flex-col justify-between">
-              <h2 className="h-[60px] text-lg font-semibold mt-4">
+            <div className="h-[160px] w-[210px] flex flex-col justify-between">
+              <h2 className="h-[60px] text-base font-semibold mt-4">
                 {product.title}
               </h2>
               <p>Price: ${product.price}</p>
               <div className="flex items-center mt-2">
-                <span className="text-gray-600 dark:text-gray-400 mr-2">
-                  Quantity: {product.quantity}
-                </span>
+                <span className="mr-2">Quantity: {product.quantity}</span>
                 <button
                   className="w-5 h-5 mx-2 text-[#000] bg-red dark:text-white border flex items-center justify-center"
                   onClick={() =>
