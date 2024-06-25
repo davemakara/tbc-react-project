@@ -59,6 +59,13 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
     fetchProducts();
   }, [initialProducts]);
 
+  const handleDeleteCartProducts = () => {
+    // @ts-ignore
+    resetCartAction(user?.sub);
+  };
+
+  console.log(products[0]?.auth_id);
+
   const handleCheckout = async () => {
     try {
       await cartCheckoutAction({ products: products, user });
@@ -90,12 +97,15 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
 
   return (
     <section className="min-h-[500px] p-5 rounded-lg sm:flex sm:flex-col">
-      <button
-        className="mb-8 mx-auto w-20 h-10 bg-red text-white rounded"
-        onClick={() => resetCartAction(products[0]?.auth_id)}
-      >
-        RESET
-      </button>
+      {user && (
+        <button
+          className="mb-8 mx-auto w-20 h-10 bg-red text-white rounded"
+          onClick={handleDeleteCartProducts}
+        >
+          RESET
+        </button>
+      )}
+
       <div className="w-full sm:flex sm:flex-wrap sm:justify-center gap-3 my-4">
         {products.map((product, index) => (
           <div

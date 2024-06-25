@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import DeleteBlogBtn from "@/components/UI/DeleteBlogBtn";
 import { getEventDetail } from "@/app/api";
 
 import { MdStadium } from "react-icons/md";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { FaCalendarAlt } from "react-icons/fa";
 import { IoTicket } from "react-icons/io5";
+import DeleteEventBtn from "@/components/UI/DeleteEventBtn";
 
 interface PageParams {
   params: {
@@ -16,20 +16,8 @@ interface PageParams {
   };
 }
 
-// const formatDate = (dateString: string): string => {
-//   const date = new Date(dateString);
-
-//   const day = String(date.getDate()).padStart(2, "0");
-//   const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
-//   const year = date.getFullYear();
-
-//   return `${day}-${month}-${year}`;
-// };
-
 const EventDetail = async ({ params }: PageParams) => {
   const event = await getEventDetail(params.id);
-
-  //   const formattedDate = formatDate(blog.createdat);
 
   return (
     <section className="w-full min-h-screen py-36 lg:py-40 flex flex-col items-center bg-[#eee] dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70">
@@ -78,7 +66,7 @@ const EventDetail = async ({ params }: PageParams) => {
                 {"<"} Back to Events
               </button>
             </Link>
-            <DeleteBlogBtn id={Number(params.id)} />
+            <DeleteEventBtn id={Number(params.id)} />
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ const Events = ({ events }: iEvents) => {
     <>
       <div className="w-full pt-[2rem] px-12 sm:px-16">
         <SearchEvent onSearch={handleSearch} />
-        <div className="flex flex-col sm:items-center gap-5 md:gap-7 xxl:gap-10">
+        <div className="flex flex-col sm:items-center gap-5 md:gap-7 xxl:gap-10 pb-32">
           {filteredEvents.map((event: EventProps) => (
             <EventDetails event={event} key={event.id} />
           ))}
