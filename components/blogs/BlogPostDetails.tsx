@@ -29,8 +29,6 @@ const formatDate = (dateString: string): string => {
 const BlogPostDetails = ({ blog }: BlogDetails) => {
   const formattedDate = formatDate(blog.createdat);
 
-  console.log(blog.createdat);
-
   return (
     <div className="w-full sm:w-[350px] md:w-full lg:w-4/5 xxl:w-2/3 md:flex bg-white dark:bg-[#1e1b1b] rounded-lg overflow-hidden transition-colors duration-200 ease-in-out hover:shadow-md hover:shadow-[#000]">
       <Link href={`blog/${blog.id}`}>

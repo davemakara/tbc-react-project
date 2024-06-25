@@ -13,7 +13,7 @@ const ProfileInfo = () => {
       ) : (
         <a
           href="/api/auth/login"
-          className="py-1 px-4 bg-red rounded-lg text-md"
+          className="py-1 px-5 bg-red hover:bg-[#b72727] rounded-lg text-md"
         >
           Login
         </a>

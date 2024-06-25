@@ -71,7 +71,7 @@ const Carousel = ({ storeProducts }: any) => {
         {latestProducts.map((item: any, index: any) => (
           <SwiperSlide key={index}>
             <Link href={`store/${item.id}`}>
-              <div className="w-[300px] sm:w-[260px] xxl:w-[280px] h-[240px] sm:h-[160px] xxl:h-[220px] relative rounded-xl overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+              <div className="w-[300px] sm:w-[260px] xxl:w-[280px] h-[240px] sm:h-[160px] xxl:h-[220px] relative rounded-xl overflow-hidden transition ease delay-150 hover:scale-110 duration-300">
                 <Image src={item.photo} alt={item.title} fill />
               </div>
             </Link>

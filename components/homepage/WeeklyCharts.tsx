@@ -103,8 +103,6 @@ const WeeklyCharts = () => {
     }
   }, [isclicked, songsChart, artistsChart]);
 
-  console.log(songsChart);
-
   return (
     <div className="w-full md:w-[600px] lg:w-[700px] xl:w-[550px] xxl:w-[700px] rounded-2xl sm:flex sm:justify-center overflow-x-auto lg:overflow-x-hidden">
       <div className="w-[600px] lg:w-[700px] xl:w-[550px] xxl:w-[700px] bg-red shadow-xl shadow-[#000] rounded-2xl text-[#000] dark:text-white transition-colors duration-500 ease-in-out">
