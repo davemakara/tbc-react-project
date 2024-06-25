@@ -5,10 +5,6 @@ export const POST = async (request: NextRequest) => {
   try {
     const { product_id, auth_id, action } = await request.json();
 
-    console.log("product_id:", product_id);
-    console.log("auth_id:", auth_id);
-    console.log("action:", action);
-
     if (!product_id || !auth_id || !action) {
       return NextResponse.json(
         { message: "Missing required fields: product_id, auth_id, and action" },

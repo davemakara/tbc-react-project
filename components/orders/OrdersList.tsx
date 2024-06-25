@@ -3,8 +3,6 @@
 import { createRefund } from "@/app/actions";
 
 const OrdersList = ({ orders }: any) => {
-  console.log(orders, "orders");
-
   const refundHandler = async (charge: string) => {
     await createRefund(charge);
   };

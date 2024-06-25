@@ -4,8 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.pathname.replace("/api/cart/reset-cart/", "");
 
-  console.log(id, "asdasd");
-
   try {
     if (!id) throw new Error("ID is required");
 

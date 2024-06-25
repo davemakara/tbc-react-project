@@ -146,7 +146,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
         ))}
       </div>
 
-      <div className="bg-white text-[#000] w-2/3 sm:w-[300px] h-[200px] my-4 p-4 mx-auto rounded-lg flex flex-col justify-between">
+      <div className="bg-white text-[#000] w-2/3 sm:w-[300px] h-[240px] my-4 p-4 mx-auto rounded-lg flex flex-col justify-between">
         <div className="h-1/2 flex flex-col justify-around">
           <p className="text-md font-semibold">
             Total Price: ${totalPrice.toFixed(2)}
@@ -157,7 +157,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
         </div>
         <button
           onClick={handleCheckout}
-          className="text-lg px-4 py-3 bg-green rounded-lg font-semibold"
+          className="text-lg px-4 py-3 bg-red rounded-lg font-semibold"
         >
           BUY NOW
         </button>
