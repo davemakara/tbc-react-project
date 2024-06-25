@@ -74,11 +74,11 @@ const AddProduct = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-[#DDDDDD] dark:bg-[#2C3333] flex flex-col items-center pt-[2rem] lg:pt-[5rem] xxl:pt-[7rem] overflow-hidden">
+    <section className="w-full min-h-screen bg-mainLightBG dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70 flex flex-col items-center py-36 lg:py-40 overflow-hidden">
       <UploadPhoto setBlobUrl={setBlobUrl} />
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-[#000] p-8 rounded shadow-md"
+        className="w-full max-w-lg bg-[#000] text-white p-8 rounded-md shadow-md mt-10"
       >
         <h2 className="text-2xl mb-6">Add New Product</h2>
 
@@ -95,7 +95,7 @@ const AddProduct = () => {
             name="title"
             value={formData.title}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
@@ -112,7 +112,7 @@ const AddProduct = () => {
             name="artist"
             value={formData.artist}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
 
@@ -129,7 +129,7 @@ const AddProduct = () => {
             name="price"
             value={formData.price}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
@@ -147,7 +147,7 @@ const AddProduct = () => {
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
@@ -165,7 +165,7 @@ const AddProduct = () => {
             name="stock"
             value={formData.stock}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
@@ -183,7 +183,7 @@ const AddProduct = () => {
             name="photo"
             value={formData.photo}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
@@ -200,7 +200,8 @@ const AddProduct = () => {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            rows={10}
+            className="border rounded w-full py-2 px-3 text-[#000] dark:text-white focus:outline-none focus:shadow-outline"
             required
           />
         </div>
@@ -217,7 +218,8 @@ const AddProduct = () => {
             name="description2"
             value={formData.description2}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            rows={10}
+            className="border rounded w-full py-2 px-3 text-[#000] dark:text-white focus:outline-none focus:shadow-outline"
           />
         </div>
 
@@ -233,13 +235,14 @@ const AddProduct = () => {
             name="description3"
             value={formData.description3}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            rows={10}
+            className="border rounded w-full py-2 px-3 text-[#000] dark:text-white focus:outline-none focus:shadow-outline"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-red text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Add Product
         </button>

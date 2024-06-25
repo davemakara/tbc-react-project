@@ -42,7 +42,9 @@ const UploadPhoto: React.FC<AddBlogPictureProps> = ({ setBlobUrl }) => {
           required
           id="file-upload"
         />
-        <button type="submit">Upload</button>
+        <button type="submit" className="bg-red px-4 py-2">
+          Upload
+        </button>
       </form>
     </div>
   );
