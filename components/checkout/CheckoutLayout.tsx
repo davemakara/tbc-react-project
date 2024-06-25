@@ -59,12 +59,12 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
     fetchProducts();
   }, [initialProducts]);
 
-  const handleDeleteCartProducts = () => {
-    // @ts-ignore
-    resetCartAction(user?.sub);
-  };
+  // const handleDeleteCartProducts = () => {
+  //   // @ts-ignore
+  //   resetCartAction(products[0]?.auth_id);
+  // };
 
-  console.log(products[0]?.auth_id);
+  // console.log(products[0]?.auth_id);
 
   const handleCheckout = async () => {
     try {
@@ -100,7 +100,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
       {user && (
         <button
           className="mb-8 mx-auto w-20 h-10 bg-red text-white rounded"
-          onClick={handleDeleteCartProducts}
+          onClick={() => resetCartAction(products[0]?.auth_id)}
         >
           RESET
         </button>
