@@ -21,11 +21,11 @@ const BurgerMenuicon = () => {
   return (
     <>
       {" "}
-      <div className="block lg:hidden absolute right-0 z-20 pr-6">
+      <div className="w-[50px] h-[50px] flex justify-center items-center lg:hidden relative">
         {menuIsOpen ? (
-          <GrClose className="w-7 h-7" onClick={toggleMenu} />
+          <GrClose className="w-7 h-7 absolute z-20" onClick={toggleMenu} />
         ) : (
-          <FaBars className="w-7 h-7" onClick={toggleMenu} />
+          <FaBars className="w-7 h-7 absolute z-20" onClick={toggleMenu} />
         )}
       </div>
       {menuIsOpen && (

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { useI18n } from "../../locales/client";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 interface Profile {
   firstName: string;
@@ -21,6 +22,10 @@ const ProfileForm: React.FC = () => {
 
   const t = useI18n();
   const [profileObj, setProfileObj] = useState(initialProfile);
+
+  const { user } = useUser();
+
+  console.log(user);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name: inputName, value } = event.target;
