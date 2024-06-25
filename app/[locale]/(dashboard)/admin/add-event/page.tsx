@@ -67,54 +67,92 @@ const AddEvent = () => {
   };
 
   return (
-    <section className="w-full min-h-screen flex justify-center items-center">
-      <form onSubmit={handleSubmit} className="flex flex-col">
-        <label>
-          Title:
+    <section className="w-full min-h-screen bg-mainLightBG dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70 flex flex-col items-center py-36 lg:py-40 overflow-hidden">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-lg bg-[#000] text-white p-8 rounded-md shadow-md mt-10"
+      >
+        <h2 className="text-2xl mb-6">Add New Event</h2>
+
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="title"
+          >
+            Title
+          </label>
+
           <input
             type="text"
+            id="title"
             name="title"
             value={formData.title}
             onChange={handleInputChange}
             required
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
           />
-        </label>
-        <label>
-          Description:
+
+          <label
+            htmlFor="description"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Description
+          </label>
           <input
             type="text"
+            id="description"
             name="description"
             value={formData.description}
             onChange={handleInputChange}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
           />
-        </label>
-        <label>
-          Artist:
+
+          <label
+            htmlFor="artist"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Artist:
+          </label>
           <textarea
+            id="artist"
             name="artist"
             value={formData.artist}
             onChange={handleInputChange}
             required
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
           />
-        </label>
-        <label>
-          Venue:
+
+          <label
+            htmlFor="venue"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Venue:
+          </label>
           <textarea
+            id="venue"
             name="venue"
             value={formData.venue}
             onChange={handleInputChange}
             required
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#000] dark:text-white leading-tight focus:outline-none focus:shadow-outline"
           />
-        </label>
-        <label>
-          Date:
+
+          <label
+            htmlFor="date"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Date:
+          </label>
           <textarea
+            id="date"
             name="date"
             value={formData.date}
             onChange={handleInputChange}
             required
+            className="border rounded w-full py-2 px-3 text-[#000] dark:text-white focus:outline-none focus:shadow-outline"
           />
-        </label>
+        </div>
+
         <label>
           Photo:
           <input
@@ -122,9 +160,15 @@ const AddEvent = () => {
             ref={inputFileRef}
             onChange={handlePhotoUpload}
             required
+            className="my-8"
           />
         </label>
-        <button type="submit">Add Event</button>
+        <button
+          type="submit"
+          className="w-32 h-14 bg-red hover:bg-[#b72727] flex justify-center items-center rounded-md mx-auto"
+        >
+          Add Event
+        </button>
       </form>
     </section>
   );

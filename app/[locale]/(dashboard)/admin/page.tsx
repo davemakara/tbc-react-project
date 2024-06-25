@@ -11,19 +11,19 @@ const AdminPage = async () => {
       <div className="w-full flex justify-center gap-4 mb-20">
         <Link
           href="/admin/add"
-          className="w-32 h-10 flex justify-center items-center bg-red rounded-lg"
+          className="w-32 h-10 flex justify-center items-center bg-red hover:bg-[#b72727] rounded-lg"
         >
           Add Product
         </Link>
         <Link
           href="/admin/add-blog"
-          className="w-32 h-10 flex justify-center items-center bg-red rounded-lg"
+          className="w-32 h-10 flex justify-center items-center bg-red hover:bg-[#b72727] rounded-lg"
         >
           Add Blog
         </Link>
         <Link
           href="/admin/add-event"
-          className="w-32 h-10 flex justify-center items-center bg-red rounded-lg"
+          className="w-32 h-10 flex justify-center items-center bg-red hover:bg-[#b72727] rounded-lg"
         >
           Add Event
         </Link>

@@ -169,7 +169,7 @@ const AddBlog = () => {
 
         <button
           type="submit"
-          className="w-32 h-14 bg-red flex justify-center items-center rounded-md mx-auto"
+          className="w-32 h-14 bg-red hover:bg-[#b72727] flex justify-center items-center rounded-md mx-auto"
         >
           Add Blog
         </button>

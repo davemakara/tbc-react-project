@@ -38,7 +38,7 @@ const BlogDetail = async ({ params }: PageParams) => {
           <h2 className="text-[30px] font-semibold py-3 lg:py-0 lg:pb-3">
             {blog.title}
           </h2>
-          <div className="text-[14px] py-10">
+          <div className="py-10">
             <p className="font-semibold">{blog.description}</p>
           </div>
 
@@ -48,7 +48,7 @@ const BlogDetail = async ({ params }: PageParams) => {
             <p className="py-3">{blog.paragraph3}</p>
           </div>
           <p className="my-8 flex gap-1 items-center">
-            <FaCalendarAlt /> {formattedDate}
+            <FaCalendarAlt /> Published: {formattedDate}
           </p>
           <div className="w-full flex justify-between">
             <Link href="/blog">
