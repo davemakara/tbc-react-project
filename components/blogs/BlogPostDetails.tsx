@@ -30,7 +30,7 @@ const BlogPostDetails = ({ blog }: BlogDetails) => {
   const formattedDate = formatDate(blog.createdat);
 
   return (
-    <div className="w-full sm:w-[350px] md:w-full lg:w-4/5 xxl:w-2/3 md:flex bg-white dark:bg-[#1e1b1b] rounded-lg overflow-hidden transition-colors duration-200 ease-in-out hover:shadow-md hover:shadow-[#000]">
+    <div className="w-full sm:w-[350px] md:w-full lg:w-4/5 xxl:w-2/3 md:flex bg-white dark:bg-[#1c1c1c] rounded-lg overflow-hidden transition-colors duration-200 ease-in-out hover:shadow-md hover:shadow-[#000]">
       <Link href={`blog/${blog.id}`}>
         <div className="relative w-full md:w-[260px] xxl:w-[350px] h-[250px] md:h-full">
           <Image src={blog.photo} alt={blog.title} fill />
