@@ -57,6 +57,7 @@ export default {
   lastName: "Last Name",
   password: "Password",
   confirmPassword: "Confirm Password",
+  username: "Username",
 
   // BLOG PAGE
   chooseRecipe: "Choose Your Favorite Recipe!",

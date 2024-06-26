@@ -26,7 +26,6 @@ const AddProduct = () => {
       [name]: value,
     });
   };
-  console.log(formData);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

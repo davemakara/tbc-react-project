@@ -24,8 +24,6 @@ const ProfileForm: React.FC = () => {
     fetchNickname();
   }, [user?.sub]);
 
-  console.log(user);
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (user?.sub) {
@@ -58,7 +56,7 @@ const ProfileForm: React.FC = () => {
         <div className="w-full lg:w-1/2">
           <div className="w-full flex flex-col">
             <label htmlFor="nickname" className="text-[18px]">
-              Username:
+              {t("username")}:
             </label>
             <input
               type="text"

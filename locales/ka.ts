@@ -57,6 +57,7 @@ export default {
   lastName: "გვარი",
   password: "პაროლი",
   confirmPassword: "გაიმეორე პაროლი",
+  username: "მომხმარებლის სახელი",
 
   // BLOG PAGE
   chooseRecipe: "აირჩიე სასურველი რეცეპტი!",

@@ -4,11 +4,7 @@ import { FC, useEffect, useState } from "react";
 
 import Image from "next/image";
 import { getProductDetail } from "@/app/api";
-import {
-  cartCheckoutAction,
-  handleQuantityChange,
-  resetCartAction,
-} from "../../app/actions";
+import { cartCheckoutAction, handleQuantityChange } from "../../app/actions";
 import LoadingScreen from "../loading/LoadingScreen";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
@@ -59,13 +55,6 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
     fetchProducts();
   }, [initialProducts]);
 
-  // const handleDeleteCartProducts = () => {
-  //   // @ts-ignore
-  //   resetCartAction(products[0]?.auth_id);
-  // };
-
-  // console.log(products[0]?.auth_id);
-
   const handleCheckout = async () => {
     try {
       await cartCheckoutAction({ products: products, user });
@@ -97,15 +86,6 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
 
   return (
     <section className="min-h-[500px] p-5 rounded-lg sm:flex sm:flex-col">
-      {user && (
-        <button
-          className="mb-8 mx-auto w-20 h-10 bg-red text-white rounded"
-          onClick={() => resetCartAction(products[0]?.auth_id)}
-        >
-          RESET
-        </button>
-      )}
-
       <div className="w-full sm:flex sm:flex-wrap sm:justify-center gap-3 my-4">
         {products.map((product, index) => (
           <div
@@ -167,7 +147,7 @@ const CheckoutLayout: FC<iProducts> = ({ products: initialProducts }) => {
         </div>
         <button
           onClick={handleCheckout}
-          className="text-lg px-4 py-3 bg-red rounded-lg font-semibold"
+          className="text-lg px-4 py-3 bg-red hover:bg-[#b72727] rounded-lg font-semibold"
         >
           BUY NOW
         </button>
