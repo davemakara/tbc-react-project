@@ -262,3 +262,11 @@ export async function getNicknameAction(sub: string) {
   const data = await response.json();
   return data.response;
 }
+
+export async function changeNicknameAction(sub: string, nickname: string) {
+  await fetch(BASE_URL + "/api/change-user-nickname/", {
+    method: "PUT",
+    body: JSON.stringify({ sub, nickname }),
+  });
+  revalidatePath("/profile");
+}

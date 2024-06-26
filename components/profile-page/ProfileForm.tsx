@@ -4,6 +4,7 @@ import { useI18n } from "../../locales/client";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Image from "next/image";
 import { getNicknameAction } from "@/app/actions";
+import { changeNicknameAction } from "@/app/actions";
 
 const ProfileForm: React.FC = () => {
   const [userNickname, setUserNickname] = useState("");
@@ -25,13 +26,17 @@ const ProfileForm: React.FC = () => {
 
   console.log(user);
 
-  const handleSubit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (user?.sub) {
+      await changeNicknameAction(user.sub, userNickname);
+    }
   };
+
   return (
     <form
       className="w-4/5 xl:w-4/5 mx-auto py-10 px-16 lg:px-0 lg:pr-16 rounded-xl text-[#000] dark:text-white bg-mainLightBG dark:bg-mainDarkBG bg-opacity-90 dark:bg-opacity-90"
-      onSubmit={handleSubit}
+      onSubmit={handleSubmit}
       autoComplete="off"
     >
       <div>
@@ -60,6 +65,7 @@ const ProfileForm: React.FC = () => {
               name="nickname"
               id="nickname"
               value={userNickname}
+              onChange={(e) => setUserNickname(e.target.value)}
               className="w-full text-[16px] py-[7px] md:py-[10px] px-[10px] md:px-[20px] mt-[7px] md:mt-[8px] mb-[20px] md:mb-[20px] md:text-[18px]"
             />
           </div>
@@ -84,4 +90,5 @@ const ProfileForm: React.FC = () => {
     </form>
   );
 };
+
 export default ProfileForm;
