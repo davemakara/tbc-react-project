@@ -150,7 +150,6 @@ export const handleQuantityChange = async (
 export async function resetCartAction(id: string) {
   await fetch(BASE_URL + `/api/cart/reset-cart/${id}`, {
     method: "DELETE",
-    cache: "no-store",
   });
   revalidatePath("/cart");
 }
@@ -251,4 +250,15 @@ export async function createRefund(charge: string) {
     },
     body: JSON.stringify({ charge }),
   });
+}
+
+// NICKNAME
+
+export async function getNicknameAction(sub: string) {
+  const response = await fetch(BASE_URL + "/api/get-user-nickname/", {
+    method: "POST",
+    body: JSON.stringify({ sub }),
+  });
+  const data = await response.json();
+  return data.response;
 }

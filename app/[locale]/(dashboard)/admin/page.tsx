@@ -27,6 +27,12 @@ const AdminPage = async () => {
         >
           Add Event
         </Link>
+        <Link
+          href="/admin/orders"
+          className="w-32 h-10 flex justify-center items-center text-white dark:text-[#000] bg-mainDarkBG dark:bg-mainLightBG hover:bg-[#b72727] dark:hover:bg-[#b72727] rounded-lg"
+        >
+          Order History
+        </Link>
       </div>
       <AllProducts />
       <AllBlogs />

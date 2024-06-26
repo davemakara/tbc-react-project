@@ -12,6 +12,10 @@ const ProfileBtn = () => {
   const toggleExpanded = () => setExpanded((current) => !current);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const isAdmin = Array.isArray(user?.role)
+    ? user?.role.includes("admin")
+    : user?.role === "admin";
+
   const handleClickOutside = (event: MouseEvent | Event) => {
     if (
       dropdownRef.current &&
@@ -51,7 +55,7 @@ const ProfileBtn = () => {
         style={{ transitionProperty: "max-height" }}
       >
         <div className="w-full">
-          <div className="w-10/12 mx-auto py-4 mt-2 mb-4 flex flex-col items-center bg-white border-[2px] shadow-sm shadow-mainDarkBG rounded-lg overflow-hidden">
+          <div className="w-10/12 mx-auto py-4 mt-3 mb-4 flex flex-col items-center bg-white border-[2px] shadow-sm shadow-mainDarkBG rounded-lg overflow-hidden">
             <Image
               src={user?.picture || ""}
               alt={user?.nickname || ""}
@@ -63,12 +67,21 @@ const ProfileBtn = () => {
           </div>
 
           <a href="/profile" onClick={toggleExpanded}>
-            <p className="py-2 text-center border-b border-b-mainDarkBG hover:bg-red">
+            <p className="py-2 text-center border-b border-b-mainDarkBG hover:bg-red transition-colors duration-300 ease-in-out">
               Profile
             </p>
           </a>
+          {isAdmin && (
+            <a href="/admin/orders" onClick={toggleExpanded}>
+              <p className="py-2 text-center border-b border-b-mainDarkBG hover:bg-red transition-colors duration-300 ease-in-out">
+                Order History
+              </p>
+            </a>
+          )}
           <a href="/api/auth/logout">
-            <p className="w-full py-2 text-center hover:bg-red">Logout</p>
+            <p className="w-full py-2 text-center hover:bg-red transition-colors duration-300 ease-in-out">
+              Logout
+            </p>
           </a>
         </div>
       </div>

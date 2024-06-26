@@ -8,10 +8,10 @@ const OrdersList = ({ orders }: any) => {
   };
 
   return (
-    <div className="mt-[80px] dark:bg-gray-200 p-12 min-h-screen">
+    <div className="w-full min-h-screen py-40 bg-mainLightBG dark:bg-mainDarkBG bg-opacity-70 dark:bg-opacity-70">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="dark:bg-[#2E3944] bg-[748D92]">
+        <table className="w-4/5 mx-auto divide-y divide-gray-200">
+          <thead className="bg-red">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                 Amount
@@ -27,7 +27,7 @@ const OrdersList = ({ orders }: any) => {
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-gray-200 text-[#000]">
             {orders.map((order: any) => (
               <tr key={order.latest_charge.id}>
                 <td className="px-6 py-7 whitespace-nowrap text-sm font-semibold text-gray-900">

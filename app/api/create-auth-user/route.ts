@@ -8,12 +8,12 @@ export async function GET(_: NextRequest) {
     const session = await getSession();
 
     if (session?.user) {
-      const { email, sub, picture } = session.user;
+      const { email, sub, picture, nickname } = session.user;
 
       const user = await sql`SELECT * FROM authusers WHERE id = ${sub}`;
 
       if (!user.rows.length)
-        await sql`INSERT INTO authusers (id, email, img) VALUES (${sub}, ${email}, ${picture});`;
+        await sql`INSERT INTO authusers (id, email, img, nickname) VALUES (${sub}, ${email}, ${picture}, ${nickname});`;
     } else {
       return redirect("/api/auth/logout");
     }
