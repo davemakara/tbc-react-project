@@ -13,14 +13,7 @@ import Footer from "@/components/footer/Footer";
 export const metadata = {
   title: "FlowRecords",
   description: "Your Music App!",
-  // icons: {
-  //   icon: "https://cdn.icon-icons.com/icons2/3833/PNG/512/logo_vercel_icon_234925.png",
-  // },
 };
-
-// interface PageProps {
-//   children: ReactNode;
-// }
 
 export default function RootLayout({
   params: { locale },

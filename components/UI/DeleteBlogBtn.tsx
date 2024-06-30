@@ -22,7 +22,6 @@ const DeleteBlogBtn = ({ id }: DeleteButtonProps) => {
       route.push("/blog");
     } catch (error) {
       console.error("Failed to delete product:", error);
-      // You might want to show an error message to the user here
     }
   };
 

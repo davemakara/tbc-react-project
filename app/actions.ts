@@ -31,23 +31,6 @@ export async function updateUserAction(formData: FormData) {
 
 //STORE
 
-// interface DetailProductData {
-//   title: string;
-//   description: string;
-//   stock: number;
-//   price: number;
-//   photo: string;
-//   category: string;
-//   artist: string;
-// }
-
-// export async function createNewProduct(formData: DetailProductData) {
-//   const { title, description, stock, price, photo, category, artist } =
-//     formData;
-//   addNewProduct(title, description, stock, price, photo, category, artist);
-//   revalidatePath("/products");
-// }
-
 export async function deleteSingleProductAction(id: number) {
   revalidatePath("/products");
   return await deleteSingleProduct(id);
@@ -153,14 +136,6 @@ export async function resetCartAction(id: string) {
   });
   revalidatePath("/cart");
 }
-
-// export async function resetCartAction(sub: string) {
-//   await fetch(BASE_URL + "/api/cart/reset-cart/", {
-//     method: "DELETE",
-//     body: JSON.stringify({ sub }),
-//   });
-//   revalidatePath("/cart");
-// }
 
 // BLOGS
 

@@ -17,18 +17,6 @@ export const POST = async (request: NextRequest) => {
     // Log the received data
     console.log("Received data:", { product_id, auth_id, quantity });
 
-    // Check if the product exists
-    // const productExists = await sql`
-    //   SELECT id FROM store
-    //   WHERE product_id = ${product_id}
-    // `;
-    // if (productExists.rowCount === 0) {
-    //   console.log("Product does not exist:", product_id);
-    //   return NextResponse.json(
-    //     { message: "Product does not exist" },
-    //     { status: 400 }
-    //   );
-    // }
     // Check if the user already has this product in the cart
     const existingCartProduct = await sql`
         SELECT id, quantity FROM cart 
